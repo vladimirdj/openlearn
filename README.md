@@ -1,5 +1,5 @@
 # open-learning
-Open Learning is an online Learning Management system enabling educators (instructors) to create their own private website filled with dynamic courses that extend learning anytime, anywhere. 
+Open Learning is an online Learning Management system enabling instructors to create their own private website filled with dynamic courses that extend learning anytime, anywhere. 
 It helps the instructors create effective online teaching and learning experiences for the students in a collaborative and private environment, and helps students build their talent pool at their convenience.
 
 It is being developed using the following languages:
