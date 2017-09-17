@@ -3,6 +3,7 @@ Open Learning is an online Learning Management system enabling educators (instru
 It helps the instructors create effective online teaching and learning experiences for the students in a collaborative and private environment, and helps students build their talent pool at their convenience.
 
 It is being developed using the following languages:
+
 (1) HTML,
 
 (2) CSS, and
