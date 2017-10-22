@@ -166,7 +166,7 @@
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
 					<h2>Course categories</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<p>Choose one of our offered awesome categories to get started with!</p>
 				</div>
 			</div>
 			<div class="row">
@@ -298,8 +298,8 @@
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2>Our Course</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<h2>Popular Courses</h2>
+					<p>See what is trending across OpenLearn!</p>
 				</div>
 			</div>
 			<div class="row">
@@ -366,27 +366,27 @@
 							<div class="item">
 								<div class="testimony-slide active text-center">
 									<div class="user" style="background-image: url(images/person1.jpg);"></div>
-									<span>Mary Walker<br><small>Students</small></span>
+									<span>Mary Walker<br><small>Student</small></span>
 									<blockquote>
-										<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+										<p>&ldquo;OpenLearn helped me to learn the most challenging parts of Web Development. Now I work as a freelancer and earn a lot. Thank you for securing my career!&rdquo;</p>
 									</blockquote>
 								</div>
 							</div>
 							<div class="item">
 								<div class="testimony-slide active text-center">
 									<div class="user" style="background-image: url(images/person2.jpg);"></div>
-									<span>Mike Smith<br><small>Students</small></span>
+									<span>Mike Smith<br><small>Student</small></span>
 									<blockquote>
-										<p>&ldquo;Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+										<p>&ldquo;There are tons of courses available which helped me boost my skillset. I really love CodeLearn and look forward to pursuing more courses!&rdquo;</p>
 									</blockquote>
 								</div>
 							</div>
 							<div class="item">
 								<div class="testimony-slide active text-center">
 									<div class="user" style="background-image: url(images/person3.jpg);"></div>
-									<span>Rita Jones<br><small>Teacher</small></span>
+									<span>Rita Jones<br><small>Instructor</small></span>
 									<blockquote>
-										<p>&ldquo;Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+										<p>&ldquo;Teaching couldn't have been easier, thanks to CodeLearn. I work as a full-time instructor now and I really love to choose teaching as my career.&rdquo;</p>
 									</blockquote>
 								</div>
 							</div>
