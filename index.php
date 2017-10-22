@@ -165,8 +165,8 @@
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2>Course categories</h2>
-					<p>Choose one of our offered awesome categories to get started with!</p>
+					<h2>Course Categories</h2>
+					<p>Where do you want to get started?</p>
 				</div>
 			</div>
 			<div class="row">
@@ -470,7 +470,7 @@
 	</div>
 
 
-	<div id="fh5co-register" style="background-image: url(images/img_bg_2.jpg);">
+	<div id="fh5co-register" style="background-image: url(images/studying.jpg);">
 		<div class="overlay"></div>
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 animate-box">
