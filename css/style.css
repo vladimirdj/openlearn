@@ -7,7 +7,7 @@
 }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *
 * ======================================================= */
 body {
@@ -235,7 +235,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 0;
 }
 .fh5co-nav ul li.has-dropdown .dropdown li a {
-  padding: 2px 0;
+  padding: 2px 0 !important;
   display: block;
   color: #999999;
   line-height: 1.2;
