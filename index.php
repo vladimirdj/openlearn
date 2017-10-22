@@ -79,7 +79,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">
-						<p class="site">www.sddey.com</p>
+						<p class="site">www.openlearn.com</p>
 						<p class="num">Call: +01 123 456 7890</p>
 						<ul class="fh5co-social">
 							<li><a href="#"><i class="icon-facebook2"></i></a></li>
@@ -262,7 +262,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-counter" class="fh5co-counters" style="background-image: url(images/img_bg_4.jpg);" data-stellar-background-ratio="0.5">
+	<div id="fh5co-counter" class="fh5co-counters" style="background-image: url(images/people-learning.png);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -351,7 +351,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-testimonial" style="background-image: url(images/school.jpg);">
+	<div id="fh5co-testimonial" style="background-image: url(images/testim.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row animate-box">
@@ -468,7 +468,7 @@
 			</div>
 		</div>
 	</div>
-
+<!--
 	<div id="fh5co-pricing" class="fh5co-bg-section">
 		<div class="container">
 			<div class="row animate-box">
@@ -488,7 +488,7 @@
 							</div>
                      <div class="pricing__price">
                         <span class="pricing__anim pricing__anim--1">
-								<span class="pricing__currency">$</span>0
+								<span class="pricing__currency">₹</span>0
                         </span>
                         <span class="pricing__anim pricing__anim--2">
 								<span class="pricing__period">per year</span>
@@ -517,7 +517,7 @@
 							</div>
                      <div class="pricing__price">
                         <span class="pricing__anim pricing__anim--1">
-								<span class="pricing__currency">$</span>79
+								<span class="pricing__currency">₹</span>799
                         </span>
                         <span class="pricing__anim pricing__anim--2">
 								<span class="pricing__period">per year</span>
@@ -546,7 +546,7 @@
 							</div>
                      <div class="pricing__price">
                         <span class="pricing__anim pricing__anim--1">
-								<span class="pricing__currency">$</span>499
+								<span class="pricing__currency">₹</span>4,999
                         </span>
                         <span class="pricing__anim pricing__anim--2">
 								<span class="pricing__period">per year</span>
@@ -570,6 +570,7 @@
 			</div>
 		</div>
 	</div>
+	-->
 
 	<div id="fh5co-register" style="background-image: url(images/img_bg_2.jpg);">
 		<div class="overlay"></div>
@@ -606,13 +607,13 @@
 		</div>
 	</div>
 
-	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
+	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/mountain.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row row-pb-md">
 				<div class="col-md-3 fh5co-widget">
-					<h3>About Education</h3>
-					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+					<h3>About OpenLearn</h3>
+					<p>OpenLearn is a global marketplace for learning and teaching online where students are mastering new skills and achieving their goals by learning from an extensive library of over 55,000 courses taught by expert instructors.</p>
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
 					<h3>Learning</h3>
@@ -661,8 +662,8 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> &amp; <a href="https://www.pexels.com/" target="_blank">Pexels</a></small>
+						<small class="block">&copy; 2017 OpenLearn, Inc.&nbsp;&nbsp;All Rights Reserved.</small> 
+						<small class="block">Designed by <a href="https://www.sddey.com" target="_blank">Subhadeep Dey</a>.</small>
 					</p>
 				</div>
 			</div>
