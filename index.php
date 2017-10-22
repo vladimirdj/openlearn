@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+	<link rel="shortcut icon" href="favicon.png" />
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Education &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
+	<title>Free Online Courses &mdash; OpenLearn</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -78,7 +79,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">
-						<p class="site">www.yourdomainname.com</p>
+						<p class="site">www.sddey.com</p>
 						<p class="num">Call: +01 123 456 7890</p>
 						<ul class="fh5co-social">
 							<li><a href="#"><i class="icon-facebook2"></i></a></li>
@@ -94,7 +95,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i>OLearn<span>.</span></a></div>
+						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
@@ -112,9 +113,9 @@
 									<li><a href="#">API</a></li>
 								</ul>
 							</li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="contact.php">Contact</a></li>
 							<li class="btn-cta"><a href="#"><span>Login</span></a></li>
-							<li class="btn-cta"><a href="#"><span>Sign up as Instructor</span></a></li>
+							<li class="btn-cta"><a href="#"><span>Become an Instructor</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -126,48 +127,36 @@
 	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
-		   	<li style="background-image: url(images/img_bg_1.jpg);">
+		   	<li style="background-image: url(images/img_bg_1.jpeg);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
-			   					<h1>The Roots of Education are Bitter, But the Fruit is Sweet</h1>
-									<h2>Brought to you by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-									<p><a class="btn btn-primary btn-lg" href="#">Start Learning Now!</a></p>
+			   					<h1>Free Online Courses</h1>
+								<h2>Advance Your Career.&nbsp;Improve Your Life.</h2>
+								<p><a class="btn btn-primary btn-lg" href="#">Start Learning Now!</a></p>
 			   				</div>
 			   			</div>
 			   		</div>
 		   		</div>
 		   	</li>
-		   	<li style="background-image: url(images/img_bg_2.jpg);">
+
+		   	<li style="background-image: url(images/teacher.jpg);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
-			   					<h1>The Great Aim of Education is not Knowledge, But Action</h1>
-									<h2>Brought to you by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-									<p><a class="btn btn-primary btn-lg btn-learn" href="#">Start Learning Now!</a></p>
+			   					<h1>Teach the World Online</h1>
+									<h2>Turn what you know into an opportunity and reach millions around the world. </h2>
+									<p><a class="btn btn-primary btn-lg btn-learn" href="#">Become Instructor</a></p>
 			   				</div>
 			   			</div>
 			   		</div>
 		   		</div>
 		   	</li>
-		   	<li style="background-image: url(images/img_bg_3.jpg);">
-		   		<div class="overlay-gradient"></div>
-		   		<div class="container">
-		   			<div class="row">
-			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
-			   				<div class="slider-text-inner">
-			   					<h1>We Help You to Learn New Things</h1>
-									<h2>Brought to you by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-									<p><a class="btn btn-primary btn-lg btn-learn" href="#">Start Learning Now!</a></p>
-			   				</div>
-			   			</div>
-			   		</div>
-		   		</div>
-		   	</li>		   	
+		   			   	
 		  	</ul>
 	  	</div>
 	</aside>
