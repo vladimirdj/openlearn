@@ -81,17 +81,17 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font></a></div>
+						<div id="fh5co-logo"><a href="../index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
 							<li class="active"><a href="index.php">Home</a></li>
-							<li><a href="courses.php">Courses</a></li>
-							<li><a href="teacher.php">Teacher</a></li>
-							<li><a href="about.php">About</a></li>
-							<li><a href="pricing.php">Pricing</a></li>
+							<li><a href="../courses.php">Courses</a></li>
+							<li><a href="../teacher.php">Teacher</a></li>
+							<li><a href="../about.php">About</a></li>
+							<li><a href="../pricing.php">Pricing</a></li>
 							<li class="has-dropdown">
-								<a href="blog.php">Blog</a>
+								<a href="../blog.php">Blog</a>
 								<ul class="dropdown">
 									<li><a href="#">Web Design</a></li>
 									<li><a href="#">eCommerce</a></li>
@@ -105,7 +105,7 @@
 									<li><a href="ok.php"><img src="../images/person1.jpg" height="50px" width="50px">&nbsp;&nbsp;Profile</a></li>
 									<br />
 									<li><a href="logout.php">Help &amp; Support</a></li>
-									<li><a href="logout.php">Logout</a></li>
+									<li><a href="../index.php">Logout</a></li>
 								</ul>						
 							</li>
 						</ul>
@@ -122,7 +122,7 @@
 	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
-		   	<li style="background-image: url(../images/teacher.jpg);">
+		   	<li style="background-image: url(../images/giphy.gif);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
@@ -156,18 +156,18 @@
 						</span>
 						<div class="desc">
 							<h3><a href="#">Create Course</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<p>Create a new course and turn what you know into an opportunity and reach millions around the world!</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 text-center animate-box">
 					<div class="services">
 						<span class="icon">
-							<i class="icon-heart4"></i>
+							<i class="icon-pen"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<h3><a href="#">Edit Course</a></h3>
+							<p>Edit an existing course.</p>
 						</div>
 					</div>
 				</div>
