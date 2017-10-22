@@ -94,7 +94,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i>Educ<span>.</span></a></div>
+						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i>OLearn<span>.</span></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
@@ -114,7 +114,7 @@
 							</li>
 							<li><a href="contact.html">Contact</a></li>
 							<li class="btn-cta"><a href="#"><span>Login</span></a></li>
-							<li class="btn-cta"><a href="#"><span>Create a Course</span></a></li>
+							<li class="btn-cta"><a href="#"><span>Sign up as Instructor</span></a></li>
 						</ul>
 					</div>
 				</div>
