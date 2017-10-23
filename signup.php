@@ -25,7 +25,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -58,9 +58,9 @@
 
 	</head>
 	<body>
-		
+
 	<div class="fh5co-loader"></div>
-	
+
 	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="top">
@@ -107,15 +107,15 @@
 						</ul>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</nav>
-	
+
 	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
-		   	<li style="background-image: url(images/teacher.jpg);">
+		   	<li style="background-image: url(images/teacher2.jpg);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
@@ -166,7 +166,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="col-md-3 col-sm-6 text-center animate-box">
 					<div class="services">
 						<span class="icon">
@@ -234,23 +234,24 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 animate-box">
-					<h3>Let's get started</h3>
+					<h3 class="text-center">Let's get started!</h3>
+					<p class="text-center">Fill out the form to become a part of us.</p> <br>
 					<form action="#">
 						<div class="row form-group">
 							<div class="col-md-6">
 								<!-- <label for="fname">First Name</label> -->
-								<input type="text" id="fname" class="form-control" placeholder="Your firstname">
+								<input type="text" id="fname" class="form-control" placeholder="First Name" required>
 							</div>
 							<div class="col-md-6">
 								<!-- <label for="lname">Last Name</label> -->
-								<input type="text" id="lname" class="form-control" placeholder="Your lastname">
+								<input type="text" id="lname" class="form-control" placeholder="Last Name" required>
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Email</label> -->
-								<input type="text" id="email" class="form-control" placeholder="Your email address">
+								<input type="text" id="email" class="form-control" placeholder="Your email address" required>
 							</div>
 						</div>
 
@@ -271,16 +272,16 @@
 							<input type="submit" value="Send Message" class="btn btn-primary">
 						</div>
 
-					</form>		
+					</form>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 
 
 <!--Sign up Code ends -->
-	
+
 	<div id="fh5co-register" style="background-image: url(images/studying.jpg);">
 		<div class="overlay"></div>
 		<div class="row">
@@ -351,7 +352,7 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
+						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
 						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> &amp; <a href="https://www.pexels.com/" target="_blank">Pexels</a></small>
 					</p>
 				</div>
@@ -364,7 +365,7 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	
+
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -411,4 +412,3 @@
 	</script>
 	</body>
 </html>
-
