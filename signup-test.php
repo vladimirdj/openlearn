@@ -112,6 +112,7 @@
 		</div>
 	</nav>
 
+
 	<!-- Modal - For Login-->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
@@ -135,20 +136,22 @@
 
 							<div class="form-check">
 								<label class="form-check-label">
-									<input type="checkbox" class="form-check-input">&nbsp;Remember me
+									<input type="checkbox" class="form-check-input">&nbsp;&nbsp;Keep me logged in
 								</label>
 							</div>
 	      </div>
 
 				<div class="modal-footer">
 	        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        	<input type="submit" value="Login" class="btn btn-primary">
+	        	<input type="submit" value="Submit" class="btn btn-primary">
 				</form>
 	      </div>
 	    </div>
 	  </div>
 	</div>
-	<!--Modal ends-->
+	<!--Modal Ends-->
+
+
 
 	<aside id="fh5co-hero">
 		<div class="flexslider">
