@@ -271,7 +271,7 @@
 						</div>
 						<div class="col-md-3 col-sm-6 text-center animate-box">
 							<span class="icon"><i class="icon-head"></i></span>
-							<span class="fh5co-counter js-counter" data-from="0" data-to="1080" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="fh5co-counter js-counter" data-from="0" data-to="180" data-speed="5000" data-refresh-interval="50"></span>
 							<span class="fh5co-counter-label">Certified Teachers</span>
 						</div>
 					</div>
