@@ -233,7 +233,7 @@
 <div id="fh5co-contact">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4 col-md-offset-4 animate-box">
+				<div class="col-md-12 animate-box">
 					<h3>Let's get started</h3>
 					<form action="#">
 						<div class="row form-group">
