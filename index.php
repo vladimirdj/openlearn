@@ -23,7 +23,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -56,9 +56,9 @@
 
 	</head>
 	<body>
-		
+
 	<div class="fh5co-loader"></div>
-	
+
 	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="top">
@@ -100,16 +100,55 @@
 								</ul>
 							</li>
 							<li><a href="contact.php">Contact</a></li>
-							<li class="btn-cta"><a href="#"><span>Login</span></a></li>
-							<li class="btn-cta"><a href="#"><span>Become an Instructor</span></a></li>
+							<li class="btn-cta" data-toggle="modal" data-target="#myModal"><a href="#"><span>Login</span></a></li>
+							<li class="btn-cta"><a href="signup.php"><span>Become an Instructor</span></a></li>
 						</ul>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</nav>
-	
+
+	<!-- Modal - For Login-->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Login to OpenLearn (Instructor)</h4>
+				</div>
+
+				<div class="modal-body">
+					<form action="index.php" method="get">
+						<div class="form-group">
+								<label for="InputEmail1">Email address</label>
+								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+							</div>
+
+							<div class="form-group">
+								<label for="exampleInputPassword1">Password</label>
+								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+							</div>
+
+							<div class="form-check">
+								<label class="form-check-label">
+									<input type="checkbox" class="form-check-input">&nbsp;Remember me
+								</label>
+							</div>
+				</div>
+
+				<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<input type="submit" value="Login" class="btn btn-primary">
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Modal ends-->
+
+
 	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
@@ -120,7 +159,7 @@
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
 			   					<h1>Free Online Courses</h1>
-								<h2>Advance Your Career.&nbsp;Improve Your Life.</h2>
+								<h2>Advance Your Career.&nbsp;Improve Your Life.&nbsp;No Signup Required.</h2>
 								<p><a class="btn btn-primary btn-lg" href="#">Start Learning Now!</a></p>
 			   				</div>
 			   			</div>
@@ -136,13 +175,13 @@
 			   				<div class="slider-text-inner">
 			   					<h1>Teach the World Online</h1>
 									<h2>Turn what you know into an opportunity and reach millions around the world. </h2>
-									<p><a class="btn btn-primary btn-lg btn-learn" href="#">Become Instructor</a></p>
+									<p><a class="btn btn-primary btn-lg btn-learn" href="signup.php">Become Instructor</a></p>
 			   				</div>
 			   			</div>
 			   		</div>
 		   		</div>
 		   	</li>
-		   			   	
+
 		  	</ul>
 	  	</div>
 	</aside>
@@ -337,7 +376,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-testimonial" style="background-image: url(images/testim.jpg);">
+	<div id="fh5co-testimonial" style="background-image: url(images/school.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row animate-box">
@@ -426,7 +465,7 @@
 							<span class="posted_on">March. 15th</span>
 							<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
 							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div> 
+						</div>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-4">
@@ -437,7 +476,7 @@
 							<span class="posted_on">March. 15th</span>
 							<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
 							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div> 
+						</div>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-4">
@@ -448,7 +487,7 @@
 							<span class="posted_on">March. 15th</span>
 							<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
 							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div> 
+						</div>
 					</div>
 				</div>
 			</div>
@@ -495,7 +534,7 @@
 					<ul class="fh5co-footer-links">
 						<li><a href="#">Blog</a></li>
 						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Testimonials</a></li>
+						<li><a href="index.php#fh5co-testimonial">Testimonials</a></li>
 						<li><a href="#">Handbook</a></li>
 						<li><a href="#">Held Desk</a></li>
 					</ul>
@@ -526,7 +565,7 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2017 OpenLearn, Inc.&nbsp;&nbsp;All Rights Reserved.</small> 
+						<small class="block">&copy; 2017 OpenLearn, Inc.&nbsp;&nbsp;All Rights Reserved.</small>
 						<small class="block">Designed by <a href="https://www.sddey.com" target="_blank">Subhadeep Dey</a>.</small>
 					</p>
 				</div>
@@ -539,7 +578,7 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	
+
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -583,4 +622,3 @@
 	</script>
 	</body>
 </html>
-
