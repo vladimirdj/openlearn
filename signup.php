@@ -123,7 +123,7 @@
 			   				<div class="slider-text-inner">
 			   					<h1 class="heading-section">Welcome Aboard!</h1>
 									<h2>Share your knowledge and reach millions of students across the globe.</h2>
-									<p><a class="btn btn-primary btn-lg" href="#">Sign up for free</a></p>
+									<p><a class="btn btn-primary btn-lg" href="signup.php#fh5co-contact">Sign up for free</a></p>
 			   				</div>
 			   			</div>
 			   		</div>
@@ -228,24 +228,13 @@
 	</div>
 </div>
 
-	<div id="fh5co-contact">
+<!--Sign up Code -->
+
+<div id="fh5co-contact">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5 col-md-push-1 animate-box">
-					
-					<div class="fh5co-contact-info">
-						<h3>Contact Information</h3>
-						<ul>
-							<li class="address">198 West 21th Street, <br> Suite 721 New York NY 10016</li>
-							<li class="phone"><a href="tel://1234567920">+ 1235 2355 98</a></li>
-							<li class="email"><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-							<li class="url"><a href="http://freehtml5.co">freeHTML5.co</a></li>
-						</ul>
-					</div>
-
-				</div>
-				<div class="col-md-6 animate-box">
-					<h3>Get In Touch</h3>
+				<div class="col-md-4 col-md-offset-4 animate-box">
+					<h3>Let's get started</h3>
 					<form action="#">
 						<div class="row form-group">
 							<div class="col-md-6">
@@ -288,6 +277,9 @@
 			
 		</div>
 	</div>
+
+
+<!--Sign up Code ends -->
 	
 	<div id="fh5co-register" style="background-image: url(images/studying.jpg);">
 		<div class="overlay"></div>
