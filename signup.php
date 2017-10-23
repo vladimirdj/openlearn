@@ -239,49 +239,49 @@
 					<form action="#">
 						<div class="row form-group">
 							<div class="col-md-6">
-								<i class="fa fa-user"></i>&nbsp;First Name
+								<i class="fa fa-user"></i>&nbsp;&nbsp;First Name
 								<input type="text" id="fname" class="form-control" placeholder="Enter your first name" required>
 							</div>
 							<div class="col-md-6">
-								<!-- <label for="lname">Last Name</label> --><i class="fa fa-user"></i>&nbsp;Last Name
+								<!-- <label for="lname">Last Name</label> --><i class="fa fa-user"></i>&nbsp;&nbsp;Last Name
 								<input type="text" id="lname" class="form-control" placeholder="Enter your last name" required>
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-6">
-								<!-- <label for="email">Email</label> --><i class="fa fa-envelope"></i>&nbsp;Email
+								<!-- <label for="email">Email</label> --><i class="fa fa-envelope"></i>&nbsp;&nbsp;Email
 								<input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
 							</div>
 
 							<div class="col-md-6">
-								<i class="fa fa-key"></i>&nbsp;Password
+								<i class="fa fa-key"></i>&nbsp;&nbsp;Password
 								<input type="password" id="password" class="form-control" placeholder="Enter your password (Must be at least 8 characters long)" required>
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-6">
-								<i class="fa fa-edge"></i>&nbsp;Website&nbsp;(Optional)
+								<i class="fa fa-edge"></i>&nbsp;&nbsp;Website&nbsp;(Optional)
 								<input type="text" id="website" class="form-control" placeholder="Enter your website URL" required>
 							</div>
 
 							<div class="col-md-6">
-								<i class="fa fa-twitter"></i>&nbsp;Twitter&nbsp;(Optional)
+								<i class="fa fa-twitter"></i>&nbsp;&nbsp;Twitter&nbsp;(Optional)
 								<input type="text" id="twitter" class="form-control" placeholder="https://twitter.com/yourusername" required>
 							</div>
 						</div>
 
 						<div class="form-group row">
 							<div class="col-md-12">
-    						<i class="fa fa-file-image-o"></i>&nbsp;Profile Picture
+    						<i class="fa fa-file-image-o"></i>&nbsp;&nbsp;Profile Picture
     						<input type="file" accept="image/*" class="form-control-file" id="profilepic">
   						</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
-								<i class="fa fa-user-circle"></i>&nbsp;About Yourself
+								<i class="fa fa-user-circle"></i>&nbsp;&nbsp;About Yourself
 								<textarea name="about" id="about" cols="30" rows="10" class="form-control" placeholder="Please tell us a bit about yourself, your background, and experience. The more details you provide, the better will it be for us as well as your students to know more about you." required></textarea>
 							</div>
 						</div>
