@@ -235,41 +235,68 @@
 			<div class="row">
 				<div class="col-md-12 animate-box">
 					<h3 class="text-center">Let's get started!</h3>
-					<p class="text-center">Fill out the form to become a part of us.</p> <br>
+					<p class="text-center">Fill out the form to become a part of us.&nbsp;All fields are mandatory unless indicated as optional.</p> <br>
 					<form action="#">
 						<div class="row form-group">
 							<div class="col-md-6">
-								<!-- <label for="fname">First Name</label> -->
-								<input type="text" id="fname" class="form-control" placeholder="First Name" required>
+								<i class="fa fa-user"></i>&nbsp;First Name
+								<input type="text" id="fname" class="form-control" placeholder="Enter your first name" required>
 							</div>
 							<div class="col-md-6">
-								<!-- <label for="lname">Last Name</label> -->
-								<input type="text" id="lname" class="form-control" placeholder="Last Name" required>
+								<!-- <label for="lname">Last Name</label> --><i class="fa fa-user"></i>&nbsp;Last Name
+								<input type="text" id="lname" class="form-control" placeholder="Enter your last name" required>
 							</div>
 						</div>
 
 						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="email">Email</label> -->
-								<input type="text" id="email" class="form-control" placeholder="Your email address" required>
+							<div class="col-md-6">
+								<!-- <label for="email">Email</label> --><i class="fa fa-envelope"></i>&nbsp;Email
+								<input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+							</div>
+
+							<div class="col-md-6">
+								<i class="fa fa-key"></i>&nbsp;Password
+								<input type="password" id="password" class="form-control" placeholder="Enter your password (Must be at least 8 characters long)" required>
 							</div>
 						</div>
 
 						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="subject">Subject</label> -->
-								<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
+							<div class="col-md-6">
+								<i class="fa fa-edge"></i>&nbsp;Website&nbsp;(Optional)
+								<input type="text" id="website" class="form-control" placeholder="Enter your website URL" required>
 							</div>
+
+							<div class="col-md-6">
+								<i class="fa fa-twitter"></i>&nbsp;Twitter&nbsp;(Optional)
+								<input type="text" id="twitter" class="form-control" placeholder="https://twitter.com/yourusername" required>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-12">
+    						<i class="fa fa-file-image-o"></i>&nbsp;Profile Picture
+    						<input type="file" accept="image/*" class="form-control-file" id="profilepic">
+  						</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
-								<!-- <label for="message">Message</label> -->
-								<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+								<i class="fa fa-user-circle"></i>&nbsp;About Yourself
+								<textarea name="about" id="about" cols="30" rows="10" class="form-control" placeholder="Please tell us a bit about yourself, your background, and experience. The more details you provide, the better will it be for us as well as your students to know more about you." required></textarea>
 							</div>
 						</div>
+
+						<div class="row form-check form-group">
+							<div class="col-md-12">
+    						<input class="form-check-input" type="checkbox" value="agree">
+    						&nbsp;&nbsp;I agree to the <a href="#">terms and conditions</a>.
+							</div>
+						</div>
+
 						<div class="form-group">
-							<input type="submit" value="Send Message" class="btn btn-primary">
+							<div class="text-center">
+								<input type="submit" value="Submit" class="btn btn-primary">
+							</div>
 						</div>
 
 					</form>
