@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-	<title>Education &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
+	<title>Become an Instructor &mdash; OpenLearn</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -150,7 +150,7 @@
 						<i class="fa fa-money"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Earn extra income</a></h3>
+							<h3>Earn extra income</h3>
 							<p>Earn money every time a student accesses your course.</p>
 						</div>
 					</div>
@@ -161,7 +161,7 @@
 							<i class="fa fa-bullhorn"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Instructor-Led Training</a></h3>
+							<h3>Instructor-Led Training</h3>
 							<p>Go live! Add a personal, interactive element to your online courses.</p>
 						</div>
 					</div>
@@ -173,7 +173,7 @@
 							<i class="fa fa-magic"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Flexible Course Design</a></h3>
+							<h3>Flexible Course Design</h3>
 							<p>Build your way with Video,PowerPoint, Audio, Downloadable Files and more.</p>
 						</div>
 					</div>
@@ -185,7 +185,7 @@
 							<i class="fa fa-comments-o"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Custom Communications</a></h3>
+							<h3>Custom Communications</h3>
 							<p>Keep everyone in the know with custom notifications, bulletins and emails.</p>
 						</div>
 					</div>
