@@ -118,7 +118,7 @@
 	</nav>
 
 
-	<!-- Modal - For Login-->
+	<!-- Modal - For Logout-->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -133,7 +133,7 @@
 				</div>
 
 				<div class="modal-footer">
-					<form action="../logout.php">
+					<form action="../index.php">
 						<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
 						<input type="submit" value="Yes" class="btn btn-primary">
 					</form>
@@ -148,16 +148,14 @@
 	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
-		   	<li style="background-image: url(../images/teacher.jpg);">
+		   	<li style="background-image: url(../images/book.jpg);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
-			   					<h1 class="heading-section">Hi, Martin!</h1>
-								   <h2>Let's begin!&nbsp;Please choose from the following options to get started.<br>
-										If you need any help, you can <a href="../contact.php">contact us </a> anytime.
-									</h2>
+			   					<h1 class="heading-section">Create Course</h1>
+								   <h2>Turn what you know into an opportunity and reach millions around the world.</h2>
 			   				</div>
 			   			</div>
 			   		</div>
@@ -168,62 +166,81 @@
 	</aside>
 	<!-- Finished adding styles -->
 
-	<!-- Add Dashboard Elements -->
-	<div id="fh5co-course-categories">
-		<div class="container">
-			<div class="row animate-box">
 
-			</div>
-			<div class="row">
-				<div class="col-sm-4 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-plus"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="create-course.php">Create Course</a></h3>
-							<p>Create a new course and turn what you know into an opportunity and reach millions around the world!</p>
-						</div>
+	<!--Course Creation Form Code -->
+	<div id="fh5co-contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 animate-box">
+						<h3 class="text-center">Let's get started!</h3>
+						<p class="text-center">Fill out the form to add details about the new course.&nbsp;After you are done, you will be directed to the course management page where you can add lectures, handouts, and much more!
+						<br>Kindly note that all the fields are mandatory unless stated otherwise.</p> <br>
+						<form action="#">
+							<div class="row form-group">
+								<div class="col-md-12">
+									<i class="fa fa-graduation-cap"></i>&nbsp;&nbsp;Course Name
+									<input type="text" id="coursename" class="form-control" placeholder="Enter the course name" required>
+								</div>
+							</div>
+
+							<div class="row form-group">
+								<div class="col-md-12">
+									<i class="fa fa-book"></i>&nbsp;&nbsp;Course Category
+									<select class="form-control" id="course-category" required>
+										<option>-- Choose course category --</option>
+      							<option id="business">Business</option>
+      							<option id="health">Health &amp; Psychology</option>
+      							<option id="accounting">Accounting</option>
+      							<option id="science">Science &amp; Technology</option>
+	      						<option id="art">Art &amp; Media</option>
+										<option id="real-estate">Real Estate</option>
+										<option id="language">Language</option>
+										<option id="programming">Web &amp; Programming</option>
+    							</select>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<div class="col-md-12">
+	    						<i class="fa fa-picture-o"></i>&nbsp;&nbsp;Course Header Picture
+	    						<input type="file" accept="image/*" class="form-control-file" id="profilepic">
+	  						</div>
+							</div>
+
+							<div class="row form-group">
+								<div class="col-md-12">
+									<i class="fa fa-pencil"></i>&nbsp;&nbsp;Brief Intro to the Course
+									<textarea name="about" id="about" cols="30" rows="5" class="form-control" placeholder="Enter a brief information about the course." maxlength="500" required></textarea>
+								</div>
+							</div>
+
+							<div class="row form-group">
+								<div class="col-md-12">
+									<i class="fa fa-pencil"></i>&nbsp;&nbsp;Detailed Info About the Course
+									<textarea name="about" id="about" cols="30" rows="15" class="form-control" placeholder="Enter a detailed information about the course." maxlength="8000" required></textarea>
+								</div>
+							</div>
+
+							<div class="row form-check form-group">
+								<div class="col-md-12">
+	    						<input class="form-check-input" type="checkbox" value="agree">
+	    						&nbsp;&nbsp;I agree to the <a href="#">terms and conditions</a>.
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="text-center">
+									<input type="submit" value="Submit" class="btn btn-primary">
+								</div>
+							</div>
+
+						</form>
 					</div>
 				</div>
-				<div class="col-sm-4 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-pen"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Manage Courses</a></h3>
-							<p>Manage your existing courses &mdash; Put announcements, upload lecture videos, notes, and much more!</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="fa fa-video-camera"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Go Live!</a></h3>
-							<p>Start a live broadcast on a certain topic.</p>
-						</div>
-					</div>
-				</div>
+
 			</div>
 		</div>
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- Finished adding dashboad elements -->
+	<!--Course Creation Code ends -->
 
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(../images/mountain.jpg);">
