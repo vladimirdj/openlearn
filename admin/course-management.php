@@ -118,7 +118,7 @@
 	</nav>
 
 
-	<!-- Modal - For Logout-->
+	<!-- Modal - For Login-->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -133,7 +133,7 @@
 				</div>
 
 				<div class="modal-footer">
-					<form action="../index.php">
+					<form action="../logout.php">
 						<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
 						<input type="submit" value="Yes" class="btn btn-primary">
 					</form>
@@ -142,20 +142,17 @@
 		</div>
 	</div>
 	<!--Modal ends-->
-
-
-	<!-- Something to add style -->
 	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
-		   	<li style="background-image: url(../images/book.jpg);">
+		   	<li style="background-image: url(../images/book2.jpg);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="row">
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
-			   					<h1 class="heading-section">Create Course</h1>
-								   <h2>Turn what you know into an opportunity and reach millions around the world.</h2>
+			   					<h1 class="heading-section">Manage Your Courses</h1>
+									<h2>Just click on the desired course, and add lectures, videos, and much more! </h2>
 			   				</div>
 			   			</div>
 			   		</div>
@@ -164,92 +161,102 @@
 		  	</ul>
 	  	</div>
 	</aside>
-	<!-- Finished adding styles -->
 
-
-	<!--Course Creation Form Code -->
-	<div id="fh5co-contact">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 animate-box">
-						<h3 class="text-center">Let's get started!</h3>
-						<p class="text-center">Fill out the form to add details about the new course.&nbsp;After you are done, you will be directed to the course management page where you can add lectures, handouts, and much more!
-						<br>Kindly note that all the fields are mandatory unless stated otherwise.</p> <br>
-						<form action="#">
-							<div class="row form-group">
-								<div class="col-md-12">
-									<i class="fa fa-graduation-cap"></i>&nbsp;&nbsp;Course Name
-									<input type="text" id="coursename" class="form-control" placeholder="Enter the course name" required>
-								</div>
-							</div>
-
-							<div class="row form-group">
-								<div class="col-md-12">
-									<i class="fa fa-book"></i>&nbsp;&nbsp;Course Category
-									<select class="form-control" id="course-category" required>
-										<option>-- Choose course category --</option>
-      							<option id="business">Business</option>
-      							<option id="health">Health &amp; Psychology</option>
-      							<option id="accounting">Accounting</option>
-      							<option id="science">Science &amp; Technology</option>
-	      						<option id="art">Art &amp; Media</option>
-										<option id="real-estate">Real Estate</option>
-										<option id="language">Language</option>
-										<option id="programming">Web &amp; Programming</option>
-    							</select>
-								</div>
-							</div>
-
-							<div class="form-group row">
-								<div class="col-md-12">
-	    						<i class="fa fa-picture-o"></i>&nbsp;&nbsp;Course Header Picture
-	    						<input type="file" accept="image/*" class="form-control-file" id="profilepic">
-	  						</div>
-							</div>
-
-							<div class="row form-group">
-								<div class="col-md-12">
-									<i class="fa fa-pencil"></i>&nbsp;&nbsp;Brief Intro to the Course
-									<textarea name="about" id="about" cols="30" rows="5" class="form-control" placeholder="Enter a brief information about the course." maxlength="500" required></textarea>
-								</div>
-							</div>
-
-							<div class="row form-group">
-								<div class="col-md-12">
-									<i class="fa fa-pencil"></i>&nbsp;&nbsp;Detailed Info About the Course
-									<textarea name="about" id="about" cols="30" rows="15" class="form-control" placeholder="Enter a detailed information about the course." maxlength="8000" required></textarea>
-								</div>
-							</div>
-
-							<div class="row form-check form-group">
-								<div class="col-md-12">
-	    						<input class="form-check-input" type="checkbox" value="agree">
-	    						&nbsp;&nbsp;I agree to the <a href="#">terms and conditions</a>.
-								</div>
-							</div>
-
-							<div class="form-group">
-								<div class="text-center">
-									<input type="submit" value="Submit" class="btn btn-primary">
-								</div>
-							</div>
-
-						</form>
+	<div id="fh5co-course">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 animate-box">
+					<div class="course">
+						<a href="#" class="course-img" style="background-image: url(images/project-1.jpg);">
+						</a>
+						<div class="desc">
+							<h3><a href="#">Web Master</a></h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+						</div>
 					</div>
 				</div>
-
+				<div class="col-md-6 animate-box">
+					<div class="course">
+						<a href="#" class="course-img" style="background-image: url(images/project-2.jpg);">
+						</a>
+						<div class="desc">
+							<h3><a href="#">Business &amp; Accounting</a></h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="course">
+						<a href="#" class="course-img" style="background-image: url(images/project-3.jpg);">
+						</a>
+						<div class="desc">
+							<h3><a href="#">Science &amp; Technology</a></h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="course">
+						<a href="#" class="course-img" style="background-image: url(images/project-4.jpg);">
+						</a>
+						<div class="desc">
+							<h3><a href="#">Health &amp; Psychology</a></h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="course">
+						<a href="#" class="course-img" style="background-image: url(images/project-5.jpg);">
+						</a>
+						<div class="desc">
+							<h3><a href="#">Science &amp; Technology</a></h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="course">
+						<a href="#" class="course-img" style="background-image: url(images/project-6.jpg);">
+						</a>
+						<div class="desc">
+							<h3><a href="#">Health &amp; Psychology</a></h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-	<!--Course Creation Code ends -->
+	</div>
 
+	<div id="fh5co-register" style="background-image: url(../images/studying.jpg);">
+		<div class="overlay"></div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 animate-box">
+				<div class="date-counter text-center">
+					<h2>Get 400 of Online Courses for Free</h2>
+					<h3>By Mike Smith</h3>
+					<div class="simply-countdown simply-countdown-one"></div>
+					<p><strong>Limited Offer, Hurry Up!</strong></p>
+					<p><a href="#" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(../images/mountain.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row row-pb-md">
 				<div class="col-md-3 fh5co-widget">
-					<h3>About OpenLearn</h3>
-					<p>OpenLearn is a global marketplace for learning and teaching online where students are mastering new skills and achieving their goals by learning from an extensive library of over 55,000 courses taught by expert instructors.</p>
+					<h3>About Education</h3>
+					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
 					<h3>Learning</h3>

@@ -192,7 +192,7 @@
 							<i class="icon-pen"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Manage Courses</a></h3>
+							<h3><a href="course-management.php">Manage Courses</a></h3>
 							<p>Manage your existing courses &mdash; Put announcements, upload lecture videos, notes, and much more!</p>
 						</div>
 					</div>
