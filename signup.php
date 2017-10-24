@@ -188,7 +188,7 @@
 						<i class="fa fa-money"></i>
 						</span>
 						<div class="desc">
-							<h3>Earn extra income</h3>
+							<h3>Earn Extra Income</h3>
 							<p>Earn money every time a student accesses your course.</p>
 						</div>
 					</div>
