@@ -103,7 +103,7 @@
 							<li><a href="contact.php">Contact</a></li> &nbsp;&nbsp;&nbsp;
 							<li class="btn-cta has-dropdown"><a href="#"><span><!--<i class="icon-head"></i>&nbsp;--><img src="../images/person1.jpg" height="15px" width="15px">&nbsp;&nbsp;Martin Anderson</span></a>
 								<ul class="dropdown">
-									<li><a href="ok.php"><img src="../images/person1.jpg" height="50px" width="50px">&nbsp;&nbsp;Profile</a></li>
+									<li><a href="../profile.php"><img src="../images/person1.jpg" height="50px" width="50px">&nbsp;&nbsp;Profile</a></li>
 									<br />
 									<li><a href="#">Help &amp; Support</a></li>
 									<li><a href="#" data-toggle="modal" data-target="#myModal">Logout</a></li>
@@ -154,7 +154,8 @@
 		   			<div class="row">
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
-			   					<h1 class="heading-section">Hi, Martin!</h1>
+								   <h1 class="heading-section">Hi, Martin!</h1>
+								   <span><img src="../images/person1.jpg" class="img-circle img-responsive text-center" style="height: 150px; width: 150px; margin: auto;" alt="Cinque Terre"> </span> <br>
 								   <h2>Let's begin!&nbsp;Please choose from the following options to get started.<br>
 										If you need any help, you can <a href="../contact.php">contact us </a> anytime.
 									</h2>
