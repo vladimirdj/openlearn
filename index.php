@@ -116,7 +116,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Login to OpenLearn (For Instructors Only)</h4>
+					<h4 class="modal-title" id="myModalLabel">Login to OpenLearn&nbsp;(For Instructors Only)</h4>
 				</div>
 
 				<div class="modal-body">
@@ -128,7 +128,7 @@
 
 							<div class="form-group">
 								<label for="exampleInputPassword1">Password</label>
-								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+								<input type="password" class="form-control is-invalid" id="exampleInputPassword1" placeholder="Password" required>
 							</div>
 
 							<div class="form-check">
