@@ -2,6 +2,7 @@
 <html>
 	<head>
 	<link rel="shortcut icon" href="favicon.png" />
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css" />
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Free Online Courses &mdash; OpenLearn</title>
