@@ -56,6 +56,27 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+	<style>
+			.modal {
+			text-align: center;
+			padding: 0!important;
+			}
+
+			.modal:before {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+			margin-right: -4px;
+			}
+
+			.modal-dialog {
+			display: inline-block;
+			text-align: left;
+			vertical-align: middle;
+			}
+		</style>
+
 	</head>
 	<body>
 
