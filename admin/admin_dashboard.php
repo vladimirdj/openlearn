@@ -118,32 +118,6 @@
 	</nav>
 
 
-	<!-- Modal - For Login-->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Logout</h4>
-				</div>
-
-				<div class="modal-body">
-					<br>
-					<p> Do you really want to log out? </p>
-				</div>
-
-				<div class="modal-footer">
-					<form action="../logout.php">
-						<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-						<input type="submit" value="Yes" class="btn btn-primary">
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Modal ends-->
-
-
 	<!-- Something to add style -->
 	<aside id="fh5co-hero">
 		<div class="flexslider">
@@ -157,7 +131,7 @@
 								   <h1 class="heading-section">Hi, Martin!</h1>
 								   <span><img src="../images/person1.jpg" class="img-circle img-responsive text-center" style="height: 150px; width: 150px; margin: auto;" alt="Cinque Terre"> </span> <br>
 								   <h2>Let's begin!&nbsp;Please choose from the following options to get started.<br>
-										If you need any help, you can <a href="../contact.php">contact us </a> anytime.
+										In case you need any help, feel free to <a href="../contact.php">contact us </a> any time.
 									</h2>
 			   				</div>
 			   			</div>
@@ -176,7 +150,7 @@
 
 			</div>
 			<div class="row">
-				<div class="col-sm-4 text-center animate-box">
+				<div class="col-md-3 col-sm-6 text-center animate-box">
 					<div class="services">
 						<span class="icon">
 							<i class="icon-plus"></i>
@@ -187,25 +161,36 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4 text-center animate-box">
+				<div class="col-md-3 col-sm-6 text-center animate-box">
 					<div class="services">
 						<span class="icon">
 							<i class="icon-pen"></i>
 						</span>
 						<div class="desc">
 							<h3><a href="course-management.php">Manage Courses</a></h3>
-							<p>Manage your existing courses &mdash; Put announcements, upload lecture videos, notes, and much more!</p>
+							<p>Manage your existing courses &mdash; View statistics, put announcements, upload lecture videos, notes, and much more!</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4 text-center animate-box">
+				<div class="col-md-3 col-sm-6 text-center animate-box">
 					<div class="services">
 						<span class="icon">
 							<i class="fa fa-video-camera"></i>
 						</span>
 						<div class="desc">
 							<h3><a href="#">Go Live!</a></h3>
-							<p>Start a live broadcast on a certain topic.</p>
+							<p>Start a livestream on a topic which you would like to explain live.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="fa fa-envelope"></i>
+						</span>
+						<div class="desc">
+							<h3><a href="#">View Messages</a></h3>
+							<p>View and reply to the messages sent by your students.</p>
 						</div>
 					</div>
 				</div>

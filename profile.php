@@ -170,7 +170,42 @@
 			</div>
 		</div>
 	</div>
-    <!--Modal ends-->
+	<!--Modal for login ends-->
+	
+	<!-- Modal - For Message-->
+	<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="sendMessageLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="sendMessageLabel">Send Message</h4>
+				</div>
+
+				<div class="modal-body">
+					<form action="index.php" method="get">
+						<div class="form-group">
+							<label for="sender-name" class="form-control-label">Your name</label>
+							<input type="text" class="form-control" id="sender-name" required>
+						</div>
+						<div class="form-group">
+							<label for="sender-email" class="form-control-label">Your email address</label>
+							<input type="email" class="form-control" id="sender-email" required>
+						</div>
+						<div class="form-group">
+							<label for="message-text" class="form-control-label">Message:</label>
+							<textarea class="form-control" id="message-text" style="height: 180px;"></textarea>
+						</div>
+				</div>
+
+				<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<input type="submit" value="Send" class="btn btn-primary">
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!--Modal for message ends-->
 
 
     <div class="container">
@@ -182,7 +217,7 @@
             <p class="lead">I am Martin, World's best instructor!</p>
             <p>People are a fan of my courses and they look forward to learning from me everytime I make a new course. I hope you will love my courses.</p> <br>
 
-            <button class="btn btn-primary"><a href="mailto:contact.sdey@gmail.com" style="color: white;">Email me</a></button><br><br><br>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#messageModal" style="color: white;"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Send Message</button><br><br><br>
             
             <div>
                 <h5>Follow me on</h5>
