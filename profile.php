@@ -185,15 +185,15 @@
 					<form action="index.php" method="get">
 						<div class="form-group">
 							<label for="sender-name" class="form-control-label">Your name</label>
-							<input type="text" class="form-control" id="sender-name" required>
+							<input type="text" class="form-control" id="sender-name" placeholder="Enter your name" required>
 						</div>
 						<div class="form-group">
 							<label for="sender-email" class="form-control-label">Your email address</label>
-							<input type="email" class="form-control" id="sender-email" required>
+							<input type="email" class="form-control" id="sender-email" placeholder="Enter your email address" required>
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="form-control-label">Message:</label>
-							<textarea class="form-control" id="message-text" style="height: 180px;"></textarea>
+							<textarea class="form-control" id="message-text" style="height: 180px;" placeholder="Enter the message. Make sure you are polite to the instructor." required></textarea>
 						</div>
 				</div>
 
