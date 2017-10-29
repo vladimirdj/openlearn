@@ -174,7 +174,7 @@
 	
 	<!-- Modal - For Message-->
 	<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="sendMessageLabel">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -193,7 +193,7 @@
 						</div>
 						<div class="form-group">
 							<label for="message-text" class="form-control-label">Message:</label>
-							<textarea class="form-control" id="message-text" style="height: 180px;" placeholder="Enter the message. Make sure you are polite to the instructor." required></textarea>
+							<textarea class="form-control" id="message-text" style="height: 180px;" placeholder="Enter your message to the instructor. Make sure to be polite." required></textarea>
 						</div>
 				</div>
 
@@ -211,7 +211,7 @@
     <div class="container">
         <div class="jumbotron text-center">
             <div class="row animate-box">
-            <h1 style="color: #2D6CDF;">Martin Alderson</h1>
+            <h1>Martin Alderson</h1>
             <span><img src="images/person1.jpg" class="img-circle img-responsive text-center" style="height: 150px; width: 150px; margin: auto;" alt="Cinque Terre"> </span> <br>
             
             <p class="lead">I am Martin, World's best instructor!</p>
