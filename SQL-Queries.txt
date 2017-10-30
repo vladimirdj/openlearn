@@ -1,0 +1,15 @@
+To create instructors table:
+----------------------------------------
+create table instructor (
+    first_name varchar(50) not null,
+    last_name varchar(50) not null,
+    email varchar(50) not null primary key,
+    password varchar(255) not null,
+    website varchar(255),
+    twitter varchar(100),
+    picture varchar(255) not null unique,
+    about varchar(255) not null
+);
+
+
+

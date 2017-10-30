@@ -201,8 +201,8 @@
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
 			   					<h1>Free Online Courses</h1>
-								<h2>Advance Your Career.&nbsp;Improve Your Life.&nbsp;No Signup Required.</h2>
-								<p><a class="btn btn-primary btn-lg" href="#">Start Learning Now!</a></p>
+								<h2>Advance Your Career.&nbsp;Improve Your Life.</h2>
+								<p><a class="btn btn-primary btn-lg" href="#fh5co-course-categories">Start Learning Now!</a></p>
 			   				</div>
 			   			</div>
 			   		</div>
@@ -215,9 +215,24 @@
 		   			<div class="row">
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
-			   					<h1>Teach the World Online</h1>
+			   					<h1>Teach the World Online.</h1>
 									<h2>Turn what you know into an opportunity and reach millions around the world. </h2>
 									<p><a class="btn btn-primary btn-lg btn-learn" href="signup.php">Become Instructor</a></p>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+			   </li>
+			   
+			   <li style="background-image: url(images/study-boy.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Unlocking Knowledge,<br>Empowering Minds.</h1>
+								<h2>Free videos and lecture notes from instructors present all over the world at OpenLearn.<br>No registration required.</h2>
+								<p><a class="btn btn-primary btn-lg" href="courses.php">See all the courses</a></p>
 			   				</div>
 			   			</div>
 			   		</div>
