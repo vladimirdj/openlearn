@@ -214,8 +214,9 @@
 
     /*Part 4: Moving the data into the MySQL database and the profile picture into the disk */    
 
+    //if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['picture']) && isset($_POST['about'])) {
 
-    /* Check if email exists. If not, then the instructor is good to go. */
+        /* Check if email exists. If not, then the instructor is good to go. */
     $value_query = mysqli_query($connection, "SELECT email FROM instructor WHERE email='".$email."'");
 
     if (mysqli_num_rows($value_query) > 0) {
@@ -249,12 +250,11 @@
                             </div>
                         </div>
                     </div><br><br><br><br><br><br>  ";
+                    mysqli_close($connection);
         } else {
                 echo "<p>Error occurred: ".mysqli_error()."</p>";
             }   
     }
-
-    mysqli_close($connection);
 ?>
 
 <div id="fh5co-register" style="background-image: url(../images/studying.jpg);">
