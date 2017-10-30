@@ -83,7 +83,7 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-	<nav class="fh5co-nav navbar navbar-default navbar-fixed-top" role="navigation" style="box-shadow: 0px 0px 8px 2px #000000;">
+	<nav class="fh5co-nav" role="navigation" style="box-shadow: 0px 0px 8px 2px #000000;">
 
 		<div class="top-menu">
 		<div class="container">
