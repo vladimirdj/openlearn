@@ -217,10 +217,9 @@
 
 
     /* Check if email exists. If not, then the instructor is good to go. */
-    $value_query = mysqli_query("SELECT email FROM instructor WHERE email=$email;");
+    $value_query = mysqli_query($connection, "SELECT email FROM instructor WHERE email='".$email."'");
 
-    $num_rows = mysqli_num_rows($value_query);
-    if($num_rows > 0){
+    if (mysqli_num_rows($value_query) > 0) {
         echo "
         <div class='container'>
             <div class='row align-items-center'>
