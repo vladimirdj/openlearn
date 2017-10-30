@@ -213,7 +213,6 @@
     /* Part 3.2 ends */
 
     /*Part 4: Moving the data into the MySQL database and the profile picture into the disk */    
-    move_uploaded_file($_FILES['picture']['tmp_name'], $directory);
 
 
     /* Check if email exists. If not, then the instructor is good to go. */
@@ -224,12 +223,14 @@
         <div class='container'>
             <div class='row align-items-center'>
                 <div class='col-md-12 animate-box'>
-                    <br><br><br><br><br><h4 class='text-center' style='color: red;'>We are sorry, the email already exists in the database.</h4>
+                    <br><br><br><br><br><h4 class='text-center' style='color: red;'>We are sorry, the email already exists in the database. Go back and enter another email address.</h4>
                 </div>
             </div>
         </div><br><br><br><br><br><br>  ";
         
     } else {
+
+        move_uploaded_file($_FILES['picture']['tmp_name'], $directory);
         $query = "INSERT INTO instructor VALUES ('$first_name', '$last_name', '$email', '$password', '$website', '$twitter', '$directory', '$about')";
         $result = mysqli_query($connection, $query);
 
