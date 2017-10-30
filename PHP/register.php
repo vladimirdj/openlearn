@@ -83,23 +83,7 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="top">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 text-right">
-						<p class="site">www.openlearn.com</p>
-						<p class="num">Call: +01 123 456 7890</p>
-						<ul class="fh5co-social">
-							<li><a href="#"><i class="icon-facebook2"></i></a></li>
-							<li><a href="#"><i class="icon-twitter2"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+	<nav class="fh5co-nav navbar navbar-default navbar-fixed-top" role="navigation" style="box-shadow: 0px 0px 8px 2px #000000;">
 
 		<div class="top-menu">
 		<div class="container">
@@ -228,44 +212,29 @@
     $directory = $directory.$file_name.rand().'.'.$file_extension; //E.g. - /var/www/html/open-learning/profile_pictures/filename.png
     /* Part 3.2 ends */
 
-    /* Part 3.3: Checking if the website and Twitter URLs are valid. */
-    if (!empty($website)) {
-        if (!filter_var($website, FILTER_VALIDATE_URL)) {
-            echo "
-                <div class='container'>
-                    <div class='row'>
-                        <div class='col-md-12 animate-box'>
-                            <p class='text-center'> - The URL must be in the format http(s)://www.domain.com.</p></div></div></div>";
-        }
-    } elseif (!empty($twitter)) {
-        if (!filter_var($twitter, FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED)) {
-            echo "<div class='container'>
-            <div class='row'>
-            <div class='col-md-12 animate-box'>
-                    <p class='text-center'>The Twitter URL must be in the format https://twitter.com/YourUsername</p></div></div></div>";
-        }
-    } /*Part 3.3 ends */
-    else { 
-        /*Part 4: Moving the data into the MySQL database and the profile picture into the disk */    
-        move_uploaded_file($_FILES['picture']['tmp_name'], $directory);
+    /*Part 4: Moving the data into the MySQL database and the profile picture into the disk */    
+    move_uploaded_file($_FILES['picture']['tmp_name'], $directory);
 
-        $query = "INSERT INTO instructor VALUES ('$first_name', '$last_name', '$email', '$password', '$website', '$twitter', '$directory', '$about')";
-        $result = mysqli_query($connection, $query);
+    $query = "INSERT INTO instructor VALUES ('$first_name', '$last_name', '$email', '$password', '$website', '$twitter', '$directory', '$about')";
+    $result = mysqli_query($connection, $query);
 
-        if($result){
-            echo "
+    if($result){
+        echo "
                 <div class='container'>
-                    <div class='row'>
+                    <div class='row align-items-center'>
                         <div class='col-md-12 animate-box'>
-                            <h3 class='text-center'>Congratulations $first_name for being a part of our family!</h3>
-                            <button class='btn btn-primary'><a href='../login.php'>Click here to login</a></button>     
+                            <br><br><br><br><br><h4 class='text-center'>Congratulations $first_name, we are glad to welcome you in our family!</h4>
                         </div>
                     </div>
-                </div>";
-        } else {
-                echo "<p>Error occurred: ".mysqli_error()."</p>";
-            }
 
+                    <div class='row align-items-center'>
+                    <div class='col-md-2 col-md-offset-5 animate-box'>
+                            <button class='btn btn-primary'><a style='color: white;' href='../login.php'>Click here to login</a></button>
+                        </div>
+                    </div>
+                </div><br><br><br><br><br><br>  ";
+    } else {
+            echo "<p>Error occurred: ".mysqli_error()."</p>";
     }
 
     mysqli_close($connection);

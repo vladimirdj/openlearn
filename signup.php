@@ -342,12 +342,12 @@
 								<div class="row form-group">
 									<div class="col-md-6">
 										<i class="fa fa-edge"></i>&nbsp;&nbsp;Website&nbsp;(Optional)
-										<input type="text" name="website" id="website" class="form-control" placeholder="Enter your website URL (https://www.domain.com)">
+										<input type="url" name="website" id="website" class="form-control" placeholder="Enter your website URL (https://www.domain.com)">
 									</div>
 
 									<div class="col-md-6">
 										<i class="fa fa-twitter"></i>&nbsp;&nbsp;Twitter&nbsp;(Optional)
-										<input type="text" name="twitter" id="twitter" class="form-control" placeholder="https://twitter.com/yourusername">
+										<input type="url" name="twitter" id="twitter" class="form-control" placeholder="https://twitter.com/yourusername">
 									</div>
 								</div>
 
