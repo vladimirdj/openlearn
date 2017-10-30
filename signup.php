@@ -314,68 +314,69 @@
 				<div class="col-md-12 animate-box">
 					<h3 class="text-center">Let's get started!</h3>
 					<p class="text-center">Fill out the form to become a part of us.&nbsp;All fields are mandatory unless indicated as optional.</p> <br>
-					<form action="#">
-						<div class="row form-group">
-							<div class="col-md-6">
-								<i class="fa fa-user"></i>&nbsp;&nbsp;First Name
-								<input type="text" name="fname" id="fname" class="form-control" placeholder="Enter your first name" required>
-							</div>
-							<div class="col-md-6">
-								<!-- <label for="lname">Last Name</label> --><i class="fa fa-user"></i>&nbsp;&nbsp;Last Name
-								<input type="text" name="lname" id="lname" class="form-control" placeholder="Enter your last name" required>
-							</div>
-						</div>
+					
+					<form action="PHP/register.php" method="post" enctype="multipart/form-data">
+								<div class="row form-group">
+									<div class="col-md-6">
+										<i class="fa fa-user"></i>&nbsp;&nbsp;First Name
+										<input type="text" name="first_name" id="first_name" class="form-control" placeholder="Enter your first name" required>
+									</div>
+									<div class="col-md-6">
+										<!-- <label for="lname">Last Name</label> --><i class="fa fa-user"></i>&nbsp;&nbsp;Last Name
+										<input type="text" name="last_nname" id="last_name" class="form-control" placeholder="Enter your last name" required>
+									</div>
+								</div>
 
-						<div class="row form-group">
-							<div class="col-md-6">
-								<!-- <label for="email">Email</label> --><i class="fa fa-envelope"></i>&nbsp;&nbsp;Email
-								<input type="email" name="email" id="email" class="form-control" placeholder="Enter your email address" required>
-							</div>
+								<div class="row form-group">
+									<div class="col-md-6">
+										<!-- <label for="email">Email</label> --><i class="fa fa-envelope"></i>&nbsp;&nbsp;Email
+										<input type="email" name="email" id="email" class="form-control" placeholder="Enter your email address" required>
+									</div>
 
-							<div class="col-md-6">
-								<i class="fa fa-key"></i>&nbsp;&nbsp;Password
-								<input type="password" name="password" id="password" class="form-control" placeholder="Enter your password (Must be at least 8 characters long)" required>
-							</div>
-						</div>
+									<div class="col-md-6">
+										<i class="fa fa-key"></i>&nbsp;&nbsp;Password
+										<input type="password" name="password" id="password" class="form-control" placeholder="Enter your password (Must be at least 8 characters long)" required>
+									</div>
+								</div>
 
-						<div class="row form-group">
-							<div class="col-md-6">
-								<i class="fa fa-edge"></i>&nbsp;&nbsp;Website&nbsp;(Optional)
-								<input type="text" name="website" id="website" class="form-control" placeholder="Enter your website URL" required>
-							</div>
+								<div class="row form-group">
+									<div class="col-md-6">
+										<i class="fa fa-edge"></i>&nbsp;&nbsp;Website&nbsp;(Optional)
+										<input type="text" name="website" id="website" class="form-control" placeholder="Enter your website URL (https://www.domain.com)">
+									</div>
 
-							<div class="col-md-6">
-								<i class="fa fa-twitter"></i>&nbsp;&nbsp;Twitter&nbsp;(Optional)
-								<input type="text" name="twitter" id="twitter" class="form-control" placeholder="https://twitter.com/yourusername" required>
-							</div>
-						</div>
+									<div class="col-md-6">
+										<i class="fa fa-twitter"></i>&nbsp;&nbsp;Twitter&nbsp;(Optional)
+										<input type="text" name="twitter" id="twitter" class="form-control" placeholder="https://twitter.com/yourusername">
+									</div>
+								</div>
 
-						<div class="form-group row">
-							<div class="col-md-12">
-    						<i class="fa fa-file-image-o"></i>&nbsp;&nbsp;Profile Picture
-    						<input type="file" name="picture" accept="image/*" class="form-control-file" id="picture">
-  						</div>
-						</div>
+								<div class="form-group row">
+									<div class="col-md-12">
+									<i class="fa fa-file-image-o"></i>&nbsp;&nbsp;Profile Picture
+									<input type="file" name="picture" accept="image/*" class="form-control-file" id="picture" required>
+								</div>
+								</div>
 
-						<div class="row form-group">
-							<div class="col-md-12">
-								<i class="fa fa-user-circle"></i>&nbsp;&nbsp;About Yourself
-								<textarea name="about" id="about" cols="30" rows="10" class="form-control" placeholder="Please tell us a bit about yourself, your background, and experience. The more details you provide, the better will it be for us as well as your students to know more about you." required></textarea>
-							</div>
-						</div>
+								<div class="row form-group">
+									<div class="col-md-12">
+										<i class="fa fa-user-circle"></i>&nbsp;&nbsp;About Yourself
+										<textarea name="about" id="about" cols="30" rows="10" class="form-control" placeholder="Please tell us a bit about yourself, your background, and experience. The more details you provide, the better will it be for us as well as your students to know more about you." required></textarea>
+									</div>
+								</div>
 
-						<div class="row form-check form-group">
-							<div class="col-md-12">
-    						<input class="form-check-input" type="checkbox" value="agree">
-    						&nbsp;&nbsp;I agree to the <a href="#">terms and conditions</a>.
-							</div>
-						</div>
+								<div class="row form-check form-group">
+									<div class="col-md-12">
+									<input class="form-check-input" type="checkbox" value="agree" required>
+									&nbsp;&nbsp;I agree to the <a href="#">terms and conditions</a>.
+									</div>
+								</div>
 
-						<div class="form-group">
-							<div class="text-center">
-								<input type="submit" value="Submit" class="btn btn-primary">
-							</div>
-						</div>
+								<div class="form-group">
+									<div class="text-center">
+										<input type="submit" value="Submit" class="btn btn-primary">
+									</div>
+								</div>
 
 					</form>
 				</div>
