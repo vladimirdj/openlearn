@@ -215,26 +215,43 @@
     /*Part 4: Moving the data into the MySQL database and the profile picture into the disk */    
     move_uploaded_file($_FILES['picture']['tmp_name'], $directory);
 
-    $query = "INSERT INTO instructor VALUES ('$first_name', '$last_name', '$email', '$password', '$website', '$twitter', '$directory', '$about')";
-    $result = mysqli_query($connection, $query);
 
-    if($result){
+    /* Check if email exists. If not, then the instructor is good to go. */
+    $value_query = mysqli_query("SELECT email FROM instructor WHERE email=$email;");
+
+    $num_rows = mysqli_num_rows($value_query);
+    if($num_rows > 0){
         echo "
-                <div class='container'>
-                    <div class='row align-items-center'>
-                        <div class='col-md-12 animate-box'>
-                            <br><br><br><br><br><h4 class='text-center'>Congratulations $first_name, we are glad to welcome you in our family!</h4>
-                        </div>
-                    </div>
-
-                    <div class='row align-items-center'>
-                    <div class='col-md-2 col-md-offset-5 animate-box'>
-                            <button class='btn btn-primary'><a style='color: white;' href='../login.php'>Click here to login</a></button>
-                        </div>
-                    </div>
-                </div><br><br><br><br><br><br>  ";
+        <div class='container'>
+            <div class='row align-items-center'>
+                <div class='col-md-12 animate-box'>
+                    <br><br><br><br><br><h4 class='text-center' style='color: red;'>We are sorry, the email already exists in the database.</h4>
+                </div>
+            </div>
+        </div><br><br><br><br><br><br>  ";
+        
     } else {
-            echo "<p>Error occurred: ".mysqli_error()."</p>";
+        $query = "INSERT INTO instructor VALUES ('$first_name', '$last_name', '$email', '$password', '$website', '$twitter', '$directory', '$about')";
+        $result = mysqli_query($connection, $query);
+
+        if($result){
+            echo "
+                    <div class='container'>
+                        <div class='row align-items-center'>
+                            <div class='col-md-12 animate-box'>
+                                <br><br><br><br><br><h4 class='text-center'>Congratulations $first_name, we are glad to welcome you in our family!</h4>
+                            </div>
+                        </div>
+
+                        <div class='row align-items-center'>
+                        <div class='col-md-2 col-md-offset-5 animate-box'>
+                                <button class='btn btn-primary'><a style='color: white;' href='../login.php'>Click here to login</a></button>
+                            </div>
+                        </div>
+                    </div><br><br><br><br><br><br>  ";
+        } else {
+                echo "<p>Error occurred: ".mysqli_error()."</p>";
+            }   
     }
 
     mysqli_close($connection);
