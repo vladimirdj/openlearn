@@ -237,38 +237,35 @@
                         <div class='col-md-12 animate-box'>
                             <p class='text-center'> - The URL must be in the format http(s)://www.domain.com.</p></div></div></div>";
         }
-    }
-        
-    if (!empty($twitter)) {
+    } elseif (!empty($twitter)) {
         if (!filter_var($twitter, FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED)) {
             echo "<div class='container'>
             <div class='row'>
             <div class='col-md-12 animate-box'>
                     <p class='text-center'>The Twitter URL must be in the format https://twitter.com/YourUsername</p></div></div></div>";
         }
-    }
-    /*Part 3.3 ends */
+    } /*Part 3.3 ends */
+    else { 
+        /*Part 4: Moving the data into the MySQL database and the profile picture into the disk */    
+        move_uploaded_file($_FILES['picture']['tmp_name'], $directory);
 
+        $query = "INSERT INTO instructor VALUES ('$first_name', '$last_name', '$email', '$password', '$website', '$twitter', '$directory', '$about')";
+        $result = mysqli_query($connection, $query);
 
-    /*Part 4: Moving the data into the MySQL database and the profile picture into the disk */    
-    move_uploaded_file($_FILES['picture']['tmp_name'], $directory);
+        if($result){
+            echo "
+                <div class='container'>
+                    <div class='row'>
+                        <div class='col-md-12 animate-box'>
+                            <h3 class='text-center'>Congratulations $first_name for being a part of our family!</h3>
+                            <button class='btn btn-primary'><a href='../login.php'>Click here to login</a></button>     
+                        </div>
+                    </div>
+                </div>";
+        } else {
+                echo "<p>Error occurred: ".mysqli_error()."</p>";
+            }
 
-    $query = "INSERT INTO instructor VALUES ('$first_name', '$last_name', '$email', '$password', '$website', '$twitter', '$picture', '$about')";
-    $result = mysqli_query($connection, $query);
-
-    if($result){
-        echo "
-        <div class='container'>
-            <div class='row'>
-                <div class='col-md-12 animate-box'>
-                    <h3 class='text-center'>Congratulations $first_name for being a part of our family now!</h3>
-                    <button class='btn btn-primary'><a href='../login.php'>Login now</a></button>     
-                </div>
-            </div>
-        </div>";
-    }
-    else {
-        echo "<p>Error occurred: ".mysqli_error();
     }
 
     mysqli_close($connection);
