@@ -100,38 +100,57 @@
 				</div>
 			</div>
 		</div>
-		<div class="top-menu">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font></a></div>
-					</div>
-					<div class="col-xs-10 text-right menu-1">
-						<ul>
-							<li class="active"><a href="index.php">Home</a></li>
-							<li><a href="courses.php">Courses</a></li>
-							<li><a href="teacher.php">Teacher</a></li>
-							<li><a href="about.php">About</a></li>
-							<li><a href="pricing.php">Pricing</a></li>
-							<li class="has-dropdown">
-								<a href="blog.php">Blog</a>
-								<ul class="dropdown">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.php">Contact</a></li> &nbsp;&nbsp;&nbsp;
-							<li class="btn-cta" data-toggle="modal" data-target="#myModal"><a href="#"><span>Login</span></a></li>
-							<li class="btn-cta"><a href="#"><span>Become an Instructor</span></a></li>
-						</ul>
-					</div>
-				</div>
 
+		<div class="top-menu">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font></a></div>
+				</div>
+				<div class="col-xs-10 text-right menu-1">
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="courses.php">Courses</a></li>
+						<li><a href="instructors.php">Instructors</a></li>
+						<li><a href="#"  data-toggle="modal" data-target="#livestream">Livestream</a></li>
+						<li><a href="about.php">About</a></li>
+						<li><a href="contact.php">Contact</a></li>
+						<li class="btn-cta" data-toggle="modal" data-target="#myModal"><a href="#"><span>Login</span></a></li>
+						<li class="btn-cta"><a href="signup.php"><span>Become an Instructor</span></a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
+	</div>
+
 	</nav>
+
+	<!-- Modal - For Livestream-->
+	<div class="modal fade" id="livestream" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="Livestream_modal">Join Livestream</h4>
+				</div>
+
+				<div class="modal-body">
+					<form action="livestream.php" method="get">
+						<div class="form-group">
+								<label for="Code_Livestream">Enter the invite code of the Livestream you want to join</label>
+								<input type="text" class="form-control" id="livestream_link" aria-describedby="emailHelp" placeholder="Livestream Invite Code" required>
+							</div>
+				</div>
+
+				<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<input type="submit" value="Join Livestream" class="btn btn-primary">
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Modal for livestream ends-->
 
 	<!-- Modal - For Login-->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -299,42 +318,42 @@
 						<div class="row form-group">
 							<div class="col-md-6">
 								<i class="fa fa-user"></i>&nbsp;&nbsp;First Name
-								<input type="text" id="fname" class="form-control" placeholder="Enter your first name" required>
+								<input type="text" name="fname" id="fname" class="form-control" placeholder="Enter your first name" required>
 							</div>
 							<div class="col-md-6">
 								<!-- <label for="lname">Last Name</label> --><i class="fa fa-user"></i>&nbsp;&nbsp;Last Name
-								<input type="text" id="lname" class="form-control" placeholder="Enter your last name" required>
+								<input type="text" name="lname" id="lname" class="form-control" placeholder="Enter your last name" required>
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-6">
 								<!-- <label for="email">Email</label> --><i class="fa fa-envelope"></i>&nbsp;&nbsp;Email
-								<input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+								<input type="email" name="email" id="email" class="form-control" placeholder="Enter your email address" required>
 							</div>
 
 							<div class="col-md-6">
 								<i class="fa fa-key"></i>&nbsp;&nbsp;Password
-								<input type="password" id="password" class="form-control" placeholder="Enter your password (Must be at least 8 characters long)" required>
+								<input type="password" name="password" id="password" class="form-control" placeholder="Enter your password (Must be at least 8 characters long)" required>
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-6">
 								<i class="fa fa-edge"></i>&nbsp;&nbsp;Website&nbsp;(Optional)
-								<input type="text" id="website" class="form-control" placeholder="Enter your website URL" required>
+								<input type="text" name="website" id="website" class="form-control" placeholder="Enter your website URL" required>
 							</div>
 
 							<div class="col-md-6">
 								<i class="fa fa-twitter"></i>&nbsp;&nbsp;Twitter&nbsp;(Optional)
-								<input type="text" id="twitter" class="form-control" placeholder="https://twitter.com/yourusername" required>
+								<input type="text" name="twitter" id="twitter" class="form-control" placeholder="https://twitter.com/yourusername" required>
 							</div>
 						</div>
 
 						<div class="form-group row">
 							<div class="col-md-12">
     						<i class="fa fa-file-image-o"></i>&nbsp;&nbsp;Profile Picture
-    						<input type="file" accept="image/*" class="form-control-file" id="profilepic">
+    						<input type="file" name="picture" accept="image/*" class="form-control-file" id="picture">
   						</div>
 						</div>
 

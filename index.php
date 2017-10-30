@@ -100,6 +100,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="top-menu">
 			<div class="container">
 				<div class="row">
@@ -119,7 +120,6 @@
 						</ul>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</nav>
