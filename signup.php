@@ -323,7 +323,7 @@
 									</div>
 									<div class="col-md-6">
 										<!-- <label for="lname">Last Name</label> --><i class="fa fa-user"></i>&nbsp;&nbsp;Last Name
-										<input type="text" name="last_nname" id="last_name" class="form-control" placeholder="Enter your last name" required>
+										<input type="text" id="last_name" name="last_name" class="form-control" placeholder="Enter your last name" required>
 									</div>
 								</div>
 
