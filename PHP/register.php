@@ -236,7 +236,7 @@
         $result = mysqli_query($connection, $query);
 
         if($result){
-            echo "
+			echo "
                     <div class='container'>
                         <div class='row align-items-center'>
                             <div class='col-md-12 animate-box'>
@@ -250,7 +250,8 @@
                             </div>
                         </div>
                     </div><br><br><br><br><br><br>  ";
-                    mysqli_close($connection);
+					mysqli_close($connection);
+					die();
         } else {
                 echo "<p>Error occurred: ".mysqli_error()."</p>";
             }   

@@ -10,6 +10,8 @@
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="freehtml5.co" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="assets/signup-form.css" type="text/css" />
 
 
   	<!-- Facebook and Twitter integration -->
@@ -315,66 +317,81 @@
 					<h3 class="text-center">Let's get started!</h3>
 					<p class="text-center">Fill out the form to become a part of us.&nbsp;All fields are mandatory unless indicated as optional.</p> <br>
 					
-					<form action="PHP/register2.php" method="post" enctype="multipart/form-data">
-								<div class="row form-group">
-									<div class="col-md-6">
-										<i class="fa fa-user"></i>&nbsp;&nbsp;First Name
-										<input type="text" name="first_name" id="first_name" class="form-control" placeholder="Enter your first name" required>
+
+					<!-- Registration Form Begins -->
+					<form method="post" autocomplete="off" role="form" id="register-form" enctype="multipart/form-data">
+
+								<div id="errorDiv"></div>
+
+								<div class="row">
+									<div class="col-md-6 form-group">
+										<i class="fa fa-user"></i>&nbsp;&nbsp;Name
+										<input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" />
+										<span class="help-block" id="error"></span>
 									</div>
-									<div class="col-md-6">
-										<!-- <label for="lname">Last Name</label> --><i class="fa fa-user"></i>&nbsp;&nbsp;Last Name
-										<input type="text" id="last_name" name="last_name" class="form-control" placeholder="Enter your last name" required>
-									</div>
+
+									<div class="col-md-6 form-group">
+										<i class="fa fa-envelope"></i>&nbsp;&nbsp;Email
+										<input type="email" name="email" id="email" class="form-control" placeholder="Enter your email address" />
+										<span class="help-block" id="error"></span>
+									</div>			
 								</div>
 
-								<div class="row form-group">
-									<div class="col-md-6">
-										<!-- <label for="email">Email</label> --><i class="fa fa-envelope"></i>&nbsp;&nbsp;Email
-										<input type="email" name="email" id="email" class="form-control" placeholder="Enter your email address" required>
-									</div>
-
-									<div class="col-md-6">
+								<div class="row">
+									<div class="form-group col-md-6">
 										<i class="fa fa-key"></i>&nbsp;&nbsp;Password
-										<input type="password" name="password" id="password" class="form-control" placeholder="Enter your password (Must be at least 8 characters long)" required>
+										<input type="password" name="password" id="password" class="form-control" placeholder="Enter your password (Must be at least 6 characters long)" />
+										<span class="help-block" id="error"></span>
 									</div>
+
+									<div class="form-group col-md-6">
+										<i class="fa fa-key"></i>&nbsp;&nbsp;Repeat Password
+										<input type="password" name="cpassword" id="cpassword" class="form-control" placeholder="Repeat password" />
+										<span class="help-block" id="error"></span>
+									</div>								
 								</div>
 
-								<div class="row form-group">
-									<div class="col-md-6">
+								<div class="row">
+									<div class="form-group col-md-6">
 										<i class="fa fa-edge"></i>&nbsp;&nbsp;Website&nbsp;(Optional)
-										<input type="url" name="website" id="website" class="form-control" placeholder="Enter your website URL (https://www.domain.com)">
+										<input type="url" name="website" id="website" class="form-control" placeholder="Enter your website URL (https://www.domain.com)" />
+										<span class="help-block" id="error"></span>
 									</div>
 
-									<div class="col-md-6">
+									<div class="form-group col-md-6">
 										<i class="fa fa-twitter"></i>&nbsp;&nbsp;Twitter&nbsp;(Optional)
 										<input type="url" name="twitter" id="twitter" class="form-control" placeholder="https://twitter.com/yourusername">
+										<span class="help-block" id="error"></span>
 									</div>
 								</div>
 
-								<div class="form-group row">
+								<div class="row form-group">
 									<div class="col-md-12">
 									<i class="fa fa-file-image-o"></i>&nbsp;&nbsp;Profile Picture
-									<input type="file" name="picture" accept="image/*" class="form-control-file" id="picture" required>
+									<input type="file" name="picture" accept="image/*" class="form-control-file" id="picture">
+									<span class="help-block" id="error"></span>
 								</div>
 								</div>
 
 								<div class="row form-group">
 									<div class="col-md-12">
 										<i class="fa fa-user-circle"></i>&nbsp;&nbsp;About Yourself
-										<textarea name="about" id="about" cols="30" rows="10" class="form-control" placeholder="Please tell us a bit about yourself, your background, and experience. The more details you provide, the better will it be for us as well as your students to know more about you." required></textarea>
+										<textarea name="about" id="about" cols="30" rows="10" class="form-control" placeholder="Please tell us a bit about yourself, your background, and experience. The more details you provide, the better will it be for us as well as your students to know more about you."></textarea>
+										<span class="help-block" id="error"></span>
 									</div>
 								</div>
 
 								<div class="row form-check form-group">
 									<div class="col-md-12">
-									<input class="form-check-input" type="checkbox" value="agree" required>
+									<input class="form-check-input" type="checkbox" value="agree">
 									&nbsp;&nbsp;I agree to the <a href="#">terms and conditions</a>.
+									<span class="help-block" id="error"></span>
 									</div>
 								</div>
 
 								<div class="form-group">
 									<div class="text-center">
-										<input type="submit" value="Submit" class="btn btn-primary">
+										<button type="submit" id="btn-signup" class="btn btn-primary">Submit</button>
 									</div>
 								</div>
 
@@ -384,8 +401,6 @@
 
 		</div>
 	</div>
-
-
 <!--Sign up Code ends -->
 
 	<div id="fh5co-register" style="background-image: url(images/studying.jpg);">
@@ -473,11 +488,14 @@
 	</div>
 
 	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
+	<script src="assets/jquery-1.12.4-jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/jquery.validate.min.js"></script>
+    <script src="assets/register.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<!-- Bootstrap 
+	<script src="js/bootstrap.min.js"></script> -->
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
