@@ -44,6 +44,11 @@ $('document').ready(function()
 				}
 				},
 
+				profile_picture: {
+					required: true,
+					accept: "image/*"
+				},
+
 				website: {
 					required: false,
 					validurl: true,
@@ -71,11 +76,6 @@ $('document').ready(function()
 					required: true,
 					minlength: 30,
 					maxlength: 255					
-				},
-
-				profile_picture: {
-					required: true,
-					accept: "image/*"
 				},
 
 				agree: {

@@ -36,7 +36,7 @@
 		*/
 
 
-		/* Test upload */
+		/* Test upload 
 		if(isset($_FILES['profile_picture']))
 		{
 			$img = $_FILES['profile_picture']['name'];
@@ -54,8 +54,6 @@
 					
 			move_uploaded_file($tmp, $path);
 		}
-		
-
 		/* Test upload ends */
 
 		$query = "INSERT INTO instructor VALUES ('$full_name', '$user_email', '$hashed_password', '$website', '$twitter', '$directory', '$about')";
