@@ -321,8 +321,6 @@
 					<!-- Registration Form Begins -->
 					<form method="post" autocomplete="off" role="form" id="register-form" enctype="multipart/form-data">
 
-								<div id="errorDiv"></div>
-
 								<div class="row">
 									<div class="col-md-6 form-group">
 										<i class="fa fa-user"></i>&nbsp;&nbsp;Name
@@ -383,7 +381,7 @@
 
 								<div class="row form-check form-group">
 									<div class="col-md-12">
-									<input class="form-check-input" type="checkbox" value="agree">
+									<input class="form-check-input" name="agree" id="agree" type="checkbox" value="agree">
 									&nbsp;&nbsp;I agree to the <a href="#">terms and conditions</a>.
 									<span class="help-block" id="error"></span>
 									</div>
@@ -391,9 +389,11 @@
 
 								<div class="form-group">
 									<div class="text-center">
-										<button type="submit" id="btn-signup" class="btn btn-primary">Submit</button>
+										<button type="submit" id="btn-signup" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Sign Up</button>
 									</div>
 								</div>
+
+								<div id="errorDiv"></div>
 
 					</form>
 				</div>
@@ -491,6 +491,7 @@
 	<script src="assets/jquery-1.12.4-jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/jquery.validate.min.js"></script>
+	<script src="js/additional-methods.js"></script>
     <script src="assets/register.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>

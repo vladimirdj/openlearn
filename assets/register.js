@@ -38,7 +38,7 @@ $('document').ready(function()
 					type: "post",
 					data: {
 						email: function() {
-							return $( "#email" ).val();
+							return $("#email").val();
 						}
 					}
 				}
@@ -66,6 +66,21 @@ $('document').ready(function()
 					required: true,
 					equalTo: '#password'
 				},
+
+				about: {
+					required: true,
+					minlength: 30,
+					maxlength: 255					
+				},
+
+				picture: {
+					required: true,
+					accept: "image/*"
+				},
+
+				agree: {
+					required: true
+				}
 		   },
 		   messages:
 		   {
@@ -74,19 +89,49 @@ $('document').ready(function()
 					validname: "Name must contain only alphabets and spaces.",
 					minlength: "Your name is too short."
 				},
+
 				email: {
-				required : "Email is required.",
-				validemail : "Please enter a valid email address.",
-				remote : "The email already exists."
-			},
-				password:{
+					required: "Email is required.",
+					validemail: "Please enter a valid email address.",
+					remote: "The email already exists."
+				},
+
+				password: {
 					required: "Password is required.",
 					minlength: "Password must have at least have 6 characters."
-					},
-				cpassword:{
+				},
+
+				cpassword: {
 					required: "Retype your password",
 					equalTo: "The password did not match!"
-					}
+				},
+
+				website: {
+					required: "This is optional.",
+					validurl: "Please enter a valid URL.",
+					minlength: "The website URL cannot be too short."
+				},
+
+				twitter: {
+					required: "This is optional.",
+					validurl: "Please enter a valid URL.",
+					minlength: "The Twitter URL cannot be too short."
+				},
+
+				about: {
+					required: "You must provide information about yourself.",
+					minlength: "You must enter at least 30 characters.",
+					maxlength: "You cannot write more than 255 characters."
+				},
+
+				picture: {
+					required: "You must upload your profile picture.",
+					accept: "Only images can be uploaded."
+				},
+
+				agree: {
+					required: "You must accept the terms and conditions to contiune."
+				}
 		   },
 		   errorPlacement : function(error, element) {
 			  $(element).closest('.form-group').find('.help-block').html(error.html());
@@ -112,18 +157,18 @@ $('document').ready(function()
 			   })
 			   .done(function(data){
 			   		
-			   		$('#btn-signup').html('<img src="ajax-loader.gif" /> &nbsp; signing up...').prop('disabled', true);
+			   		$('#btn-signup').html('<img src="ajax-loader.gif" /> &nbsp; Signing up...').prop('disabled', true);
 			   		$('input[type=text],input[type=email],input[type=password]').prop('disabled', true);
 			   		
 			   		setTimeout(function(){
 								   
-						if ( data.status==='success' ) {
+						if (data.status==='success') {
 							
 							$('#errorDiv').slideDown('fast', function(){
 								$('#errorDiv').html('<div class="alert alert-info">'+data.message+'</div>');
 								$("#register-form").trigger('reset');
 								$('input[type=text],input[type=email],input[type=password]').prop('disabled', false);
-								$('#btn-signup').html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Me Up').prop('disabled', false);
+								$('#btn-signup').html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Up').prop('disabled', false);
 							}).delay(3000).slideUp('fast');
 							
 									   
@@ -133,7 +178,7 @@ $('document').ready(function()
 						      	$('#errorDiv').html('<div class="alert alert-danger">'+data.message+'</div>');
 							  	$("#register-form").trigger('reset');
 							  	$('input[type=text],input[type=email],input[type=password]').prop('disabled', false);
-							  	$('#btn-signup').html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Me Up').prop('disabled', false);
+							  	$('#btn-signup').html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Up').prop('disabled', false);
 							}).delay(3000).slideUp('fast');
 						}
 								  
@@ -142,7 +187,7 @@ $('document').ready(function()
 			   })
 			   .fail(function(){
 			   		$("#register-form").trigger('reset');
-			   		alert('An unknown error occoured, Please try again Later...');
+			   		alert('An unknown error occoured. Please try again later.');
 			   });
 		   }
 });

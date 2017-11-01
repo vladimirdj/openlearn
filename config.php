@@ -1,10 +1,6 @@
 <?php
-    define('DB_SERVER', 'localhost');
-    define('DB_USERNAME', 'root');
-    define('DB_PASSWORD', 'toor');
-    define('DB_DATABASE', 'openlearn');
    
-    $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+   $link = mysqli_connect('localhost', 'root', 'toor', 'openlearn');
 
     if(!$link)
     {
