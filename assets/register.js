@@ -74,8 +74,7 @@ $('document').ready(function()
 				},
 
 				picture: {
-					required: true,
-					accept: "image/*"
+					required: true
 				},
 
 				agree: {
@@ -125,12 +124,11 @@ $('document').ready(function()
 				},
 
 				picture: {
-					required: "You must upload your profile picture.",
-					accept: "Only images can be uploaded."
+					required: "You must upload your profile picture."
 				},
 
 				agree: {
-					required: "You must accept the terms and conditions to contiune."
+					required: "You must accept the Terms and Conditions to contiune."
 				}
 		   },
 		   errorPlacement : function(error, element) {

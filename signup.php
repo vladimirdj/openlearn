@@ -374,7 +374,7 @@
 								<div class="row form-group">
 									<div class="col-md-12">
 										<i class="fa fa-user-circle"></i>&nbsp;&nbsp;About Yourself
-										<textarea name="about" id="about" cols="30" rows="10" class="form-control" placeholder="Please tell us a bit about yourself, your background, and experience. The more details you provide, the better will it be for us as well as your students to know more about you."></textarea>
+										<textarea name="about" id="about" cols="30" rows="10" maxlength="255" class="form-control" placeholder="Please tell us a bit about yourself, your background, and experience. The more details you provide, the better will it be for us as well as your students to know more about you."></textarea>
 										<span class="help-block" id="error"></span>
 									</div>
 								</div>
