@@ -160,11 +160,11 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">Login to OpenLearn (Instructor)</h4>
+	        <h4 class="modal-title" id="myModalLabel">Login to OpenLearn (For Instructors Only)</h4>
 	      </div>
 
 				<div class="modal-body">
-					<form action="index.php" method="get">
+					<form action="index.php" method="POST" autocomplete="off">
 						<div class="form-group">
 								<label for="InputEmail1">Email address</label>
 								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
@@ -319,7 +319,7 @@
 					
 
 					<!-- Registration Form Begins -->
-					<form method="post" autocomplete="off" role="form" id="register-form" enctype="multipart/form-data">
+					<form method="post" role="form" id="register-form" enctype="multipart/form-data">
 
 								<div class="row">
 									<div class="col-md-6 form-group">
@@ -366,7 +366,7 @@
 								<div class="row form-group">
 									<div class="col-md-12">
 									<i class="fa fa-file-image-o"></i>&nbsp;&nbsp;Profile Picture
-									<input type="file" name="picture" accept="image/*" class="form-control-file" id="picture">
+									<input type="file" name="picture" accept="image/*" id="picture" />
 									<span class="help-block" id="error"></span>
 								</div>
 								</div>
@@ -389,7 +389,7 @@
 
 								<div class="form-group">
 									<div class="text-center">
-										<button type="submit" id="btn-signup" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Sign Up</button>
+										<button type="submit" id="btn-signup" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Up</button>
 									</div>
 								</div>
 

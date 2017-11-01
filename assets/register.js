@@ -74,7 +74,8 @@ $('document').ready(function()
 				},
 
 				picture: {
-					required: true
+					required: true,
+					accept: "image/*"
 				},
 
 				agree: {
@@ -108,7 +109,7 @@ $('document').ready(function()
 				website: {
 					required: "This is optional.",
 					validurl: "Please enter a valid URL.",
-					minlength: "The website URL cannot be too short."
+					minlength: "The URL cannot be too short."
 				},
 
 				twitter: {
@@ -124,7 +125,8 @@ $('document').ready(function()
 				},
 
 				picture: {
-					required: "You must upload your profile picture."
+					required: "You must upload your profile picture.",
+					accept: "Only images are accepted."
 				},
 
 				agree: {
@@ -156,7 +158,7 @@ $('document').ready(function()
 			   .done(function(data){
 			   		
 			   		$('#btn-signup').html('<img src="ajax-loader.gif" /> &nbsp; Signing up...').prop('disabled', true);
-			   		$('input[type=text],input[type=email],input[type=password]').prop('disabled', true);
+			   		$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', true);
 			   		
 			   		setTimeout(function(){
 								   
@@ -165,7 +167,7 @@ $('document').ready(function()
 							$('#errorDiv').slideDown('fast', function(){
 								$('#errorDiv').html('<div class="alert alert-info">'+data.message+'</div>');
 								$("#register-form").trigger('reset');
-								$('input[type=text],input[type=email],input[type=password]').prop('disabled', false);
+								$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', false);
 								$('#btn-signup').html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Up').prop('disabled', false);
 							}).delay(3000).slideUp('fast');
 							
@@ -175,7 +177,7 @@ $('document').ready(function()
 						    $('#errorDiv').slideDown('fast', function(){
 						      	$('#errorDiv').html('<div class="alert alert-danger">'+data.message+'</div>');
 							  	$("#register-form").trigger('reset');
-							  	$('input[type=text],input[type=email],input[type=password]').prop('disabled', false);
+							  	$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', false);
 							  	$('#btn-signup').html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Up').prop('disabled', false);
 							}).delay(3000).slideUp('fast');
 						}
