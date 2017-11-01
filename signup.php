@@ -319,7 +319,7 @@
 					
 
 					<!-- Registration Form Begins -->
-					<form method="post" role="form" id="register-form" enctype="multipart/form-data">
+					<form method="post" id="register-form" enctype="multipart/form-data">
 
 								<div class="row">
 									<div class="col-md-6 form-group">
@@ -366,7 +366,7 @@
 								<div class="row form-group">
 									<div class="col-md-12">
 									<i class="fa fa-file-image-o"></i>&nbsp;&nbsp;Profile Picture
-									<input type="file" name="picture" accept="image/*" id="picture" />
+									<input type="file" name="profile_picture" accept="image/*" id="profile_picture" />
 									<span class="help-block" id="error"></span>
 								</div>
 								</div>
@@ -492,7 +492,8 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/jquery.validate.min.js"></script>
 	<script src="js/additional-methods.js"></script>
-    <script src="assets/register.js"></script>
+	<script src="js/extension.js"></script>
+    <script src="register.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap 
