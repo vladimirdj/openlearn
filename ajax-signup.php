@@ -60,7 +60,7 @@
 
 		$stmt =  mysqli_query($link, $query);
 		
-		// check for successfull registration
+		// check for successful registration
         if ($stmt) {
 			$response['status'] = 'success';
 			$response['message'] = '<span class="glyphicon glyphicon-ok"></span> &nbsp; Thank you for signing up! You may login now.';
