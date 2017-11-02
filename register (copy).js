@@ -148,7 +148,8 @@ $('document').ready(function()
 		   
 		   
 		   function submitForm(){
-				$.ajax({
+			   
+			   $.ajax({
 			   		url: 'ajax-signup.php',
 			   		type: 'POST',
 			   		data: $('#register-form').serialize(),
@@ -188,6 +189,5 @@ $('document').ready(function()
 			   		$("#register-form").trigger('reset');
 			   		alert('An unknown error occoured. Please try again later.');
 			   });
-			   
-}
+		   }
 });

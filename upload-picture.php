@@ -1,4 +1,5 @@
 <?php
+    header('Content-type: application/json');
 
     require_once 'config.php';
 
@@ -6,7 +7,7 @@
 		
 		$img = $_FILES['profile_picture']['name'];
         $tmp = $_FILES['profile_picture']['tmp_name'];
-        $path = 'profile_pictures/';
+        $path = '/var/www/html/open-learning/profile_pictures/';
             
         // get uploaded file's extension
         $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
