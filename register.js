@@ -1,14 +1,14 @@
 // JavaScript Validation For Registration Page
 
 $('document').ready(function()
-{ 		 
+{
 
 		 // name validation
 		 var nameregex = /^[a-zA-Z ]+$/;
 		 $.validator.addMethod("validname", function(value, element) {
 		     return this.optional(element) || nameregex.test(value);
-		 }); 
-		 
+		 });
+
 		 // valid email pattern
 		 var eregex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		 $.validator.addMethod("validemail", function( value, element ) {
@@ -20,8 +20,8 @@ $('document').ready(function()
 		 $.validator.addMethod("validurl", function(value, element) {
 			return this.optional(element) || urlregex.test(value);
 		});
-		 
-		 $("#register-form").validate({					
+
+		 $("#register-form").validate({
 		  rules:
 		  {
 				name: {
@@ -75,7 +75,7 @@ $('document').ready(function()
 				about: {
 					required: true,
 					minlength: 30,
-					maxlength: 255					
+					maxlength: 255
 				},
 
 				agree: {
@@ -144,9 +144,9 @@ $('document').ready(function()
 			  $(element).closest('.form-group').find('.help-block').html('');
 		   },
 				submitHandler: submitForm
-		   }); 
-		   
-		   
+		   });
+
+
 		   function submitForm(){
 				$.ajax({
 			   		url: 'ajax-signup.php',
@@ -158,24 +158,24 @@ $('document').ready(function()
 			   		dataType: 'json'
 			   })
 			   .done(function(data){
-			   		
+
 			   		$('#btn-signup').html('<img src="ajax-loader.gif" /> &nbsp; Signing up...').prop('disabled', true);
 			   		$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', true);
-			   		
+
 			   		setTimeout(function(){
-								   
+
 						if (data.status==='success') {
-							
+
 							$('#errorDiv').slideDown('fast', function(){
 								$('#errorDiv').html('<div class="alert alert-info">'+data.message+'</div>');
 								$("#register-form").trigger('reset');
 								$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', false);
 								$('#btn-signup').html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Up').prop('disabled', false);
 							}).delay(3000).slideUp('fast');
-							
-									   
+
+
 					    } else {
-									   
+
 						    $('#errorDiv').slideDown('fast', function(){
 						      	$('#errorDiv').html('<div class="alert alert-danger">'+data.message+'</div>');
 							  	$("#register-form").trigger('reset');
@@ -183,14 +183,14 @@ $('document').ready(function()
 							  	$('#btn-signup').html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Up').prop('disabled', false);
 							}).delay(3000).slideUp('fast');
 						}
-								  
+
 					},3000);
-			   		
+
 			   })
 			   .fail(function(){
 			   		$("#register-form").trigger('reset');
 			   		alert('An unknown error occoured. Please try again later.');
 			   });
-			   
+
 }
 });
