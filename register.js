@@ -151,7 +151,7 @@ $('document').ready(function()
 				$.ajax({
 			   		url: 'ajax-signup.php',
 			   		type: 'POST',
-					data: new FormData($('#register-form')),
+					data: new FormData(document.getElementById("register-form")),
 					cache: false,
 					contentType: false,
 					processData: false,
