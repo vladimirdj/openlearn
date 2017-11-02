@@ -17,22 +17,20 @@
 		$user_pass = strip_tags($password);
 		$website = $_POST['website'];
 		$twitter = $_POST['twitter'];
-		//$user_picture = $_FILES['profile_picture']['name'];
+		$user_picture = $_FILES['profile_picture']['name'];
 		$about = strip_tags($_POST['about']);
 
 		//Password hashing
 		$hashed_password = password_hash($user_pass, PASSWORD_DEFAULT);
-
 
 		/* Storing the profile picture in disk and doing validation */
         /* -- Extracting file extensions and filename for renaming the file later on. */
         $file_property = pathinfo($user_picture);
         $pic_filename = $file_property['filename'];
         $pic_file_extension = $file_property['extension'];
-        $directory = "/var/www/html/open-learning/profile_pictures/";
+        $directory = dirname(__FILE__) . "/profile_pictures/";
 		$directory .= $pic_filename.rand().'.'.$pic_file_extension;
-
-		move_uploaded_file($_FILES['picture']['tmp_name'], $directory); //Moving file to the disk
+		move_uploaded_file($_FILES['profile_picture']['tmp_name'], $directory); //Moving file to the disk
 
 
 		/* Test upload
@@ -56,7 +54,6 @@
 		/* Test upload ends */
 
 		$query = "INSERT INTO instructor VALUES ('$full_name', '$user_email', '$hashed_password', '$website', '$twitter', '$directory', '$about')";
-
 		$stmt =  mysqli_query($link, $query);
 
 		// check for successful registration
@@ -66,7 +63,7 @@
         } else {
             $response['status'] = 'error'; // could not register
 			$response['message'] = '<span class="glyphicon glyphicon-info-sign"></span> &nbsp; Could not register now. Please try again later.';
-			echo $_FILES['profile_pic'];
+			$response["query"] = mysqli_error($link);
         }
 	}
 
