@@ -1,5 +1,29 @@
 <!DOCTYPE HTML>
 <html>
+
+	<?php
+		require_once 'config.php';		
+
+		//if(isset($_GET['instructor_email'])) {
+
+			$instructor_email = $_GET['instructor_email'];
+			
+			$getinfo = "SELECT name, email, website, twitter, picture, about from instructor where email='$instructor_email'";
+			$query = mysqli_query($link, $getinfo);
+			$row = mysqli_fetch_assoc($query);
+			
+			$inst_name = $row['name'];
+			$inst_email = $row['email'];
+			$inst_website = $row['website'];
+			$inst_twitter = $row['twitter'];
+			$inst_picture = $row['picture'];
+			$inst_about = $row['about'];
+
+			mysqli_close($link);
+
+		//}
+	?>
+
 	<head>
 	<link rel="shortcut icon" href="favicon.png" />
 	<meta charset="utf-8">
@@ -109,7 +133,7 @@
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="index.php">Home</a></li>
+							<li><a href="index.php">Home</a></li>
 							<li><a href="courses.php">Courses</a></li>
 							<li><a href="teacher.php">Teacher</a></li>
 							<li><a href="about.php">About</a></li>
@@ -211,18 +235,17 @@
     <div class="container">
         <div class="jumbotron text-center">
             <div class="row animate-box">
-            <h1>Martin Alderson</h1>
-            <span><img src="images/person1.jpg" class="img-circle img-responsive text-center" style="height: 150px; width: 150px; margin: auto;" alt="Cinque Terre"> </span> <br>
+            <h1><?php echo "$inst_name"; ?></h1>
+            <?php echo "<img src='$inst_picture' class='img-circle img-responsive text-center' style='height: 150px; width: 150px; margin: auto;' alt='Picture' />"; ?><br>
             
-            <p class="lead">I am Martin, World's best instructor!</p>
-            <p>People are a fan of my courses and they look forward to learning from me everytime I make a new course. I hope you will love my courses.</p> <br>
+            <p class="lead"><?php echo "$inst_about"; ?><br><br><br>
 
-            <button class="btn btn-primary" data-toggle="modal" data-target="#messageModal" style="color: white;"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Send Message</button><br><br><br>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#messageModal" style="color: white;"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Send Message</button><br><br>
             
             <div>
                 <h5>Follow me on</h5>
-                <a href="https://www.sddey.com"><i class="fa fa-globe fa-2x"></i></a>
-                &emsp;<a href="https://twitter.com"><i class="fa fa-twitter fa-2x"></i></a>
+                <?php echo "<a href='$inst_website' target='_blank'>";?> <i class="fa fa-globe fa-2x"></i></a>
+                &emsp;<?php echo "<a href='$inst_twitter' target='_blank'>";?><i class="fa fa-twitter fa-2x"></i></a>
             </div>
             
         </div>
@@ -235,7 +258,7 @@
             <div class="container">
                 <div class="row animate-box">
                     <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-                        <h2>Courses by Martin Alderson</h2>
+                        <h2>Courses by <?php echo $inst_name; ?></h2>
                         <p>Go through the courses made by the instructor.</p>
                     </div>
                 </div>
