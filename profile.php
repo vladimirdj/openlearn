@@ -235,23 +235,22 @@
     <div class="container">
         <div class="jumbotron text-center">
             <div class="row animate-box">
-            <h1><?php echo "$inst_name"; ?></h1>
-            <?php echo "<img src='$inst_picture' class='img-circle img-responsive text-center' style='height: 150px; width: 150px; margin: auto;' alt='Picture' />"; ?><br>
+            	<h1><?php echo "$inst_name"; ?></h1>
+            	<?php echo "<img src='$inst_picture' class='img-circle img-responsive text-center' style='height: 150px; width: 150px; margin: auto;' alt='Picture' />"; ?><br>
             
-            <p class="lead"><?php echo "$inst_about"; ?><br><br><br>
+            	<p class="lead"><?php echo "$inst_about"; ?><br><br><br>
 
-            <button class="btn btn-primary" data-toggle="modal" data-target="#messageModal" style="color: white;"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Send Message</button><br><br>
+            	<button class="btn btn-primary" data-toggle="modal" data-target="#messageModal" style="color: white;"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Send Message</button><br><br>
             
-            <div>
-                <h5>Follow me on</h5>
-                <?php echo "<a href='$inst_website' target='_blank'>";?> <i class="fa fa-globe fa-2x"></i></a>
-                &emsp;<?php echo "<a href='$inst_twitter' target='_blank'>";?><i class="fa fa-twitter fa-2x"></i></a>
+            	<div>
+                	<h5>Follow me on</h5>
+                	<?php echo "<a href='$inst_website' target='_blank'>";?> <i class="fa fa-globe fa-2x"></i></a>
+                	&emsp;<?php echo "<a href='$inst_twitter' target='_blank'>";?><i class="fa fa-twitter fa-2x"></i></a>
+            	</div>
             </div>
-            
-        </div>
         </div>
     </div>
-
+	
 
     <!--Courses List -->    
         <div id="fh5co-course">
