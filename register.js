@@ -151,7 +151,10 @@ $('document').ready(function()
 				$.ajax({
 			   		url: 'ajax-signup.php',
 			   		type: 'POST',
-			   		data: $('#register-form').serialize(),
+					data: new FormData($('#register-form')),
+					cache: false,
+					contentType: false,
+					processData: false,
 			   		dataType: 'json'
 			   })
 			   .done(function(data){
