@@ -319,7 +319,7 @@
 					
 
 					<!-- Registration Form Begins -->
-					<form method="post" id="register-form" enctype="multipart/form-data">
+					<form method="post" id="register-form" autocomplete="off" enctype="multipart/form-data">
 
 								<div class="row">
 									<div class="col-md-6 form-group">
