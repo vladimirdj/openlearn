@@ -4,24 +4,19 @@
 	<?php
 		require_once 'config.php';		
 
-		//if(isset($_GET['instructor_email'])) {
-
-			$instructor_email = $_GET['instructor_email'];
-			
-			$getinfo = "SELECT name, email, website, twitter, picture, about from instructor where email='$instructor_email'";
-			$query = mysqli_query($link, $getinfo);
-			$row = mysqli_fetch_assoc($query);
-			
-			$inst_name = $row['name'];
-			$inst_email = $row['email'];
-			$inst_website = $row['website'];
-			$inst_twitter = $row['twitter'];
-			$inst_picture = $row['picture'];
-			$inst_about = $row['about'];
-
-			mysqli_close($link);
-
-		//}
+		$instructor_email = $_GET['instructor_email'];
+		
+		$getinfo = "SELECT name, email, website, twitter, picture, about from instructor where email='$instructor_email'";
+		$query = mysqli_query($link, $getinfo);
+		$row = mysqli_fetch_assoc($query);
+		
+		$inst_name = $row['name'];
+		$inst_email = $row['email'];
+		$inst_website = $row['website'];
+		$inst_twitter = $row['twitter'];
+		$inst_picture = $row['picture'];
+		$inst_about = $row['about'];
+		mysqli_close($link);
 	?>
 
 	<head>
@@ -126,37 +121,27 @@
 			</div>
 		</div>
 		<div class="top-menu">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font></a></div>
-					</div>
-					<div class="col-xs-10 text-right menu-1">
-						<ul>
-							<li><a href="index.php">Home</a></li>
-							<li><a href="courses.php">Courses</a></li>
-							<li><a href="teacher.php">Teacher</a></li>
-							<li><a href="about.php">About</a></li>
-							<li><a href="pricing.php">Pricing</a></li>
-							<li class="has-dropdown">
-								<a href="blog.php">Blog</a>
-								<ul class="dropdown">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.php">Contact</a></li>
-							<li class="btn-cta" data-toggle="modal" data-target="#myModal"><a href="#"><span>Login</span></a></li>
-							<li class="btn-cta"><a href="signup.php"><span>Become an Instructor</span></a></li>
-						</ul>
-					</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font></a></div>
 				</div>
-
+				<div class="col-xs-10 text-right menu-1">
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="courses.php">Courses</a></li>
+						<li><a href="instructors.php">Instructors</a></li>
+						<li><a href="#"  data-toggle="modal" data-target="#livestream">Livestream</a></li>
+						<li><a href="about.php">About</a></li>
+						<li><a href="contact.php">Contact</a></li>
+						<li class="btn-cta" data-toggle="modal" data-target="#myModal"><a href="#"><span>Login</span></a></li>
+						<li class="btn-cta"><a href="signup.php"><span>Become an Instructor</span></a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</nav>
+	</div>
+</nav>
 
 	<!-- Modal - For Login-->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -195,6 +180,33 @@
 		</div>
 	</div>
 	<!--Modal for login ends-->
+
+	<!-- Modal - For Livestream-->
+	<div class="modal fade" id="livestream" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="Livestream_modal">Join Livestream</h4>
+				</div>
+
+				<div class="modal-body">
+					<form action="livestream.php" method="get">
+						<div class="form-group">
+								<label for="Code_Livestream">Enter the invite code of the Livestream you want to join</label>
+								<input type="text" class="form-control" id="livestream_link" aria-describedby="emailHelp" placeholder="Livestream Invite Code" required>
+							</div>
+				</div>
+
+				<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<input type="submit" value="Join Livestream" class="btn btn-primary">
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Modal for livestream ends-->
 	
 	<!-- Modal - For Message-->
 	<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="sendMessageLabel">
@@ -236,7 +248,7 @@
         <div class="jumbotron text-center">
             <div class="row animate-box">
             	<h1><?php echo "$inst_name"; ?></h1>
-            	<?php echo "<img src='$inst_picture' class='img-circle img-responsive text-center' style='height: 150px; width: 150px; margin: auto;' alt='Picture' />"; ?><br>
+            	<?php echo "<img src='profile_pictures/".basename($inst_picture)."' class='img-circle img-responsive text-center' style='height: 150px; width: 150px; margin: auto;' alt='No Image' />"; ?><br>
             
             	<p class="lead"><?php echo "$inst_about"; ?><br><br><br>
 
@@ -250,7 +262,7 @@
             </div>
         </div>
     </div>
-	
+
 
     <!--Courses List -->    
         <div id="fh5co-course">
