@@ -1,5 +1,7 @@
 <?php
 
+    ini_set ('log_errors', 'on');
+    
     header('Content-type: application/json');
 
 	require_once 'config.php';
