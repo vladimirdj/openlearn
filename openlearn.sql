@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 04, 2017 at 07:40 PM
+-- Generation Time: Nov 04, 2017 at 10:00 PM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -52,13 +52,21 @@ INSERT INTO `instructor` (`name`, `id`, `email`, `password`, `website`, `twitter
 --
 
 CREATE TABLE `messages` (
-  `message_id` int(11) NOT NULL,
+  `message_id` varchar(20) NOT NULL,
   `student_name` varchar(40) NOT NULL,
   `student_email` varchar(70) NOT NULL,
   `student_message` varchar(400) NOT NULL,
   `message_date` datetime NOT NULL,
   `instructor_id` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`message_id`, `student_name`, `student_email`, `student_message`, `message_date`, `instructor_id`) VALUES
+('59fde67ba646b', 'dfdf dfdf ', 'ff@i.com', 'dfkndf df df df', '2017-11-04 21:40:35', '59fda3768bccb'),
+('59fdea82d493e', 'Suhka Isn', 'sukha@y.com', 'sdshd hrrt rthrr', '2017-11-04 21:57:46', '59fda3768bccb');
 
 --
 -- Indexes for dumped tables
