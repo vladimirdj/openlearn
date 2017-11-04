@@ -389,7 +389,7 @@
 
 								<div class="form-group">
 									<div class="text-center">
-										<button type="submit" id="btn-signup" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Up</button>
+										<button type="submit" id="btn-signup" class="btn btn-primary">Register</button>
 									</div>
 								</div>
 

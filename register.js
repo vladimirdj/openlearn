@@ -159,7 +159,7 @@ $('document').ready(function()
 			   })
 			   .done(function(data){
 
-			   		$('#btn-signup').html('<img src="ajax-loader.gif" /> &nbsp; Signing up...').prop('disabled', true);
+			   		$('#btn-signup').html('<img src="ajax-loader.gif" />&nbsp; Registering...').prop('disabled', true);
 			   		$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', true);
 
 			   		setTimeout(function(){
@@ -170,7 +170,7 @@ $('document').ready(function()
 								$('#errorDiv').html('<div class="alert alert-info">'+data.message+'</div>');
 								$("#register-form").trigger('reset');
 								$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', false);
-								$('#btn-signup').html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Up').prop('disabled', false);
+								$('#btn-signup').html('Register').prop('disabled', false);
 							}).delay(3000).slideUp('fast');
 
 
@@ -180,7 +180,7 @@ $('document').ready(function()
 						      	$('#errorDiv').html('<div class="alert alert-danger">'+data.message+'</div>');
 							  	$("#register-form").trigger('reset');
 							  	$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', false);
-							  	$('#btn-signup').html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Up').prop('disabled', false);
+							  	$('#btn-signup').html('Register').prop('disabled', false);
 							}).delay(3000).slideUp('fast');
 						}
 

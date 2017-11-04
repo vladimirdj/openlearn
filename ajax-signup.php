@@ -11,6 +11,7 @@
 		$name = trim($_POST['name']);
 		$email = trim($_POST['email']);
 		$password = trim($_POST['password']);
+		$inst_id = uniqid();
 
 		$full_name = strip_tags($name);
 		$user_email = strip_tags($email);
@@ -29,12 +30,12 @@
         $pic_filename = $file_property['filename'];
         $pic_file_extension = $file_property['extension'];
         $directory = dirname(__FILE__) . "/profile_pictures/";
-		$directory .= $pic_filename.rand().'.'.$pic_file_extension;
+		$directory .= $pic_filename.mt_rand().'.'.$pic_file_extension;
 
 		//Moving file to the disk.
 		move_uploaded_file($_FILES['profile_picture']['tmp_name'], $directory); 
 
-		$query = "INSERT INTO instructor VALUES ('$full_name', '$user_email', '$hashed_password', '$website', '$twitter', '$directory', '$about')";
+		$query = "INSERT INTO instructor VALUES ('$full_name', '$inst_id', '$user_email', '$hashed_password', '$website', '$twitter', '$directory', '$about')";
 		$stmt =  mysqli_query($link, $query);
 
 		// check for successful registration
