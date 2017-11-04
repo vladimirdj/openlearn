@@ -6,7 +6,7 @@
 
 		$instructor_email = $_GET['instructor_email'];
 
-		$getinfo = "SELECT name, id, email, website, twitter, picture, about from instructor where email='$instructor_email'";
+		$getinfo = "SELECT `name`, `id`, `email`, `website`, `twitter`, `picture`, `about` from `instructor` where (`email`='$instructor_email')";
 		$query = mysqli_query($link, $getinfo);
 		$row = mysqli_fetch_assoc($query);
 
