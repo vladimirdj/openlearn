@@ -20,6 +20,10 @@ $('document').ready(function()
 				instPassword: {
 					required : true,
 					minlength: 6
+				},
+
+				rememberMe: {
+					required: false
 				}
 		   },
 		   messages:
@@ -33,6 +37,10 @@ $('document').ready(function()
 				instPassword: {
 					required : "A password is required for authentication",
 					minlength: "The password cannot be too short"
+				},
+
+				rememberMe: {
+					required: "Optional"
 				}
 		   },
 		   errorPlacement : function(error, element) {
@@ -64,7 +72,12 @@ $('document').ready(function()
 			   		setTimeout(function(){
 
 						if (data.status==='success') {
-							window.location.href='admin/admin_dashboard.php';
+							$('#errorDiv').slideDown('fast', function(){
+								$('#errorDiv').html('<div class="alert alert-info">'+data.message+'</div>');
+								$("#login-form").trigger('reset');
+								$('input[type=email],input[type=password]').prop('disabled', false);
+								$('#btn-login').html('Login').prop('disabled', false);
+							}).delay(3000).slideUp('fast');
 
 					    } else {
 
@@ -72,11 +85,11 @@ $('document').ready(function()
 						      	$('#errorDiv').html('<div class="alert alert-danger">'+data.message+'</div>');
 							  	$("#login-form").trigger('reset');
 							  	$('input[type=email],input[type=password]').prop('disabled', false);
-							  	$('#btn-send-message').html('Login').prop('disabled', false);
+							  	$('#btn-login').html('Login').prop('disabled', false);
 							}).delay(3000).slideUp('fast');
 						}
 
-					}, 3000);
+					},3000);
 
 			   })
 			   .fail(function(){

@@ -3,8 +3,6 @@
     ini_set ('log_errors', 'on'); //Logging errors
     
     header('Content-type: application/json');
-    
-    session_start();    
 
     $response = array();
 
@@ -22,7 +20,7 @@
     $isCorrectPassword = password_verify($inst_password, $hashed_db_password);
 
 
-    $query_login = "SELECT `id`, `email`, `password` FROM `instructor` WHERE (`email`='$inst_email') AND (`password`='$hashed_db_password')";
+    $query_login = "SELECT `id`, `email`, `password` FROM `instructor` WHERE `email`='$inst_email' AND `password`='$hashed_db_password'";
     $stmt =  mysqli_query($link, $query_login);
     $count = mysqli_num_rows($stmt);
 
@@ -31,11 +29,10 @@
 		$response['status'] = 'success';
 		$response['message'] = '<span class="glyphicon glyphicon-ok"></span> &nbsp;Your message has been sent successfully!';
     } else {
-        $response['status'] = 'error'; // could not register
-        $response['message'] = '<span class="glyphicon glyphicon-info-sign"></span> &nbsp; Could not send your message. Please try again later.';
+        $response['status'] = 'error'; // could not log in
+        $response['message'] = '<span class="glyphicon glyphicon-info-sign"></span> &nbsp;Email or password is incorrect. Please try again.';
     }
 
-    echo json_encode($response);
-    
     mysqli_close ($link);
+    echo json_encode($response);
 ?>

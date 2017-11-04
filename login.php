@@ -20,12 +20,12 @@
                         
                         <form id="login-form" autocomplete="off" method="POST" class="form-signin">
                                 <div class="form-group">
-                                    <input type="text" id="instEmail" class="form-control" placeholder="Email" autofocus>
+                                    <input type="text" name="instEmail" id="instEmail" class="form-control" placeholder="Email" autofocus>
                                     <span class="help-block" id="error"></span>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <input type="password" id="instPassword" class="form-control" placeholder="Password">
+                                    <input type="password" name="instPassword" id="instPassword" class="form-control" placeholder="Password">
                                     <span class="help-block" id="error"></span>
                                 </div>
 
