@@ -1,5 +1,7 @@
 <?php
 
+    ini_set ('log_errors', 'on');
+    
     header('Content-type: application/json');
     
     $response = array();
@@ -9,7 +11,7 @@
     $student_message = $_POST['senderMessage'];
     $message_id = uniqid();		
 
-	$query = "INSERT INTO messages VALUES ('$message_id', '$student_name', '$student_email', '$student_message', NOW(), '$inst_email' WHERE instructor_email='$inst_email')";
+	$query = "INSERT INTO messages VALUES ('$message_id', '$student_name', '$student_email', '$student_message', NOW(), '$inst_email')";
 	$stmt =  mysqli_query($link, $query);
 	// check for successful registration
     if ($stmt) {
