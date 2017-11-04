@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 04, 2017 at 06:06 PM
+-- Generation Time: Nov 04, 2017 at 07:40 PM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -57,7 +57,7 @@ CREATE TABLE `messages` (
   `student_email` varchar(70) NOT NULL,
   `student_message` varchar(400) NOT NULL,
   `message_date` datetime NOT NULL,
-  `instructor_email` varchar(70) NOT NULL
+  `instructor_id` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -68,15 +68,14 @@ CREATE TABLE `messages` (
 -- Indexes for table `instructor`
 --
 ALTER TABLE `instructor`
-  ADD PRIMARY KEY (`id`,`email`),
-  ADD KEY `inst_index` (`id`);
+  ADD PRIMARY KEY (`id`,`email`);
 
 --
 -- Indexes for table `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`message_id`),
-  ADD KEY `FK_MESSAGE` (`instructor_email`);
+  ADD KEY `FK_MESSAGE` (`instructor_id`);
 
 --
 -- Constraints for dumped tables
@@ -86,7 +85,7 @@ ALTER TABLE `messages`
 -- Constraints for table `messages`
 --
 ALTER TABLE `messages`
-  ADD CONSTRAINT `FK_MESSAGE` FOREIGN KEY (`instructor_email`) REFERENCES `instructor` (`id`);
+  ADD CONSTRAINT `FK_MESSAGE` FOREIGN KEY (`instructor_id`) REFERENCES `instructor` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
