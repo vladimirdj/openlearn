@@ -8,10 +8,10 @@
 
     require_once 'config.php';
 
-    $student_name = $_POST['senderName'];
-    $student_email = $_POST['senderEmail'];
-    $student_message = $_POST['senderMessage'];
-    $inst_id = $_POST['instID'];
+    $student_name = strip_tags(trim($_POST['senderName']));
+    $student_email = strip_tags(trim($_POST['senderEmail']));
+    $student_message = strip_tags(trim($_POST['senderMessage']));
+    $inst_id = strip_tags(trim($_POST['instID']));
     $message_id = uniqid();
 
 	$query = sprintf("INSERT INTO `messages` VALUES ('%s', '%s', '%s', '%s', NOW(), '%s')",
