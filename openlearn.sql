@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 02, 2017 at 06:35 AM
+-- Generation Time: Nov 04, 2017 at 06:06 PM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `instructor` (
   `name` varchar(50) NOT NULL,
+  `id` varchar(400) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `website` varchar(255) DEFAULT NULL,
@@ -40,12 +41,24 @@ CREATE TABLE `instructor` (
 -- Dumping data for table `instructor`
 --
 
-INSERT INTO `instructor` (`name`, `email`, `password`, `website`, `twitter`, `picture`, `about`) VALUES
-('Subhadeep Dey', 'ddsd@i.com', '$2y$10$ndRZspx4HORB99NC5JsS7u0NWFzTuS459VFky/0BZIUgxNFZJmEgm', 'http://www.sddey.com', 'https://twitter.com/SDey_96', '/var/www/html/open-learning/profile_pictures/895948369.', 'ssssssssssssssssssssss ffdff               ggggggggggggggg'),
-('Subhadeep', 'dey@i.com', '$2y$10$sAeq1tFABVLU.hNAukmD9.OHT.aqYPl.SOD1C8iiWJhPSLm.Hp/9C', 'http://www.sddey.com', 'https://twitter.com/SDey_96', '', 'Hi there Hi there Hi there Hi there Hi there Hi there Hi there Hi there Hi there Hi there Hi there Hi there Hi there Hi there Hi there Hi there Hi there Hi there '),
-('SUbhadeep Dey', 'ffdf@i.comm', '$2y$10$I4kwQ4bnTMbTDSMWwUj0fO5VNtQ4sl.kPNZBXYysYAMtxhz6C5R8q', 'http://www.sddey.com', 'https://twitter.com/SDey_96', '', 'hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi there hi '),
-('Subhadeep Dey', 'sdey96@outlook.com', '$2y$10$JG0I3icAf2kxKjFe1OOxp.Tp03gUld5Jl0zicy3elztRCLYGVmK.y', 'http://www.sddey.com', 'https://twitter.com/SDey_96', '', 'I am a very good boy. What about you?'),
-('sDsdsdsd', 'sdsd@i.commd', '$2y$10$AxwEMVQyaJ8pxee0k/1kcuXWC/8APb.7ehJU2iOEAhnvEuiAC3ziq', 'http://www.sddey.com', 'https://twitter.com/SDey_96', '', 'fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff');
+INSERT INTO `instructor` (`name`, `id`, `email`, `password`, `website`, `twitter`, `picture`, `about`) VALUES
+('Subhadeep Dey', '2feeefg', 'contact.sdey@gmail.com', 'df4eeeeee442', 'https://google.com', 'https://twitter.com', '/var/www/ff.jpg', 'I am a very good boy'),
+('Subhadeep Dey', '59fda3768bccb', 'contact.sdey@gmail.co', '$2y$10$I2z9mlcitttir8x1oXqvb.508kSVXm0vHVPszyvp4CdBUabBl96pS', '', '', '/var/www/html/open-learning/profile_pictures/sidebar-21296047125.jpg', 'I am a very good boy, you know. very foo');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `message_id` int(11) NOT NULL,
+  `student_name` varchar(40) NOT NULL,
+  `student_email` varchar(70) NOT NULL,
+  `student_message` varchar(400) NOT NULL,
+  `message_date` datetime NOT NULL,
+  `instructor_email` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -55,7 +68,25 @@ INSERT INTO `instructor` (`name`, `email`, `password`, `website`, `twitter`, `pi
 -- Indexes for table `instructor`
 --
 ALTER TABLE `instructor`
-  ADD PRIMARY KEY (`email`);
+  ADD PRIMARY KEY (`id`,`email`),
+  ADD KEY `inst_index` (`id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`message_id`),
+  ADD KEY `FK_MESSAGE` (`instructor_email`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `messages`
+--
+ALTER TABLE `messages`
+  ADD CONSTRAINT `FK_MESSAGE` FOREIGN KEY (`instructor_email`) REFERENCES `instructor` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

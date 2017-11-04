@@ -1,5 +1,24 @@
 <!DOCTYPE HTML>
 <html>
+
+	<?php
+		require_once 'config.php';		
+
+		$instructor_email = $_GET['instructor_email'];
+		
+		$getinfo = "SELECT name, email, website, twitter, picture, about from instructor where email='$instructor_email'";
+		$query = mysqli_query($link, $getinfo);
+		$row = mysqli_fetch_assoc($query);
+		
+		$inst_id = $row['id']; 
+		$inst_name = $row['name'];
+		$inst_email = $row['email'];
+		$inst_website = $row['website'];
+		$inst_twitter = $row['twitter'];
+		$inst_picture = $row['picture'];
+		$inst_about = $row['about'];
+	?>
+
 	<head>
 	<link rel="shortcut icon" href="favicon.png" />
 	<meta charset="utf-8">
@@ -84,7 +103,7 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
+	<nav class="fh5co-nav navbar navbar-default" role="navigation" style="box-shadow: 0 8px 6px -6px gray;">
 		<div class="top">
 			<div class="container">
 				<div class="row">
@@ -102,37 +121,28 @@
 			</div>
 		</div>
 		<div class="top-menu">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font></a></div>
-					</div>
-					<div class="col-xs-10 text-right menu-1">
-						<ul>
-							<li class="active"><a href="index.php">Home</a></li>
-							<li><a href="courses.php">Courses</a></li>
-							<li><a href="teacher.php">Teacher</a></li>
-							<li><a href="about.php">About</a></li>
-							<li><a href="pricing.php">Pricing</a></li>
-							<li class="has-dropdown">
-								<a href="blog.php">Blog</a>
-								<ul class="dropdown">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.php">Contact</a></li>
-							<li class="btn-cta" data-toggle="modal" data-target="#myModal"><a href="#"><span>Login</span></a></li>
-							<li class="btn-cta"><a href="signup.php"><span>Become an Instructor</span></a></li>
-						</ul>
-					</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font></a></div>
 				</div>
-
+				<div class="col-xs-10 text-right menu-1">
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="courses.php">Courses</a></li>
+						<li><a href="instructors.php">Instructors</a></li>
+						<li><a href="#"  data-toggle="modal" data-target="#livestream">Livestream</a></li>
+						<li><a href="about.php">About</a></li>
+						<li><a href="contact.php">Contact</a></li>
+						<li class="btn-cta" data-toggle="modal" data-target="#myModal"><a href="#"><span>Login</span></a></li>
+						<li class="btn-cta"><a href="signup.php"><span>Become an Instructor</span></a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</nav>
+	</div>
+</nav>
+<br><br>
 
 	<!-- Modal - For Login-->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -144,7 +154,7 @@
 				</div>
 
 				<div class="modal-body">
-					<form action="index.php" method="get">
+					<form action="index.php" method="POST" autocomplete="off">
 						<div class="form-group">
 								<label for="InputEmail1">Email address</label>
 								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
@@ -171,6 +181,33 @@
 		</div>
 	</div>
 	<!--Modal for login ends-->
+
+	<!-- Modal - For Livestream-->
+	<div class="modal fade" id="livestream" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="Livestream_modal">Join Livestream</h4>
+				</div>
+
+				<div class="modal-body">
+					<form action="livestream.php" method="get">
+						<div class="form-group">
+								<label for="Code_Livestream">Enter the invite code of the Livestream you want to join</label>
+								<input type="text" class="form-control" id="livestream_link" aria-describedby="emailHelp" placeholder="Livestream Invite Code" required>
+							</div>
+				</div>
+
+				<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<input type="submit" value="Join Livestream" class="btn btn-primary">
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Modal for livestream ends-->
 	
 	<!-- Modal - For Message-->
 	<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="sendMessageLabel">
@@ -182,25 +219,30 @@
 				</div>
 
 				<div class="modal-body">
-					<form action="index.php" method="get">
+					<!--Form to send message: -->
+					<form name="message-form" id="message-form" method="POST" autocomplete="off">
 						<div class="form-group">
-							<label for="sender-name" class="form-control-label">Your name</label>
-							<input type="text" class="form-control" id="sender-name" placeholder="Enter your name" required>
+							<input type="text" class="form-control" name="senderName" id="senderName" placeholder="Your name" >
+							<span class="help-block" id="error"></span>
 						</div>
+
 						<div class="form-group">
-							<label for="sender-email" class="form-control-label">Your email address</label>
-							<input type="email" class="form-control" id="sender-email" placeholder="Enter your email address" required>
+							<input type="email" class="form-control" name="senderEmail" id="senderEmail" placeholder="Your email address" />
+							<span class="help-block" id="error"></span>
 						</div>
+						
 						<div class="form-group">
-							<label for="message-text" class="form-control-label">Message:</label>
-							<textarea class="form-control" id="message-text" style="height: 180px;" placeholder="Enter your message to the instructor. Make sure to be polite." required></textarea>
+							<textarea class="form-control" name="senderMessage" id="senderMessage" style="height: 180px;" placeholder="Your message" ></textarea>
+							<span class="help-block" id="error"></span>
 						</div>
 				</div>
 
 				<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<input type="submit" value="Send" class="btn btn-primary">
-				</form>
+						<button type="submit" id="btn-send-message" name="btn-send-message" class="btn btn-primary"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;Send</button>
+					
+						<div id="errorDiv"></div> <!--Error or confirmation is shown here -->
+					</form>
 				</div>
 			</div>
 		</div>
@@ -211,21 +253,19 @@
     <div class="container">
         <div class="jumbotron text-center">
             <div class="row animate-box">
-            <h1>Martin Alderson</h1>
-            <span><img src="images/person1.jpg" class="img-circle img-responsive text-center" style="height: 150px; width: 150px; margin: auto;" alt="Cinque Terre"> </span> <br>
+            	<h1><?php echo "$inst_name"; ?></h1>
+            	<?php echo "<img src='profile_pictures/".basename($inst_picture)."' class='img-circle img-responsive text-center' style='height: 150px; width: 150px; margin: auto;' alt='No Image' />"; ?><br>
             
-            <p class="lead">I am Martin, World's best instructor!</p>
-            <p>People are a fan of my courses and they look forward to learning from me everytime I make a new course. I hope you will love my courses.</p> <br>
+            	<p class="lead"><?php echo "$inst_about"; ?><br><br><br>
 
-            <button class="btn btn-primary" data-toggle="modal" data-target="#messageModal" style="color: white;"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Send Message</button><br><br><br>
+            	<button class="btn btn-primary" data-toggle="modal" data-target="#messageModal" style="color: white;"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Send Message</button><br><br>
             
-            <div>
-                <h5>Follow me on</h5>
-                <a href="https://www.sddey.com"><i class="fa fa-globe fa-2x"></i></a>
-                &emsp;<a href="https://twitter.com"><i class="fa fa-twitter fa-2x"></i></a>
+            	<div>
+                	<h5>Follow me on</h5>
+                	<?php echo "<a href='$inst_website' target='_blank'>";?> <i class="fa fa-globe fa-2x"></i></a>
+                	&emsp;<?php echo "<a href='$inst_twitter' target='_blank'>";?><i class="fa fa-twitter fa-2x"></i></a>
+            	</div>
             </div>
-            
-        </div>
         </div>
     </div>
 
@@ -235,7 +275,7 @@
             <div class="container">
                 <div class="row animate-box">
                     <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-                        <h2>Courses by Martin Alderson</h2>
+                        <h2>Courses by <?php echo $inst_name; ?></h2>
                         <p>Go through the courses made by the instructor.</p>
                     </div>
                 </div>
@@ -399,11 +439,14 @@
 	</div>
 
 	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
+	<script src="assets/jquery-1.12.4-jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/jquery.validate.min.js"></script>
+	<script src="js/additional-methods.js"></script>
+	<script src="js/extension.js"></script> <!--Message is validated and sent-->
+	<script src="send-message.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->

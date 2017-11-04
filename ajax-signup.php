@@ -11,6 +11,7 @@
 		$name = trim($_POST['name']);
 		$email = trim($_POST['email']);
 		$password = trim($_POST['password']);
+		$inst_id = uniqid();
 
 		$full_name = strip_tags($name);
 		$user_email = strip_tags($email);
@@ -29,31 +30,12 @@
         $pic_filename = $file_property['filename'];
         $pic_file_extension = $file_property['extension'];
         $directory = dirname(__FILE__) . "/profile_pictures/";
-		$directory .= $pic_filename.rand().'.'.$pic_file_extension;
-		move_uploaded_file($_FILES['profile_picture']['tmp_name'], $directory); //Moving file to the disk
+		$directory .= $pic_filename.mt_rand().'.'.$pic_file_extension;
 
+		//Moving file to the disk.
+		move_uploaded_file($_FILES['profile_picture']['tmp_name'], $directory); 
 
-		/* Test upload
-		if(isset($_FILES['profile_picture']))
-		{
-			$img = $_FILES['profile_picture']['name'];
-			$tmp = $_FILES['profile_picture']['tmp_name'];
-			$path = 'profile_pictures/';
-
-			// get uploaded file's extension
-			$ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
-
-			// can upload same image using rand function
-			$final_image = rand(1000,1000000).$img;
-
-			// check's valid format
-			$path = $path.strtolower($final_image);
-
-			move_uploaded_file($tmp, $path);
-		}
-		/* Test upload ends */
-
-		$query = "INSERT INTO instructor VALUES ('$full_name', '$user_email', '$hashed_password', '$website', '$twitter', '$directory', '$about')";
+		$query = "INSERT INTO instructor VALUES ('$full_name', '$inst_id', '$user_email', '$hashed_password', '$website', '$twitter', '$directory', '$about')";
 		$stmt =  mysqli_query($link, $query);
 
 		// check for successful registration
@@ -63,7 +45,6 @@
         } else {
             $response['status'] = 'error'; // could not register
 			$response['message'] = '<span class="glyphicon glyphicon-info-sign"></span> &nbsp; Could not register now. Please try again later.';
-			$response["query"] = mysqli_error($link);
         }
 	}
 
