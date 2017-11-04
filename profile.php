@@ -103,7 +103,7 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
+	<nav class="fh5co-nav navbar navbar-default" role="navigation" style="box-shadow: 0 8px 6px -6px gray;">
 		<div class="top">
 			<div class="container">
 				<div class="row">
@@ -142,6 +142,7 @@
 		</div>
 	</div>
 </nav>
+<br><br>
 
 	<!-- Modal - For Login-->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -153,7 +154,7 @@
 				</div>
 
 				<div class="modal-body">
-					<form action="index.php" method="get">
+					<form action="index.php" method="POST" autocomplete="off">
 						<div class="form-group">
 								<label for="InputEmail1">Email address</label>
 								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
@@ -218,25 +219,30 @@
 				</div>
 
 				<div class="modal-body">
-					<form action="index.php" method="get">
+					<!--Form to send message: -->
+					<form name="message-form" id="message-form" method="POST" autocomplete="off">
 						<div class="form-group">
-							<label for="sender-name" class="form-control-label">Your name</label>
-							<input type="text" class="form-control" id="sender-name" placeholder="Enter your name" required>
+							<input type="text" class="form-control" name="senderName" id="senderName" placeholder="Your name" >
+							<span class="help-block" id="error"></span>
 						</div>
+
 						<div class="form-group">
-							<label for="sender-email" class="form-control-label">Your email address</label>
-							<input type="email" class="form-control" id="sender-email" placeholder="Enter your email address" required>
+							<input type="email" class="form-control" name="senderEmail" id="senderEmail" placeholder="Your email address" />
+							<span class="help-block" id="error"></span>
 						</div>
+						
 						<div class="form-group">
-							<label for="message-text" class="form-control-label">Message:</label>
-							<textarea class="form-control" id="message-text" style="height: 180px;" placeholder="Enter your message to the instructor. Make sure to be polite." required></textarea>
+							<textarea class="form-control" name="senderMessage" id="senderMessage" style="height: 180px;" placeholder="Your message" ></textarea>
+							<span class="help-block" id="error"></span>
 						</div>
 				</div>
 
 				<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<input type="submit" value="Send" class="btn btn-primary">
-				</form>
+						<button type="submit" id="btn-send-message" name="btn-send-message" class="btn btn-primary"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;Send</button>
+					
+						<div id="errorDiv"></div> <!--Error or confirmation is shown here -->
+					</form>
 				</div>
 			</div>
 		</div>
@@ -433,11 +439,14 @@
 	</div>
 
 	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
+	<script src="assets/jquery-1.12.4-jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/jquery.validate.min.js"></script>
+	<script src="js/additional-methods.js"></script>
+	<script src="js/extension.js"></script> <!--Message is validated and sent-->
+	<script src="send-message.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
