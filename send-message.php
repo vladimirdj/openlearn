@@ -14,7 +14,7 @@
     $inst_id = $_POST['instID'];
     $message_id = uniqid();
 
-	$query = sprintf("INSERT INTO `messages` VALUES ('%s', '%s', '%s', '%s', NOW(), %s)",
+	$query = sprintf("INSERT INTO `messages` VALUES ('%s', '%s', '%s', '%s', NOW(), '%s')",
                      $message_id, $student_name, $student_email, $student_message,
                      $inst_id);
 
@@ -28,5 +28,7 @@
         $response['message'] = '<span class="glyphicon glyphicon-info-sign"></span> &nbsp; Could not send your message. Please try again later.';
     }
 
-	echo json_encode($response);
+    echo json_encode($response);
+    
+    mysqli_close ($link);
 ?>

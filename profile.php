@@ -488,3 +488,5 @@
 	</script>
 	</body>
 </html>
+
+<?= mysqli_close ($link); ?>
