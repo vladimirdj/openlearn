@@ -6,6 +6,8 @@
 
     $response = array();
 
+    require_once 'config.php';
+
     $student_name = $_POST['senderName'];
     $student_email = $_POST['senderEmail'];
     $student_message = $_POST['senderMessage'];
