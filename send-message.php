@@ -4,8 +4,6 @@
     
     header('Content-type: application/json');
 
-	require_once 'config.php';
-
     $response = array();
 
     $student_name = $_POST['senderName'];
@@ -13,10 +11,9 @@
     $student_message = $_POST['senderMessage'];
     $message_id = uniqid();
 
-    $inst_email = $_POST['instEmail'];
 	$query = sprintf("INSERT INTO `messages` VALUES ('%s', '%s', '%s', '%s', NOW(), %s)",
                      $message_id, $student_name, $student_email, $student_message,
-                     "(SELECT `id` FROM `instructor` WHERE `email`='$inst_email')");
+                     $inst_id);
 
 	$stmt =  mysqli_query($link, $query);
 	// check for successful registration

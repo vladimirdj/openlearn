@@ -6,12 +6,12 @@
 
 		$instructor_email = $_GET['instructor_email'];
 
-		$getinfo = "SELECT name, email, website, twitter, picture, about from instructor where email='$instructor_email'";
+		$getinfo = "SELECT name, id, email, website, twitter, picture, about from instructor where email='$instructor_email'";
 		$query = mysqli_query($link, $getinfo);
 		$row = mysqli_fetch_assoc($query);
 
-		$inst_id = $row['id'];
 		$inst_name = $row['name'];
+		$inst_id = $row['id'];
 		$inst_email = $row['email'];
 		$inst_website = $row['website'];
 		$inst_twitter = $row['twitter'];
