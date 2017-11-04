@@ -235,6 +235,8 @@
 							<textarea class="form-control" name="senderMessage" id="senderMessage" style="height: 180px;" placeholder="Your message" ></textarea>
 							<span class="help-block" id="error"></span>
 						</div>
+
+						<input type="hidden" name="inst_id" id="inst_id" value="<?= $inst_id ?>" /> <!--For passing on instructor's ID to `send-message.php` -->
 				</div>
 
 				<div class="modal-footer">

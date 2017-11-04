@@ -11,6 +11,7 @@
     $student_name = $_POST['senderName'];
     $student_email = $_POST['senderEmail'];
     $student_message = $_POST['senderMessage'];
+    $inst_id = $_POST['inst_id'];
     $message_id = uniqid();
 
 	$query = sprintf("INSERT INTO `messages` VALUES ('%s', '%s', '%s', '%s', NOW(), %s)",
