@@ -72,12 +72,8 @@ $('document').ready(function()
 			   		setTimeout(function(){
 
 						if (data.status==='success') {
-							$('#errorDiv').slideDown('fast', function(){
-								$('#errorDiv').html('<div class="alert alert-info">'+data.message+'</div>');
-								$("#login-form").trigger('reset');
-								$('input[type=email],input[type=password]').prop('disabled', false);
-								$('#btn-login').html('Login').prop('disabled', false);
-							}).delay(3000).slideUp('fast');
+							
+							window.location.replace("admin/admin_dashboard.php");
 
 					    } else {
 
