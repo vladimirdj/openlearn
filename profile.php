@@ -2,15 +2,15 @@
 <html>
 
 	<?php
-		require_once 'config.php';		
+		require_once 'config.php';
 
 		$instructor_email = $_GET['instructor_email'];
-		
+
 		$getinfo = "SELECT name, email, website, twitter, picture, about from instructor where email='$instructor_email'";
 		$query = mysqli_query($link, $getinfo);
 		$row = mysqli_fetch_assoc($query);
-		
-		$inst_id = $row['id']; 
+
+		$inst_id = $row['id'];
 		$inst_name = $row['name'];
 		$inst_email = $row['email'];
 		$inst_website = $row['website'];
@@ -208,7 +208,7 @@
 		</div>
 	</div>
 	<!--Modal for livestream ends-->
-	
+
 	<!-- Modal - For Message-->
 	<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="sendMessageLabel">
 		<div class="modal-dialog modal-lg" role="document">
@@ -230,7 +230,7 @@
 							<input type="email" class="form-control" name="senderEmail" id="senderEmail" placeholder="Your email address" />
 							<span class="help-block" id="error"></span>
 						</div>
-						
+
 						<div class="form-group">
 							<textarea class="form-control" name="senderMessage" id="senderMessage" style="height: 180px;" placeholder="Your message" ></textarea>
 							<span class="help-block" id="error"></span>
@@ -240,7 +240,7 @@
 				<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="submit" id="btn-send-message" name="btn-send-message" class="btn btn-primary"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;Send</button>
-					
+
 						<div id="errorDiv"></div> <!--Error or confirmation is shown here -->
 					</form>
 				</div>
@@ -255,11 +255,11 @@
             <div class="row animate-box">
             	<h1><?php echo "$inst_name"; ?></h1>
             	<?php echo "<img src='profile_pictures/".basename($inst_picture)."' class='img-circle img-responsive text-center' style='height: 150px; width: 150px; margin: auto;' alt='No Image' />"; ?><br>
-            
+
             	<p class="lead"><?php echo "$inst_about"; ?><br><br><br>
 
             	<button class="btn btn-primary" data-toggle="modal" data-target="#messageModal" style="color: white;"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Send Message</button><br><br>
-            
+
             	<div>
                 	<h5>Follow me on</h5>
                 	<?php echo "<a href='$inst_website' target='_blank'>";?> <i class="fa fa-globe fa-2x"></i></a>
@@ -270,7 +270,7 @@
     </div>
 
 
-    <!--Courses List -->    
+    <!--Courses List -->
         <div id="fh5co-course">
             <div class="container">
                 <div class="row animate-box">
@@ -352,7 +352,7 @@
 
 
     <!--Courses List ends -->
-    
+
 
     <div id="fh5co-register" style="background-image: url(images/studying.jpg);">
 		<div class="overlay"></div>
@@ -484,4 +484,3 @@
 	</script>
 	</body>
 </html>
-
