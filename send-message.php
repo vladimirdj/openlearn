@@ -1,7 +1,9 @@
 <?php
 
     header('Content-type: application/json');
-    
+
+	require_once 'config.php';
+
     $response = array();
 
     $student_name = $_POST['senderName'];
