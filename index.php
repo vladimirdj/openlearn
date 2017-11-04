@@ -134,27 +134,30 @@
 				</div>
 
 				<div class="modal-body">
-					<form action="index.php" method="get">
+					<form id="login-form" method="POST" autocomplete="off">
 						<div class="form-group">
-								<label for="InputEmail1">Email address</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+								<b>Email address</b>
+								<input type="email" name="instEmail" class="form-control" id="instEmail" placeholder="Enter email">
+								<span class="help-block" id="error"></span>
 							</div>
 
 							<div class="form-group">
-								<label for="exampleInputPassword1">Password</label>
-								<input type="password" class="form-control is-invalid" id="exampleInputPassword1" placeholder="Password" required>
+								<b>Password</b>
+								<input type="password" name="intPassword" class="form-control" id="instPassword" placeholder="Password">
+								<span class="help-block" id="error"></span>
 							</div>
 
 							<div class="form-check">
 								<label class="form-check-label">
-									<input type="checkbox" class="form-check-input">&nbsp;Remember me
+									<input type="checkbox" id="rememberMe"class="form-check-input">&nbsp;Remember me
 								</label>
 							</div>
+							<div id="errorDiv"></div> 
 				</div>
 
 				<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<input type="submit" value="Login" class="btn btn-primary">
+						<button type="submit" id="btn-login" class="btn btn-primary">Login</button>
 				</form>
 				</div>
 			</div>
@@ -638,6 +641,11 @@
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
+	<script src="assets/jquery.validate.min.js"></script>
+	<script src="js/additional-methods.js"></script>
+	<script src="js/extension.js"></script> <!--Message is validated and sent-->
+	<script src="login.js"></script>
+
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->

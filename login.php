@@ -20,7 +20,7 @@
                         
                         <form id="login-form" autocomplete="off" method="POST" class="form-signin">
                                 <div class="form-group">
-                                    <input type="text" name="instEmail" id="instEmail" class="form-control" placeholder="Email" autofocus>
+                                    <input type="email" name="instEmail" id="instEmail" class="form-control" placeholder="Email" autofocus>
                                     <span class="help-block" id="error"></span>
                                 </div>
                                 
