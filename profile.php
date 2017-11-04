@@ -4,6 +4,8 @@
 	<?php
 		require_once 'config.php';
 
+		ini_set ('log_errors', 'on');
+
 		$instructor_email = $_GET['instructor_email'];
 
 		$getinfo = "SELECT `name`, `id`, `email`, `website`, `twitter`, `picture`, `about` from `instructor` where (`email`='$instructor_email')";
@@ -236,7 +238,7 @@
 							<span class="help-block" id="error"></span>
 						</div>
 
-						<input type="hidden" name="inst_id" id="inst_id" value="<?= $inst_id ?>" /> <!--For passing on instructor's ID to `send-message.php` -->
+						<input type="hidden" name="instID" id="instID" value='<?php echo $inst_id;?>' /> <!--For passing on instructor's ID to `send-message.php` -->
 				</div>
 
 				<div class="modal-footer">

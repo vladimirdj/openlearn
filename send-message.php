@@ -11,7 +11,7 @@
     $student_name = $_POST['senderName'];
     $student_email = $_POST['senderEmail'];
     $student_message = $_POST['senderMessage'];
-    $inst_id = $_POST['inst_id'];
+    $inst_id = $_POST['instID'];
     $message_id = uniqid();
 
 	$query = sprintf("INSERT INTO `messages` VALUES ('%s', '%s', '%s', '%s', NOW(), %s)",
@@ -26,7 +26,6 @@
     } else {
         $response['status'] = 'error'; // could not register
         $response['message'] = '<span class="glyphicon glyphicon-info-sign"></span> &nbsp; Could not send your message. Please try again later.';
-        $response["query"] = mysqli_error($link);
     }
 
 	echo json_encode($response);
