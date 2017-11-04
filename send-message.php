@@ -12,7 +12,10 @@
     $message_id = uniqid();
 
     $inst_email = $_POST['instEmail'];
-	$query = "INSERT INTO messages VALUES ('$message_id', '$student_name', '$student_email', '$student_message', NOW(), '$inst_email' WHERE instructor_email='$inst_email')";
+	$query = sprintf("INSERT INTO `messages` VALUES ('%s', '%s', '%s', '%s', NOW(), %s)",
+                     $message_id, $student_name, $student_email, $student_message,
+                     "(SELECT `id` FROM `instructor` WHERE `email`='$inst_email')");
+
 	$stmt =  mysqli_query($link, $query);
 	// check for successful registration
     if ($stmt) {
