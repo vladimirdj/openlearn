@@ -143,7 +143,7 @@
 
 							<div class="form-group">
 								<b>Password</b>
-								<input type="password" name="intPassword" class="form-control" id="instPassword" placeholder="Password">
+								<input type="password" name="instPassword" class="form-control" id="instPassword" placeholder="Password">
 								<span class="help-block" id="error"></span>
 							</div>
 
