@@ -10,13 +10,13 @@
 		$query = mysqli_query($link, $getinfo);
 		$row = mysqli_fetch_assoc($query);
 		
+		$inst_id = $row['id']; 
 		$inst_name = $row['name'];
 		$inst_email = $row['email'];
 		$inst_website = $row['website'];
 		$inst_twitter = $row['twitter'];
 		$inst_picture = $row['picture'];
 		$inst_about = $row['about'];
-		mysqli_close($link);
 	?>
 
 	<head>
