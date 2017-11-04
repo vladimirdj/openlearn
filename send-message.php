@@ -7,7 +7,7 @@
     $student_name = $_POST['senderName'];
     $student_email = $_POST['senderEmail'];
     $student_message = $_POST['senderMessage'];
-    $message_id = uniqid();		
+    $message_id = uniqid();
 
 	$query = "INSERT INTO messages VALUES ('$message_id', '$student_name', '$student_email', '$student_message', NOW(), '$inst_email' WHERE instructor_email='$inst_email')";
 	$stmt =  mysqli_query($link, $query);
