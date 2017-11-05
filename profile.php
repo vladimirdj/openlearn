@@ -155,9 +155,8 @@
 							<li class='btn-cta has-dropdown'><a href='#'><span><img src='profile_pictures/".basename($inst_picture_here)."' height='15px' width='15px'>&nbsp;&nbsp;".$inst_name_here."</span></a>
 							<ul class='dropdown'>
 								<li><a href='profile.php?inst_id=$inst_here_id'>Profile</a></li>
-
+								<li><a href='#'>Dashboard</a></li>
 								<li><a href='#'>Help &amp; Support</a></li>
-								
 								<li><a href='logout.php'>Logout</a></li>
 							</ul>
 						</li>";

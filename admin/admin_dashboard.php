@@ -5,7 +5,7 @@
 	<link rel="shortcut icon" href="../favicon.png" />
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Free Online Courses &mdash; OpenLearn</title>
+	<title>Admin Dashboard &mdash; Free Online Courses at OpenLearn!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -13,38 +13,38 @@
 
 	<?php
 	
-	ini_set ('log_errors', 'on'); //Logging errors
+		ini_set ('log_errors', 'on'); //Logging errors
 
-	session_start();
-	
-	require_once '../config.php';
+		session_start();
 
-	if(isset($_SESSION['inst_id'])) {
+		require_once '../config.php';
 
-		$inst_id = $_SESSION['inst_id'];
+		if(isset($_SESSION['inst_id'])) {
 
-		$getinfo = "SELECT `name`, `id`, `email`, `picture` from `instructor` where `id`='{$_SESSION['inst_id']}'";
-		$query = mysqli_query($link, $getinfo);
-		$row = mysqli_fetch_assoc($query);
+			$inst_id = $_SESSION['inst_id'];
 
-		$inst_name = $row['name'];
-		$inst_email = $row['email'];
-		$inst_picture = $row['picture'];
+			$getinfo = "SELECT `name`, `id`, `email`, `picture` from `instructor` where `id`='{$_SESSION['inst_id']}'";
+			$query = mysqli_query($link, $getinfo);
+			$row = mysqli_fetch_assoc($query);
 
-		//Getting instructor's first name (accessible as zeroth index)
-		$get_name = explode(' ',trim($inst_name));
-		$inst_first_name = $get_name[0];
-	}
-	else
-	{
-		//Redirect the instructor to login page if he/she is not logged in.
-		echo "
-			<script type='text/javascript'>
-				window.location.href = '../login.php';
-			</script>
-		";
-	}
-?>
+			$inst_name = $row['name'];
+			$inst_email = $row['email'];
+			$inst_picture = $row['picture'];
+
+			//Getting instructor's first name (accessible as zeroth index)
+			$get_name = explode(' ',trim($inst_name));
+			$inst_first_name = $get_name[0];
+		}
+		else
+		{
+			//Redirect the instructor to login page if he/she is not logged in.
+			echo "
+				<script type='text/javascript'>
+					window.location.href = '../login.php';
+				</script>
+			";
+		}
+	?>
 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
@@ -117,7 +117,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="../index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font></a></div>
+						<div id="fh5co-logo"><a href="../index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn&nbsp;</font><font color="red">/Admin</font></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
@@ -134,9 +134,8 @@
 								<li class='btn-cta has-dropdown'><a href='#'><span><img src='../profile_pictures/".basename($inst_picture)."' height='15px' width='15px'>&nbsp;&nbsp;".$inst_name."</span></a>
 								<ul class='dropdown'>
 									<li><a href='../profile.php?inst_id=$inst_id'>Profile</a></li>
-
-									<li><a href='#'>Help &amp; Support</a></li>
-									
+									<li><a href='http://localhost/open-learning/admin/admin_dashboard.php'>Dashboard</a></li>
+									<li><a href='#'>Help &amp; Support</a></li>									
 									<li><a href='../logout.php'>Logout</a></li>
 								</ul>
 							</li>";

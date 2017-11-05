@@ -11,6 +11,41 @@
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="freehtml5.co" />
 
+	<?php
+	
+		ini_set ('log_errors', 'on'); //Logging errors
+
+		session_start();
+
+		require_once '../config.php';
+
+		if(isset($_SESSION['inst_id'])) {
+
+			$inst_id = $_SESSION['inst_id'];
+
+			$getinfo = "SELECT `name`, `id`, `email`, `picture` from `instructor` where `id`='{$_SESSION['inst_id']}'";
+			$query = mysqli_query($link, $getinfo);
+			$row = mysqli_fetch_assoc($query);
+
+			$inst_name = $row['name'];
+			$inst_email = $row['email'];
+			$inst_picture = $row['picture'];
+
+			//Getting instructor's first name (accessible as zeroth index)
+			$get_name = explode(' ',trim($inst_name));
+			$inst_first_name = $get_name[0];
+		}
+		else
+		{
+			//Redirect the instructor to login page if he/she is not logged in.
+			echo "
+				<script type='text/javascript'>
+					window.location.href = '../login.php';
+				</script>
+			";
+		}
+?>
+
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
@@ -82,33 +117,30 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="../index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font></a></div>
+						<div id="fh5co-logo"><a href="../index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font><font color="red">&nbsp;/Admin</font></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="index.php">Home</a></li>
-							<li><a href="../courses.php">Courses</a></li>
-							<li><a href="../teacher.php">Teacher</a></li>
-							<li><a href="../about.php">About</a></li>
-							<li><a href="../pricing.php">Pricing</a></li>
-							<li class="has-dropdown">
-								<a href="../blog.php">Blog</a>
-								<ul class="dropdown">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.php">Contact</a></li> &nbsp;&nbsp;&nbsp;
-							<li class="btn-cta has-dropdown"><a href="#"><span><!--<i class="icon-head"></i>&nbsp;--><img src="../images/person1.jpg" height="18px" width="23px">&nbsp;&nbsp;Martin Anderson</span></a>
-								<ul class="dropdown">
-									<li><a href="ok.php"><img src="../images/person1.jpg" height="50px" width="55px">&nbsp;&nbsp;Profile</a></li>
-									<br />
-									<li><a href="#">Help &amp; Support</a></li>
-									<li><a href="#" data-toggle="modal" data-target="#myModal">Logout</a></li>
-								</ul>
-							</li>
+						<li><a href="../index.php">Home</a></li>
+						<li><a href="../courses.php">Courses</a></li>
+						<li><a href="../instructors.php">Instructors</a></li>
+						<li><a href="../about.php">About</a></li>
+						<li><a href="../contact.php">Contact</a></li> 
+						&nbsp;&nbsp;&nbsp;
+						
+						<?php
+							if(isset($_SESSION['inst_id'])) {
+								echo "
+							<li class='btn-cta has-dropdown'><a href='#'><span><img src='../profile_pictures/".basename($inst_picture)."' height='15px' width='15px'>&nbsp;&nbsp;".$inst_name."</span></a>
+							<ul class='dropdown'>
+								<li><a href='../profile.php?inst_id=$inst_id'>Profile</a></li>
+								<li><a href='http://localhost/open-learning/admin/admin_dashboard.php'>Dashboard</a></li>
+								<li><a href='#'>Help &amp; Support</a></li>									
+								<li><a href='../logout.php'>Logout</a></li>
+							</ul>
+						</li>";
+						}
+					?>
 						</ul>
 					</div>
 				</div>
@@ -230,21 +262,6 @@
 							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="fh5co-register" style="background-image: url(../images/studying.jpg);">
-		<div class="overlay"></div>
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 animate-box">
-				<div class="date-counter text-center">
-					<h2>Get 400 of Online Courses for Free</h2>
-					<h3>By Mike Smith</h3>
-					<div class="simply-countdown simply-countdown-one"></div>
-					<p><strong>Limited Offer, Hurry Up!</strong></p>
-					<p><a href="#" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
 				</div>
 			</div>
 		</div>
