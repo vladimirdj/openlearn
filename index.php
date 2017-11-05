@@ -1,21 +1,22 @@
 <?php
 	
 	ini_set ('log_errors', 'on'); //Logging errors
+
 	session_start();
 	
 	require_once 'config.php';
 
 	if(isset($_SESSION['inst_id'])) {
 
-		$getinfo = "SELECT `name`, `id`, `email`, `picture` from `instructor` where `id`={$_SESSION['inst_id']}";
+		$inst_id = $_SESSION['inst_id'];
+
+		$getinfo = "SELECT `name`, `id`, `email`, `picture` from `instructor` where `id`='{$_SESSION['inst_id']}'";
 		$query = mysqli_query($link, $getinfo);
 		$row = mysqli_fetch_assoc($query);
 
 		$inst_name = $row['name'];
-		$inst_id = $row['id'];
 		$inst_email = $row['email'];
 		$inst_picture = $row['picture'];
-	
 	}
 ?>
 
@@ -138,18 +139,19 @@
 
 							<?php
 								if(isset($_SESSION['inst_id'])) {
-									echo"
+									echo "
 									<li class='btn-cta has-dropdown'><a href='#'><span><img src='profile_pictures/".basename($inst_picture)." height='15px' width='15px'>&nbsp;&nbsp;".$inst_name."</span></a>
 									<ul class='dropdown'>
-										<li><a href='profile.php?inst_id=".$inst_id.">Profile</a></li>
+										<li><a href='profile.php?inst_id=$inst_id>Profile</a></li>
+
 										<li><a href='#'>Help &amp; Support</a></li>
+										
 										<li><a href='logout.php'>Logout</a></li>
 									</ul>
 								</li>";
-
 								}
 								else {
-									echo"<li class='btn-cta' data-toggle='modal' data-target='#myModal'><a href='#'><span>Login</span></a></li>
+									echo "<li class='btn-cta' data-toggle='modal' data-target='#myModal'><a href='#'><span>Login</span></a></li>
 									
 									<li class='btn-cta'><a href='signup.php'><span>Become an Instructor</span></a></li>";
 								}
