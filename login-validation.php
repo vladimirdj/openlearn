@@ -6,6 +6,8 @@
 
     $response = array();
 
+    session_start();
+
     require_once 'config.php';
 
     $inst_email = mysqli_real_escape_string($link, $_POST['instEmail']);
@@ -23,10 +25,12 @@
 
 	// check for successful validation
     if (($execute_query) && ($isCorrectPassword)) {
-		$response['status'] = 'success';
+
+        $_SESSION['inst_id'] = $inst_id;
+		$response['status']  = 'success';
 		$response['message'] = '<span class="glyphicon glyphicon-ok"></span> &nbsp;Details verified!';
     } else {
-        $response['status'] = 'error'; // could not log in
+        $response['status']  = 'error'; // could not log in
         $response['message'] = '<span class="glyphicon glyphicon-info-sign"></span> &nbsp;Email or password is incorrect. Please try again.';
     }
 

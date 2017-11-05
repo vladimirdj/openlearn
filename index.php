@@ -1,3 +1,9 @@
+<?php
+	
+	ini_set ('log_errors', 'on'); //Logging errors
+    session_start();
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -112,7 +118,6 @@
 							<li class="active"><a href="index.php">Home</a></li>
 							<li><a href="courses.php">Courses</a></li>
 							<li><a href="instructors.php">Instructors</a></li>
-							<li><a href="#"  data-toggle="modal" data-target="#livestream">Livestream</a></li>
 							<li><a href="about.php">About</a></li>
 							<li><a href="contact.php">Contact</a></li>
 							<li class="btn-cta" data-toggle="modal" data-target="#myModal"><a href="#"><span>Login</span></a></li>
@@ -164,34 +169,6 @@
 		</div>
 	</div>
 	<!--Modal for login ends-->
-
-
-	<!-- Modal - For Livestream-->
-	<div class="modal fade" id="livestream" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="Livestream_modal">Join Livestream</h4>
-				</div>
-
-				<div class="modal-body">
-					<form action="livestream.php" method="get">
-						<div class="form-group">
-								<label for="Code_Livestream">Enter the invite code of the Livestream you want to join</label>
-								<input type="text" class="form-control" id="livestream_link" aria-describedby="emailHelp" placeholder="Livestream Invite Code" required>
-							</div>
-				</div>
-
-				<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<input type="submit" value="Join Livestream" class="btn btn-primary">
-				</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Modal for livestream ends-->
 
 
 	<aside id="fh5co-hero">
