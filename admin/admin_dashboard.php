@@ -103,10 +103,9 @@
 							<li><a href="contact.php">Contact</a></li> &nbsp;&nbsp;&nbsp;
 							<li class="btn-cta has-dropdown"><a href="#"><span><!--<i class="icon-head"></i>&nbsp;--><img src="../images/person1.jpg" height="15px" width="15px">&nbsp;&nbsp;Martin Anderson</span></a>
 								<ul class="dropdown">
-									<li><a href="../profile.php"><img src="../images/person1.jpg" height="50px" width="50px">&nbsp;&nbsp;Profile</a></li>
-									<br />
+									<li><a href="../profile.php">Profile</a></li>
 									<li><a href="#">Help &amp; Support</a></li>
-									<li><a href="#" data-toggle="modal" data-target="#myModal">Logout</a></li>
+									<li><a href="../logout.php">Logout</a></li>
 								</ul>
 							</li>
 						</ul>

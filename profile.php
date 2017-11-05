@@ -6,9 +6,9 @@
 
 		ini_set ('log_errors', 'on');
 
-		$instructor_email = $_GET['instructor_email'];
+		$instructor_id = $_GET['inst_id'];
 
-		$getinfo = "SELECT `name`, `id`, `email`, `website`, `twitter`, `picture`, `about` from `instructor` where (`email`='$instructor_email')";
+		$getinfo = "SELECT `name`, `id`, `email`, `website`, `twitter`, `picture`, `about` from `instructor` where (`id`='$instructor_id')";
 		$query = mysqli_query($link, $getinfo);
 		$row = mysqli_fetch_assoc($query);
 
