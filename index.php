@@ -140,9 +140,9 @@
 							<?php
 								if(isset($_SESSION['inst_id'])) {
 									echo "
-									<li class='btn-cta has-dropdown'><a href='#'><span><img src='profile_pictures/".basename($inst_picture)." height='15px' width='15px'>&nbsp;&nbsp;".$inst_name."</span></a>
+									<li class='btn-cta has-dropdown'><a href='#'><span><img src='profile_pictures/".basename($inst_picture)."' height='15px' width='15px'>&nbsp;&nbsp;".$inst_name."</span></a>
 									<ul class='dropdown'>
-										<li><a href='profile.php?inst_id=$inst_id>Profile</a></li>
+										<li><a href='profile.php?inst_id=$inst_id'>Profile</a></li>
 
 										<li><a href='#'>Help &amp; Support</a></li>
 										
