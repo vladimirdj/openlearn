@@ -6,6 +6,7 @@
 <?php
 
     ini_set ('log_errors', 'on'); //Logging errors
+    
     session_start();
 
     if(isset($_SESSION['inst_id'])) {

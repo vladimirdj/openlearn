@@ -11,6 +11,41 @@
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="freehtml5.co" />
 
+	<?php
+	
+	ini_set ('log_errors', 'on'); //Logging errors
+
+	session_start();
+	
+	require_once '../config.php';
+
+	if(isset($_SESSION['inst_id'])) {
+
+		$inst_id = $_SESSION['inst_id'];
+
+		$getinfo = "SELECT `name`, `id`, `email`, `picture` from `instructor` where `id`='{$_SESSION['inst_id']}'";
+		$query = mysqli_query($link, $getinfo);
+		$row = mysqli_fetch_assoc($query);
+
+		$inst_name = $row['name'];
+		$inst_email = $row['email'];
+		$inst_picture = $row['picture'];
+
+		//Getting instructor's first name (accessible as zeroth index)
+		$get_name = explode(' ',trim($inst_name));
+		$inst_first_name = $get_name[0];
+	}
+	else
+	{
+		//Redirect the instructor to login page if he/she is not logged in.
+		echo "
+			<script type='text/javascript'>
+				window.location.href = '../login.php';
+			</script>
+		";
+	}
+?>
+
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
@@ -86,28 +121,28 @@
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="index.php">Home</a></li>
+							<li><a href="../index.php">Home</a></li>
 							<li><a href="../courses.php">Courses</a></li>
-							<li><a href="../teacher.php">Teacher</a></li>
+							<li><a href="../instructors.php">Instructors</a></li>
 							<li><a href="../about.php">About</a></li>
-							<li><a href="../pricing.php">Pricing</a></li>
-							<li class="has-dropdown">
-								<a href="../blog.php">Blog</a>
-								<ul class="dropdown">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
+							<li><a href="../contact.php">Contact</a></li> 
+							&nbsp;&nbsp;&nbsp;
+							
+							<?php
+								if(isset($_SESSION['inst_id'])) {
+									echo "
+								<li class='btn-cta has-dropdown'><a href='#'><span><img src='../profile_pictures/".basename($inst_picture)."' height='15px' width='15px'>&nbsp;&nbsp;".$inst_name."</span></a>
+								<ul class='dropdown'>
+									<li><a href='../profile.php?inst_id=$inst_id'>Profile</a></li>
+
+									<li><a href='#'>Help &amp; Support</a></li>
+									
+									<li><a href='../logout.php'>Logout</a></li>
 								</ul>
-							</li>
-							<li><a href="contact.php">Contact</a></li> &nbsp;&nbsp;&nbsp;
-							<li class="btn-cta has-dropdown"><a href="#"><span><!--<i class="icon-head"></i>&nbsp;--><img src="../images/person1.jpg" height="15px" width="15px">&nbsp;&nbsp;Martin Anderson</span></a>
-								<ul class="dropdown">
-									<li><a href="../profile.php">Profile</a></li>
-									<li><a href="#">Help &amp; Support</a></li>
-									<li><a href="../logout.php">Logout</a></li>
-								</ul>
-							</li>
+							</li>";
+							}
+						?>
+
 						</ul>
 					</div>
 				</div>
@@ -127,8 +162,9 @@
 		   			<div class="row">
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
-								   <h1 class="heading-section">Hi, Martin!</h1>
-								   <span><img src="../images/person1.jpg" class="img-circle img-responsive text-center" style="height: 150px; width: 150px; margin: auto;" alt="Cinque Terre"> </span> <br>
+								   <h1 class="heading-section">Hi, <?php echo $inst_first_name; ?>!</h1>
+								   <span> <?php echo "<img src='../profile_pictures/".basename($inst_picture)."' class='img-circle img-responsive text-center' style='height: 150px; width: 150px; margin: auto;' alt='No image'>"; ?></span> <br>
+								   <br>
 								   <h2>Let's begin!&nbsp;Please choose from the following options to get started.<br>
 										In case you need any help, feel free to <a href="../contact.php">contact us </a> any time.
 									</h2>
@@ -171,17 +207,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="fa fa-video-camera"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Go Live!</a></h3>
-							<p>Start a livestream on a topic which you would like to explain live.</p>
-						</div>
-					</div>
-				</div>
+			
 				<div class="col-md-3 col-sm-6 text-center animate-box">
 					<div class="services">
 						<span class="icon">
@@ -190,6 +216,18 @@
 						<div class="desc">
 							<h3><a href="#">View Messages</a></h3>
 							<p>View and reply to the messages sent by your students.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="fa fa-question"></i>
+						</span>
+						<div class="desc">
+							<h3><a href="#">Get Help</a></h3>
+							<p>Contact us in case you need any help. We usually reply within 24 hours.</p>
 						</div>
 					</div>
 				</div>

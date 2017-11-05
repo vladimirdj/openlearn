@@ -5,6 +5,22 @@
     <head>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet" type="text/css" href="css/login.css">
+
+        <?php
+
+            ini_set ('log_errors', 'on'); //Logging errors
+
+            session_start();
+
+            if(isset($_SESSION['inst_id'])) {
+                echo "
+                    <script type='text/javascript'>
+				        window.location.href = 'admin/admin_dashboard.php';
+			        </script>                
+                ";
+            }
+
+        ?>
     </head>
 
 
