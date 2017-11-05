@@ -6,6 +6,10 @@
 
 		ini_set ('log_errors', 'on');
 
+		session_start();
+
+		$inst_here_id = $_SESSION['inst_id'];
+
 		$instructor_id = $_GET['inst_id'];
 
 		$getinfo = "SELECT `name`, `id`, `email`, `website`, `twitter`, `picture`, `about` from `instructor` where (`id`='$instructor_id')";
@@ -137,10 +141,20 @@
 						<li><a href="contact.php">Contact</a></li>
 						<?php
 						if(isset($_SESSION['inst_id'])) {
+
+							//For showing the logged in instructor's details in the nav bar //
+							
+							$getinfoin = "SELECT `name`, `id`, `email`, `picture` from `instructor` where `id`='{$_SESSION['inst_id']}'";
+							$queryin = mysqli_query($link, $getinfoin);
+							$rowin = mysqli_fetch_assoc($queryin);
+					
+							$inst_name_here = $rowin['name'];
+							$inst_email_here = $rowin['email'];
+							$inst_picture_here = $rowin['picture'];
 							echo "
-							<li class='btn-cta has-dropdown'><a href='#'><span><img src='profile_pictures/".basename($inst_picture)."' height='15px' width='15px'>&nbsp;&nbsp;".$inst_name."</span></a>
+							<li class='btn-cta has-dropdown'><a href='#'><span><img src='profile_pictures/".basename($inst_picture_here)."' height='15px' width='15px'>&nbsp;&nbsp;".$inst_name_here."</span></a>
 							<ul class='dropdown'>
-								<li><a href='profile.php?inst_id=$inst_id'>Profile</a></li>
+								<li><a href='profile.php?inst_id=$inst_here_id'>Profile</a></li>
 
 								<li><a href='#'>Help &amp; Support</a></li>
 								
@@ -251,7 +265,17 @@
 
             	<p class="lead"><?php echo "$inst_about"; ?><br><br><br>
 
-            	<button class="btn btn-primary" data-toggle="modal" data-target="#messageModal" style="color: white;"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Send Message</button><br><br>
+				<?php
+					
+					//Hack to not show "Send Message" button for the logged in instructor's profile
+					if($inst_id === $_SESSION['inst_id']) {
+						echo "";						
+					}
+					else {
+						echo "<button class='btn btn-primary' data-toggle='modal' data-target='#messageModal' style='color: white;'><i class='fa fa-envelope'></i>&nbsp;&nbsp;Send Message</button><br><br>";
+					}
+
+				?>
 
             	<div>
                 	<h5>Follow me on</h5>
