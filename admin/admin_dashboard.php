@@ -164,7 +164,7 @@
 								   <h1 class="heading-section">Hi, <?php echo $inst_first_name; ?>!</h1>
 								   <span> <?php echo "<img src='../profile_pictures/".basename($inst_picture)."' class='img-circle img-responsive text-center' style='height: 150px; width: 150px; margin: auto;' alt='No image'>"; ?></span> <br>
 								   <br>
-								   <h2>Let's begin!&nbsp;Please choose from the following options to get started.<br>
+								   <h2>Let's get started!&nbsp;Please choose from the following options to get started.<br>
 										In case you need any help, feel free to <a href="../contact.php">contact us </a> any time.
 									</h2>
 			   				</div>
