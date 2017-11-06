@@ -233,27 +233,27 @@
 						<br>Kindly note that all the fields are mandatory unless stated otherwise.</p> <br>
 						
 						
-						<form action="registet-course.php" action="POST">
+						<form action="register-course.php" method="POST">
 							<div class="row form-group">
 								<div class="col-md-12">
 									<i class="fa fa-graduation-cap"></i>&nbsp;&nbsp;Course Name
-									<input type="text" id="coursename" class="form-control" placeholder="Enter the course name">
+									<input type="text" id="course-name" name="course-name" class="form-control" placeholder="Enter the course name" required>
 								</div>
 							</div>
 
 							<div class="row form-group">
 								<div class="col-md-12">
 									<i class="fa fa-book"></i>&nbsp;&nbsp;Course Category
-									<select class="form-control" id="course-category">
+									<select class="form-control" name="course-category" id="course-category" required>
 										<option>-- Choose course category --</option>
-      									<option id="business" value="Business">Business</option>
-      									<option id="health" value="Health &amp; Psychology">Health &amp; Psychology</option>
-      									<option id="accounting" value="Accounting">Accounting</option>
-      									<option id="science" value="Science &amp; Technology">Science &amp; Technology</option>
-	      								<option id="art" value=""Art &amp; Media>Art &amp; Media</option>
-										<option id="real-estate" value="Real Estate">Real Estate</option>
-										<option id="language" value="Language">Language</option>
-										<option id="programming" value="Web &amp; Programming">Web &amp; Programming</option>
+      									<option value="Business">Business</option>
+      									<option value="Health and Psychology">Health &amp; Psychology</option>
+      									<option value="Accounting">Accounting</option>
+      									<option value="Science and Technology">Science &amp; Technology</option>
+	      								<option value="Artand Media">Art &amp; Media</option>
+										<option value="Real Estate">Real Estate</option>
+										<option value="Language">Language</option>
+										<option value="Web and Programming">Web &amp; Programming</option>
     								</select>
 								</div>
 							</div>
@@ -261,13 +261,13 @@
 							<div class="row form-group">
 								<div class="col-md-12">
 									<i class="fa fa-pencil"></i>&nbsp;&nbsp;Course Information
-									<textarea name="about" id="about" cols="30" rows="15" class="form-control" placeholder="Enter a detailed information about the course." maxlength="300"></textarea>
+									<textarea required name="course-info" id="course-info" cols="30" rows="15" class="form-control" placeholder="Enter a detailed information about the course." maxlength="300"></textarea>
 								</div>
 							</div>
 
 							<div class="row form-check form-group">
 								<div class="col-md-12">
-	    						<input class="form-check-input" type="checkbox" value="agree">
+	    						<input class="form-check-input" type="checkbox" required value="agree">
 	    						&nbsp;&nbsp;I agree to the <a href="#">terms and conditions</a>.
 								</div>
 							</div>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 04, 2017 at 10:00 PM
+-- Generation Time: Nov 07, 2017 at 01:29 AM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -42,8 +42,8 @@ CREATE TABLE `instructor` (
 --
 
 INSERT INTO `instructor` (`name`, `id`, `email`, `password`, `website`, `twitter`, `picture`, `about`) VALUES
-('Subhadeep Dey', '2feeefg', 'contact.sdey@gmail.com', 'df4eeeeee442', 'https://google.com', 'https://twitter.com', '/var/www/ff.jpg', 'I am a very good boy'),
-('Subhadeep Dey', '59fda3768bccb', 'contact.sdey@gmail.co', '$2y$10$I2z9mlcitttir8x1oXqvb.508kSVXm0vHVPszyvp4CdBUabBl96pS', '', '', '/var/www/html/open-learning/profile_pictures/sidebar-21296047125.jpg', 'I am a very good boy, you know. very foo');
+('Subhadeep Dey', '59fda3768bccb', 'contact.sdey@gmail.co', '$2y$10$I2z9mlcitttir8x1oXqvb.508kSVXm0vHVPszyvp4CdBUabBl96pS', '', '', '/var/www/html/open-learning/profile_pictures/picture3.jpg', 'I am a very good boy, you know. very foo'),
+('Thomas Jaguar', '59fe0aee0db8d', 'thomas@jaguar.com', '$2y$10$jku1ACArNqamrymluV.NbeZAsPP5c8m5AY7t.1X2RqHw41z.iiEHS', 'https://www.jaguar.com', 'https://twitter.com/jaguar', '/var/www/html/open-learning/profile_pictures/person2.jpg', 'I am the CEO of Jaguar Corp.\r\n\r\nI love passionate people, right? You are passionate too I hope.');
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,11 @@ CREATE TABLE `messages` (
 
 INSERT INTO `messages` (`message_id`, `student_name`, `student_email`, `student_message`, `message_date`, `instructor_id`) VALUES
 ('59fde67ba646b', 'dfdf dfdf ', 'ff@i.com', 'dfkndf df df df', '2017-11-04 21:40:35', '59fda3768bccb'),
-('59fdea82d493e', 'Suhka Isn', 'sukha@y.com', 'sdshd hrrt rthrr', '2017-11-04 21:57:46', '59fda3768bccb');
+('59fdea82d493e', 'Suhka Isn', 'sukha@y.com', 'sdshd hrrt rthrr', '2017-11-04 21:57:46', '59fda3768bccb'),
+('59ff5647b5027', 'Hi there', 'iams@i.com', 'Hi ther esdsjd sd sd', '2017-11-05 23:49:51', '59fe0aee0db8d'),
+('59ff5ccd5c2f2', 'ddff', 'dfd@m.com', 'ddfdf f df', '2017-11-06 00:17:41', '59fe0aee0db8d'),
+('59ff5d33b6d56', 'dfddf', 'sdsd@i.com', 'dfdf dfdfdf df df', '2017-11-06 00:19:23', '59fe0aee0db8d'),
+('59ff5e49f11e5', 'Shi rhr', 'dfdf@i.co', 'qsdsdsddfdf', '2017-11-06 00:24:01', '59fda3768bccb');
 
 --
 -- Indexes for dumped tables
