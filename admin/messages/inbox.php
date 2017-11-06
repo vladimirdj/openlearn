@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Novus Admin Panel an Admin Panel Category Flat Bootstrap Responsive Website Template | Inbox :: w3layouts</title>
+<title>Messages - OpenLearn</title>
 
 <?php
 
@@ -15,7 +15,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	session_start();
 
-	require_once '../config.php';
+	require_once '../../config.php';
 
 	if(isset($_SESSION['inst_id'])) {
 
@@ -43,6 +43,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		";
 	}
 ?>
+
+<link rel="shortcut icon" href="../../favicon.png" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -84,79 +86,23 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
 					<ul class="nav" id="side-menu">
 						<li>
-							<a href="index.html"><i class="fa fa-home nav_icon"></i>Dashboard</a>
+							<a href="../admin_dashboard.php"><i class="fa fa-home nav_icon"></i>Dashboard</a>
 						</li>
 						<li>
-							<a href="#"><i class="fa fa-cogs nav_icon"></i>Components <span class="nav-badge">12</span> <span class="fa arrow"></span></a>
+							<a href="#"><i class="fa fa-cogs nav_icon"></i>Course Management<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
-									<a href="grids.html">Grid System</a>
+									<a href="../create-course.php"><i class="fa fa-plus nav_icon"></i>&nbsp;Add Course</a>
 								</li>
 								<li>
-									<a href="media.html">Media Objects</a>
+									<a href="../course-manangement.php"><i class="fa fa-pencil nav_icon"></i>Manage Exisiting Courses</a>
 								</li>
 							</ul>
 							<!-- /nav-second-level -->
 						</li>
-						<li class="">
-							<a href="#"><i class="fa fa-book nav_icon"></i>UI Elements <span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level collapse">
-								<li>
-									<a href="general.html">General<span class="nav-badge-btm">08</span></a>
-								</li>
-								<li>
-									<a href="typography.html">Typography</a>
-								</li>
-							</ul>
-							<!-- /nav-second-level -->
-						</li>
+						
 						<li>
-							<a href="widgets.html"><i class="fa fa-th-large nav_icon"></i>Widgets <span class="nav-badge-btm">08</span></a>
-						</li>
-						<li>
-							<a href="#"><i class="fa fa-envelope nav_icon"></i>Mailbox<span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level collapse">
-								<li>
-									<a href="inbox.html">Inbox <span class="nav-badge-btm">05</span></a>
-								</li>
-								<li>
-									<a href="compose.html">Compose email</a>
-								</li>
-							</ul>
-							<!-- //nav-second-level -->
-						</li>
-						<li>
-							<a href="tables.html"><i class="fa fa-table nav_icon"></i>Tables <span class="nav-badge">05</span></a>
-						</li>
-						<li>
-							<a href="#"><i class="fa fa-check-square-o nav_icon"></i>Forms<span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level collapse">
-								<li>
-									<a href="forms.html">Basic Forms <span class="nav-badge-btm">07</span></a>
-								</li>
-								<li>
-									<a href="validation.html">Validation</a>
-								</li>
-							</ul>
-							<!-- //nav-second-level -->
-						</li>
-						<li>
-							<a href="#"><i class="fa fa-file-text-o nav_icon"></i>Pages<span class="nav-badge-btm">02</span><span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level collapse">
-								<li>
-									<a href="login.html">Login</a>
-								</li>
-								<li>
-									<a href="signup.html">SignUp</a>
-								</li>
-								<li>
-									<a href="blank-page.html">Blank Page</a>
-								</li>
-							</ul>
-							<!-- //nav-second-level -->
-						</li>
-						<li>
-							<a href="charts.html" class="chart-nav"><i class="fa fa-bar-chart nav_icon"></i>Charts <span class="nav-badge-btm pull-right">new</span></a>
+							<a href="widgets.html"><i class="fa fa-question-circle nav_icon"></i>Help &amp; Support</a>
 						</li>
 					</ul>
 					<div class="clearfix"> </div>
@@ -172,10 +118,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<button id="showLeftPush"><i class="fa fa-bars"></i></button>
 				<!--toggle button end-->
 				<!--logo -->
-				<div class="logo">
-					<a href="index.html">
-						<h1>NOVUS</h1>
-						<span>AdminPanel</span>
+				<div class="logo" style="background-color: white;">
+					<a href="../../index.php">
+						<h1><font color="black">OPEN</font><font color="blue">LEARN</font></h1>
+						<span><font color="black">Admin Panel</font></span>
 					</a>
 				</div>
 				<!--//logo-->
@@ -194,138 +140,6 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="header-right">
 				<div class="profile_details_left"><!--notifications of menu start -->
-					<ul class="nofitications-dropdown">
-						<li class="dropdown head-dpdn">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">3</span></a>
-							<ul class="dropdown-menu">
-								<li>
-									<div class="notification_header">
-										<h3>You have 3 new messages</h3>
-									</div>
-								</li>
-								<li><a href="#">
-								   <div class="user_img"><img src="images/1.png" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet</p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								   <div class="clearfix"></div>	
-								</a></li>
-								<li class="odd"><a href="#">
-									<div class="user_img"><img src="images/2.png" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet </p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								  <div class="clearfix"></div>	
-								</a></li>
-								<li><a href="#">
-								   <div class="user_img"><img src="images/3.png" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet </p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								   <div class="clearfix"></div>	
-								</a></li>
-								<li>
-									<div class="notification_bottom">
-										<a href="#">See all messages</a>
-									</div> 
-								</li>
-							</ul>
-						</li>
-						<li class="dropdown head-dpdn">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">3</span></a>
-							<ul class="dropdown-menu">
-								<li>
-									<div class="notification_header">
-										<h3>You have 3 new notification</h3>
-									</div>
-								</li>
-								<li><a href="#">
-									<div class="user_img"><img src="images/2.png" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet</p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								  <div class="clearfix"></div>	
-								 </a></li>
-								 <li class="odd"><a href="#">
-									<div class="user_img"><img src="images/1.png" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet </p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								   <div class="clearfix"></div>	
-								 </a></li>
-								 <li><a href="#">
-									<div class="user_img"><img src="images/3.png" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet </p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								   <div class="clearfix"></div>	
-								 </a></li>
-								 <li>
-									<div class="notification_bottom">
-										<a href="#">See all notifications</a>
-									</div> 
-								</li>
-							</ul>
-						</li>	
-						<li class="dropdown head-dpdn">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><span class="badge blue1">15</span></a>
-							<ul class="dropdown-menu">
-								<li>
-									<div class="notification_header">
-										<h3>You have 8 pending task</h3>
-									</div>
-								</li>
-								<li><a href="#">
-									<div class="task-info">
-										<span class="task-desc">Database update</span><span class="percentage">40%</span>
-										<div class="clearfix"></div>	
-									</div>
-									<div class="progress progress-striped active">
-										<div class="bar yellow" style="width:40%;"></div>
-									</div>
-								</a></li>
-								<li><a href="#">
-									<div class="task-info">
-										<span class="task-desc">Dashboard done</span><span class="percentage">90%</span>
-									   <div class="clearfix"></div>	
-									</div>
-									<div class="progress progress-striped active">
-										 <div class="bar green" style="width:90%;"></div>
-									</div>
-								</a></li>
-								<li><a href="#">
-									<div class="task-info">
-										<span class="task-desc">Mobile App</span><span class="percentage">33%</span>
-										<div class="clearfix"></div>	
-									</div>
-								   <div class="progress progress-striped active">
-										 <div class="bar red" style="width: 33%;"></div>
-									</div>
-								</a></li>
-								<li><a href="#">
-									<div class="task-info">
-										<span class="task-desc">Issues fixed</span><span class="percentage">80%</span>
-									   <div class="clearfix"></div>	
-									</div>
-									<div class="progress progress-striped active">
-										 <div class="bar  blue" style="width: 80%;"></div>
-									</div>
-								</a></li>
-								<li>
-									<div class="notification_bottom">
-										<a href="#">See all pending tasks</a>
-									</div> 
-								</li>
-							</ul>
-						</li>	
-					</ul>
-					<div class="clearfix"> </div>
 				</div>
 				<!--notification menu end -->
 				<div class="profile_details">		
@@ -333,20 +147,20 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 						<li class="dropdown profile_details_drop">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<div class="profile_img">	
-									<span class="prfil-img"><img src="images/a.png" alt=""> </span> 
+									<span class="prfil-img"><?php echo "<img src='../../profile_pictures/".basename($inst_picture)."' class='img-circle img-responsive text-center' style='height: 50px; width: 50px; margin: auto;' alt='No image'>"; ?></span> 
 									<div class="user-name">
-										<p>Wikolia</p>
-										<span>Administrator</span>
+										<p><?php echo $inst_name; ?></p>
+										<span>Instructor</span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
 									<i class="fa fa-angle-up lnr"></i>
 									<div class="clearfix"></div>	
-								</div>	
+								</div>
 							</a>
 							<ul class="dropdown-menu drp-mnu">
-								<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
-								<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li> 
-								<li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+								<?php echo "<li><a href='../../profile.php?inst_id=$inst_id'><i class='fa fa-user'></i> Profile</a> </li>"; 
+								echo "<li><a href='../../logout.php'><i class='fa fa-sign-out'></i> Logout</a> </li>"; 
+								?>
 							</ul>
 						</li>
 					</ul>
@@ -360,42 +174,16 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		<div id="page-wrapper">
 			<div class="main-page">
 				<h3 class="title1">Inbox</h3>
-				<div class="inbox-page">
-					<h4>Today</h4>
-					<div class="inbox-row widget-shadow" id="accordion" role="tablist" aria-multiselectable="true">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i1.png" alt=""/></div>
-						<div class="mail mail-name"> <h6>Janiya</h6> </div>
+				<div class="inbox-page" style="width: 900px; margin:auto;">
+					
+					<div class='inbox-row widget-shadow' id='accordion' role='tablist' aria-multiselectable='true'>
+						<div class='mail'> <input type='checkbox' class='checkbox'> </div>
+						<div class="mail"><img src="images/user24.png" alt=""/></div>
+						<div class="mail mail-name"> <h6>Janiya Marudffdfh dfYera</h6> </div>
 						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							<div class="mail"><p>Nullam quis risus eget urna mollis ornare</p></div>
+							<div class="mail"><p>Enquiry Regarding Course</p></div>
 						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
+						
 						<div class="mail-right"><p>30 Dec</p></div>
 						<div class="clearfix"> </div>
 						<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
@@ -408,800 +196,15 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</div>
-					<div class="inbox-row widget-shadow" id="accordion1" role="tablist" aria-multiselectable="true">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i2.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Walsh</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-							<div class="mail"><p>Mollis nullam quis risus eget ornare</p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>30 Dec</p></div>
-						<div class="clearfix"> </div>	
-						<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-							<div class="mail-body">
-								<p>Quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i3.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Skolski</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapsethree">
-							<div class="mail"><p>Ornare vel eu leo nullam quis urna mollis </p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>30 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-							<div class="mail-body">
-								<p>Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i4.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Emoori</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-							<div class="mail"><p>Vely Ornare  leo nullam quis risus mollis </p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapsefour">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>30 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-							<div class="mail-body">
-								<p> Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="inbox-page row">
-					<h4>Yesterday Messages</h4>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i2.png" alt=""/></div>
-						<div class="mail mail-name"><h6> Walsh </h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-							<div class="mail"><p>Mollis nullam quis risus eget urna  ornare</p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>29 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-							<div class="mail-body">
-								<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch Nihil.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i1.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Janiya</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapsesix">
-							<div class="mail"><p>Nullam quis risus eget urna mollis ornare</p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>29 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingsix">
-							<div class="mail-body">
-								<p>Officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i3.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Skolski</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSev" aria-expanded="true" aria-controls="collapsesev">
-							<div class="mail"><p>Ornare vel eu leo nullam quis urna mollis </p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSev" aria-expanded="true" aria-controls="collapseSev">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>29 Dec</p></div>
-						<div class="clearfix"> </div>	
-						<div id="collapseSev" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingsev">
-							<div class="mail-body">
-								<p>wolf moon officia aute, non cupidatat skateboard dolor brunch aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i4.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Emoori</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
-							<div class="mail"><p>Vely Ornare  leo nullam eget urna mollis </p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>29 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight">
-							<div class="mail-body">
-								<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="inbox-page row">
-					<h4>Older Messages</h4>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i2.png" alt=""/></div>
-						<div class="mail mail-name"><h6> Walsh</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="true" aria-controls="collapsenine">
-							<div class="mail"><p>Mollis nullam quis risus ornare vel leo</p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>29 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingnine">
-							<div class="mail-body">
-								<p>Skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i1.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Janiya</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
-							<div class="mail"><p>Nullam quis risus mollis ornare leo</p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>28 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingten">
-							<div class="mail-body">
-								<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i3.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Skolski</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="true" aria-controls="collapse11">
-							<div class="mail"><p>Ornare vel quis risus eget urna mollis </p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="true" aria-controls="collapse11">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>28 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
-							<div class="mail-body">
-								<p>Nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i4.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Emoori</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="true" aria-controls="collapse12">
-							<div class="mail"><p>Vely Ornare  leo nullam quis risus eget </p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="true" aria-controls="collapse12">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>27 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
-							<div class="mail-body">
-								<p>Anim pariatur cliche repreh enderit brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i1.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Janiya</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="true" aria-controls="collapse13">
-							<div class="mail"><p>Vely Ornare quis risus eget urna mollis </p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse13" aria-expanded="true" aria-controls="collapse13">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>26 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
-							<div class="mail-body">
-								<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon temsunt </p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i3.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Skolski</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse14" aria-expanded="true" aria-controls="collapse14">
-							<div class="mail"><p>Vely Ornare  leo nullam quis risus eget </p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="true" aria-controls="collapse15">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>26 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapse14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading14">
-							<div class="mail-body">
-								<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i1.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Janiya</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="true" aria-controls="collapse15">
-							<div class="mail"><p>Nullam quis risus mollis ornare vel eu leo</p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse15" aria-expanded="true" aria-controls="collapse15">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>26 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapse15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading15">
-							<div class="mail-body">
-								<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i2.png" alt=""/></div>
-						<div class="mail mail-name"><h6> Walsh</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="true" aria-controls="collapse16">
-							<div class="mail"><p>Mollis nullam quis risus eget urna</p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse16" aria-expanded="true" aria-controls="collapse16">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>25 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
-							<div class="mail-body">
-								<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua putica sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i3.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Skolski</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse17" aria-expanded="true" aria-controls="collapse17">
-							<div class="mail"><p>Ornare vel eu leo nullam quis urna mollis </p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse17" aria-expanded="true" aria-controls="collapse17">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>25 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
-							<div class="mail-body">
-								<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="inbox-row widget-shadow">
-						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
-						<div class="mail"><img src="images/i4.png" alt=""/></div>
-						<div class="mail mail-name"><h6>Emoori</h6></div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="true" aria-controls="collapse18">
-							<div class="mail"><p>Vely Ornare  leo nullam quis risus mollis </p></div>
-						</a>
-						<div class="mail-right">
-							<div class="dropdown">
-								<a href="#"  data-toggle="dropdown" aria-expanded="false">
-									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-								</a>
-								<ul class="dropdown-menu float-right">
-									<li>
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse18" aria-expanded="true" aria-controls="collapse18">
-											<i class="fa fa-reply mail-icon"></i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#" title="">
-											<i class="fa fa-download mail-icon"></i>
-											Archive
-										</a>
-									</li>
-									<li>
-										<a href="#" class="font-red" title="">
-											<i class="fa fa-trash-o mail-icon"></i>
-											Delete
-										</a>
-									</li>
-								</ul>
-							</div> 
-						</div>
-						<div class="mail-right"><p>10 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading18">
-							<div class="mail-body">
-								<p>Laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-					</div>
+
+					
+				
 				</div>
 			</div>
 		</div>
 		<!--footer-->
 		<div class="footer">
-		   <p>&copy; 2016 Novus Admin Panel. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>
+		   <p>&copy; 2017, OpenLearn, Inc. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>
 		</div>
         <!--//footer-->
 	</div>

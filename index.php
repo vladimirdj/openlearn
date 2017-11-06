@@ -142,11 +142,10 @@
 									echo "
 									<li class='btn-cta has-dropdown'><a href='#'><span><img src='profile_pictures/".basename($inst_picture)."' height='15px' width='15px'>&nbsp;&nbsp;".$inst_name."</span></a>
 									<ul class='dropdown'>
-										<li><a href='profile.php?inst_id=$inst_id'>Profile</a></li>
-
-										<li><a href='#'>Help &amp; Support</a></li>
-										
-										<li><a href='logout.php'>Logout</a></li>
+										<li><a href='profile.php?inst_id=$inst_id'><i class='fa fa-user'></i>&nbsp;&nbsp;Profile</a></li>
+										<li><a href='http://localhost/open-learning/admin/admin_dashboard.php'><i class='fa fa-tachometer'></i>&nbsp;&nbsp;Dashboard</a></li>
+										<li><a href='#'><i class='fa fa-question-circle'></i>&nbsp;&nbsp;Help &amp; Support</a></li>									
+										<li><a href='logout.php'><i class='fa fa-sign-out'></i>&nbsp;&nbsp;Logout</a></li>
 									</ul>
 								</li>";
 								}
