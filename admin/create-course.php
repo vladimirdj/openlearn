@@ -15,9 +15,9 @@
 	
 		ini_set ('log_errors', 'on'); //Logging errors
 
-		session_start();
-
 		require_once '../config.php';
+
+		session_start();
 
 		if(isset($_SESSION['inst_id'])) {
 
@@ -237,14 +237,14 @@
 							<div class="row form-group">
 								<div class="col-md-12">
 									<i class="fa fa-graduation-cap"></i>&nbsp;&nbsp;Course Name
-									<input type="text" id="course-name" name="course-name" class="form-control" placeholder="Enter the course name" required>
+									<input type="text" id="courseName" name="courseName" class="form-control" placeholder="Enter the course name" required>
 								</div>
 							</div>
 
 							<div class="row form-group">
 								<div class="col-md-12">
 									<i class="fa fa-book"></i>&nbsp;&nbsp;Course Category
-									<select class="form-control" name="course-category" id="course-category" required>
+									<select class="form-control" name="courseCategory" id="courseCategory" required>
 										<option>-- Choose course category --</option>
       									<option value="Business">Business</option>
       									<option value="Health and Psychology">Health &amp; Psychology</option>
@@ -261,13 +261,13 @@
 							<div class="row form-group">
 								<div class="col-md-12">
 									<i class="fa fa-pencil"></i>&nbsp;&nbsp;Course Information
-									<textarea required name="course-info" id="course-info" cols="30" rows="15" class="form-control" placeholder="Enter a detailed information about the course." maxlength="300"></textarea>
+									<textarea name="courseInfo" id="courseInfo" cols="30" rows="15" class="form-control" placeholder="Enter a detailed information about the course." maxlength="300" required></textarea>
 								</div>
 							</div>
 
 							<div class="row form-check form-group">
 								<div class="col-md-12">
-	    						<input class="form-check-input" type="checkbox" required value="agree">
+	    						<input class="form-check-input" type="checkbox" required>
 	    						&nbsp;&nbsp;I agree to the <a href="#">terms and conditions</a>.
 								</div>
 							</div>
