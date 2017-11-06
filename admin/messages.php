@@ -5,7 +5,7 @@
 	<link rel="shortcut icon" href="../favicon.png" />
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Admin Dashboard &mdash; Free Online Courses at OpenLearn!</title>
+	<title>Messages&mdash; Free Online Courses at OpenLearn!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -161,7 +161,7 @@
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
 					<h1>Messages</h1>
-					<p>View and Reply to messages sent by your students</p>
+					<p>View and reply to the messages sent by your students</p>
 					<a href="admin_dashboard.php"><button class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;&nbsp;Back to Dashboard</button></a>
 				</div>
 			</div>
@@ -173,7 +173,8 @@
                                     <th>Sent Date &amp; Time</th>  
                                     <th>Name</th>  
                                     <th>Email</th>  
-                                    <th>Messsage</th>
+									<th>Messsage</th>
+									<th>Reply</th>
                                </tr>  
                           </thead>  
 
@@ -186,7 +187,8 @@
                                     <td>'.$mrow["message_date"].'</td>  
                                     <td>'.$mrow["student_name"].'</td>  
                                     <td>'.$mrow["student_email"].'</td>  
-                                    <td>'.$mrow["student_message"].'</td>  
+									<td>'.$mrow["student_message"].'</td>
+									<td><a href="mailto:'.$mrow["student_email"].'"><button class="btn btn-success align-center">Reply</button></a></td>
                                </tr>  
                                ';  
 							}
@@ -197,6 +199,8 @@
 
 	</div>
 	
+
+	<br><br><br><br><br><br>
 
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(../images/mountain.jpg);">

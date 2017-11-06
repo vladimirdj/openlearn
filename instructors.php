@@ -17,11 +17,11 @@
 		$inst_name = $row['name'];
 		$inst_email = $row['email'];
 		$inst_picture = $row['picture'];
-
-
-		//Getting info about all the instructors:
-		
 	}
+
+	//Getting info about all the instructors:
+	$getAllInfo = "SELECT * from `instructor`";
+	$queryAll = mysqli_query($link, $getAllInfo);
 ?>
 
 
@@ -97,6 +97,47 @@
 
 	</head>
 	<body>
+
+	<!-- Modal - For Login-->
+	<div class="modal fade" id="myModal" tabindex="-1" autocomplete="off" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Login to OpenLearn&nbsp;(For Instructors Only)</h4>
+				</div>
+
+				<div class="modal-body">
+					<form id="login-form" method="POST" autocomplete="off">
+						<div class="form-group">
+								<b>Email address</b>
+								<input type="email" name="instEmail" class="form-control" id="instEmail" placeholder="Enter email">
+								<span class="help-block" id="error"></span>
+							</div>
+
+							<div class="form-group">
+								<b>Password</b>
+								<input type="password" name="instPassword" class="form-control" id="instPassword" placeholder="Password">
+								<span class="help-block" id="error"></span>
+							</div>
+
+							<div class="form-check">
+								<label class="form-check-label">
+									<input type="checkbox" id="rememberMe"class="form-check-input">&nbsp;Remember me
+								</label>
+							</div>
+							<div id="errorDiv"></div> 
+				</div>
+
+				<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" id="btn-login" class="btn btn-primary">Login</button>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Modal for login ends-->
 		
 	<div class="fh5co-loader"></div>
 	
@@ -184,20 +225,21 @@
 			<div class="row">
 
 			<?php
-				echo '<div class="col-md-3 animate-box text-center">
-					<div class="staff">
-						<div class="staff-img" style="background-image: url(images/staff-1.jpg);">
-							<ul class="fh5co-social">
-								<li><a href="#"><i class="icon-facebook2"></i></a></li>
-								<li><a href="#"><i class="icon-twitter2"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-								<li><a href="#"><i class="icon-github"></i></a></li>
-							</ul>
+
+				while ($fetch_row = mysqli_fetch_assoc($queryAll)) {
+					echo '<div class="col-md-3 animate-box text-center">
+						<div class="staff">
+							<div class="staff-img" style="background-image: url(profile_pictures/'.basename($fetch_row['picture']).');">
+								<ul class="fh5co-social">
+									<li><a target="_blank" href="'.$fetch_row['twitter'].'" ><i class="icon-twitter2"></i></a></li>
+									<li><a target="_blank" href="'.$fetch_row['website'].'" ><i class="fa fa-globe"></i></a></li>
+								</ul>
+							</div>
+							<h3><a target="_blank" href="profile.php?inst_id='.$fetch_row['id'].'">'.$fetch_row['name'].'</a></h3>
+							<p>'.$fetch_row['about'].'</p>
 						</div>
-						<h3><a href="#">Mike Smith</a></h3>
-						<p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.</p>
-					</div>
-				</div>';
+					</div>';
+				}
 
 				?>
 
@@ -205,7 +247,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-register" style="background-image: url(images/img_bg_2.jpg);">
+	<div id="fh5co-register" style="background-image: url(images/testim.jpg);">
 		<div class="overlay"></div>
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 animate-box">
@@ -220,13 +262,13 @@
 		</div>
 	</div>
 
-	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
+	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/teacher.png);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row row-pb-md">
 				<div class="col-md-3 fh5co-widget">
-					<h3>About Education</h3>
-					<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+					<h3>About OpenLearn</h3>
+					<p>OpenLearn is a free online learning hub.</p>
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
 					<h3>Learning</h3>
@@ -275,7 +317,7 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
+						<small class="block">&copy; 2017, OpenLearn, Inc. All Rights Reserved.</small> 
 						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> &amp; <a href="https://www.pexels.com/" target="_blank">Pexels</a></small>
 					</p>
 				</div>
@@ -290,7 +332,12 @@
 	</div>
 	
 	<!-- jQuery -->
+	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
+	<script src="assets/jquery.validate.min.js"></script>
+	<script src="js/additional-methods.js"></script>
+	<script src="js/extension.js"></script> <!--Message is validated and sent-->
+	<script src="login.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
@@ -312,6 +359,7 @@
 	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<script src="login.js"></script>
 	<script>
     var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 

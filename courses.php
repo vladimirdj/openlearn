@@ -221,7 +221,7 @@
 						</a>
 						<div class="desc">
 							<h3><a href="#">Web Master</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<p>Dignissimos aspeffguundf df dmfn dfdfbd nfb dfdfdfdfdf dfdf df dfdfdfhjdfhkdsjhkjhfkjefhsriores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
 						</div>
 					</div>

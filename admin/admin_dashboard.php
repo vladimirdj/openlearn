@@ -90,6 +90,30 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+
+	<style>
+		.modal {
+			text-align: center;
+			padding: 0!important;
+			}
+
+			.modal:before {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+			margin-right: -4px;
+			}
+
+			.modal-dialog {
+			display: inline-block;
+			text-align: left;
+			vertical-align: middle;
+			}
+
+
+	</style>
+
 	</head>
 	<body>
 
@@ -136,7 +160,7 @@
 									<li><a href='../profile.php?inst_id=$inst_id'><i class='fa fa-user'></i>&nbsp;&nbsp;Profile</a></li>
 									<li><a href='http://localhost/open-learning/admin/admin_dashboard.php'><i class='fa fa-tachometer'></i>&nbsp;&nbsp;Dashboard</a></li>
 									<li><a href='#'><i class='fa fa-question-circle'></i>&nbsp;&nbsp;Help &amp; Support</a></li>									
-									<li><a href='../logout.php'><i class='fa fa-sign-out'></i>&nbsp;&nbsp;Logout</a></li>
+									<li><a href='#' data-toggle='modal' data-target='#logoutModal'><i class='fa fa-sign-out'></i>&nbsp;&nbsp;Logout</a></li>
 								</ul>
 							</li>";
 							}
@@ -149,6 +173,31 @@
 			</div>
 		</div>
 	</nav>
+
+	<!-- Modal - For Logout-->
+	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Logout</h4>
+				</div>
+
+				<div class="modal-body">
+					<br>
+					<p> Do you really want to log out? </p>
+				</div>
+
+				<div class="modal-footer">
+					<form action="../logout.php">
+						<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+						<input type="submit" value="Yes" class="btn btn-primary">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Modal ends-->
 
 
 	<!-- Something to add style -->

@@ -298,7 +298,7 @@
                 <div class="row">
                     <div class="col-md-6 animate-box">
                         <div class="course">
-                            <a href="#" class="course-img" style="background-image: url(images/project-1.jpg);">
+                            <a href="#" class="course-img" style="background-image: url(images/profile-art.jpg);">
                             </a>
                             <div class="desc">
                                 <h3><a href="#">Web Master</a></h3>
@@ -309,7 +309,7 @@
                     </div>
                     <div class="col-md-6 animate-box">
                         <div class="course">
-                            <a href="#" class="course-img" style="background-image: url(images/project-2.jpg);">
+                            <a href="#" class="course-img" style="background-image: url(images/profile-art.jpg);">
                             </a>
                             <div class="desc">
                                 <h3><a href="#">Business &amp; Accounting</a></h3>
@@ -320,7 +320,7 @@
                     </div>
                     <div class="col-md-6 animate-box">
                         <div class="course">
-                            <a href="#" class="course-img" style="background-image: url(images/project-3.jpg);">
+                            <a href="#" class="course-img" style="background-image: url(images/profile-art.jpg);">
                             </a>
                             <div class="desc">
                                 <h3><a href="#">Science &amp; Technology</a></h3>
@@ -331,7 +331,7 @@
                     </div>
                     <div class="col-md-6 animate-box">
                         <div class="course">
-                            <a href="#" class="course-img" style="background-image: url(images/project-4.jpg);">
+                            <a href="#" class="course-img" style="background-image: url(images/profile-art.jpg);">
                             </a>
                             <div class="desc">
                                 <h3><a href="#">Health &amp; Psychology</a></h3>
