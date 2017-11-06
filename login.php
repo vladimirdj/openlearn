@@ -55,7 +55,7 @@
                     </div>
                     
                     <a href="signup.php" class="text-center new-account">Create an account </a>
-                    <br><br><a href="#" class="text-center new-account">Home </a>
+                    <br><br><a href="index.php" class="text-center new-account">Home </a>
                 </div>
             </div>
         </div>

@@ -194,6 +194,19 @@
 	  	</div>
 	</aside>
 
+	<div id="filter-buttons">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 animate-box">
+					<div class=>
+
+				</div>
+
+			</div>
+
+		</div>	
+	</div> 
+
 	<div id="fh5co-course">
 		<div class="container">
 			<div class="row">

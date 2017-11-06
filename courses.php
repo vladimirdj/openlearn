@@ -106,10 +106,9 @@
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="index.php">Home</a></li>
-							<li><a href="courses.php">Courses</a></li>
+							<li><a href="index.php">Home</a></li>
+							<li class="active"><a href="courses.php">Courses</a></li>
 							<li><a href="instructors.php">Instructors</a></li>
-							<li><a href="#"  data-toggle="modal" data-target="#livestream">Livestream</a></li>
 							<li><a href="about.php">About</a></li>
 							<li><a href="contact.php">Contact</a></li>
 							<li class="btn-cta" data-toggle="modal" data-target="#myModal"><a href="#"><span>Login</span></a></li>
