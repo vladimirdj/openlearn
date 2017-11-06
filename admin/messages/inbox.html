@@ -8,6 +8,42 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Novus Admin Panel an Admin Panel Category Flat Bootstrap Responsive Website Template | Inbox :: w3layouts</title>
+
+<?php
+
+	ini_set ('log_errors', 'on'); //Logging errors
+
+	session_start();
+
+	require_once '../config.php';
+
+	if(isset($_SESSION['inst_id'])) {
+
+		$inst_id = $_SESSION['inst_id'];
+
+		$getinfo = "SELECT `name`, `id`, `email`, `picture` from `instructor` where `id`='{$_SESSION['inst_id']}'";
+		$query = mysqli_query($link, $getinfo);
+		$row = mysqli_fetch_assoc($query);
+
+		$inst_name = $row['name'];
+		$inst_email = $row['email'];
+		$inst_picture = $row['picture'];
+
+		//Getting instructor's first name (accessible as zeroth index)
+		$get_name = explode(' ',trim($inst_name));
+		$inst_first_name = $get_name[0];
+	}
+	else
+	{
+		//Redirect the instructor to login page if he/she is not logged in.
+		echo "
+			<script type='text/javascript'>
+				window.location.href = '../login.php';
+			</script>
+		";
+	}
+?>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Novus Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
