@@ -38,7 +38,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		//Redirect the instructor to login page if he/she is not logged in.
 		echo "
 			<script type='text/javascript'>
-				window.location.href = '../login.php';
+				window.location.href = '../../login.php';
 			</script>
 		";
 	}
