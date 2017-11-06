@@ -1,9 +1,3 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -32,6 +26,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		//Getting instructor's first name (accessible as zeroth index)
 		$get_name = explode(' ',trim($inst_name));
 		$inst_first_name = $get_name[0];
+
+
+		//Getting messages.
+		$sql_messages = " SELECT * FROM `messages` WHERE `instructor_id`='$inst_id' ";
+		$result_messages = mysqli_query($link, $sql_messages);
 	}
 	else
 	{
@@ -52,7 +51,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!-- Custom CSS -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <!-- font CSS -->
@@ -60,7 +60,6 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
  <!-- js-->
-<script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/modernizr.custom.js"></script>
 <!--webfonts-->
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -78,6 +77,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <link href="css/custom.css" rel="stylesheet">
 <!--//Metis Menu -->
 </head> 
+
 <body class="cbp-spmenu-push">
 	<div class="main-content">
 		<!--left-fixed -navigation-->
@@ -174,34 +174,36 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		<div id="page-wrapper">
 			<div class="main-page">
 				<h3 class="title1">Inbox</h3>
-				<div class="inbox-page" style="width: 900px; margin:auto;">
-					
-					<div class='inbox-row widget-shadow' id='accordion' role='tablist' aria-multiselectable='true'>
-						<div class='mail'> <input type='checkbox' class='checkbox'> </div>
-						<div class="mail"><img src="images/user24.png" alt=""/></div>
-						<div class="mail mail-name"> <h6>Janiya Marudffdfh dfYera</h6> </div>
-						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							<div class="mail"><p>Enquiry Regarding Course</p></div>
-						</a>
-						
-						<div class="mail-right"><p>30 Dec</p></div>
-						<div class="clearfix"> </div>
-						<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-							<div class="mail-body">
-								<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.</p>
-								<form>
-									<input type="text" placeholder="Reply to sender" required="">
-									<input type="submit" value="Send">
-								</form>
-							</div>
+					<div class="table-responsive widget-shadow"> 
+						 <table id="view-messages" class="table table-bordered">  
+							  <thead>  
+								   <tr>  
+										<th>Date &amp; Time </th>  
+										<th>Name</th>  
+										<th>Email</th>  
+										<th>Message</th> 
+								   </tr>  
+							  </thead>  
+							  </tbody>
+							  <?php  
+							  while($mrow = mysqli_fetch_assoc($result_messages))  
+							  {  
+								   echo '  
+								   <tr>  
+										<td>'.$mrow["message_date"].'</td>  
+										<td>'.$mrow["student_name"].'</td>  
+										<td>'.$mrow["student_email"].'</td>  
+										<td>'.$mrow["student_message"].'</td>  
+								   </tr>  
+								   ';  
+							  }  
+							  ?>  
+							</tbody>
+						 </table>   		  
 						</div>
 					</div>
-
-					
-				
 				</div>
 			</div>
-		</div>
 		<!--footer-->
 		<div class="footer">
 		   <p>&copy; 2017, OpenLearn, Inc. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>
@@ -229,10 +231,24 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 			}
 		</script>
 	<!--scrolling js-->
-	<script src="js/jquery.nicescroll.js"></script>
+	
+	
 	<script src="js/scripts.js"></script>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 	<!--//scrolling js-->
 	<!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.js"> </script>
+
+   <script>  
+	$(document).ready(function(){  
+		 $('#vew-messages').DataTable();  
+	});  
+	</script>  
 </body>
 </html>

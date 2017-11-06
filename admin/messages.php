@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
+	<meta name="author" content="freehtml5.co" /> 
 
 	<?php
 	
@@ -34,6 +34,10 @@
 			//Getting instructor's first name (accessible as zeroth index)
 			$get_name = explode(' ',trim($inst_name));
 			$inst_first_name = $get_name[0];
+
+			//Getting messages.
+			$sql_messages = " SELECT * FROM `messages` WHERE `instructor_id`='$inst_id' ";
+			$result_messages = mysqli_query($link, $sql_messages);
 		}
 		else
 		{
@@ -64,8 +68,7 @@
 	<link rel="stylesheet" href="../css/animate.css">
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="../css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="../css/bootstrap.css">
+	
 
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="../css/magnific-popup.css">
@@ -83,6 +86,9 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="../css/style.css">
 
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 	<!-- Modernizr JS -->
 	<script src="../js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -96,7 +102,7 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
+	<nav class="fh5co-nav navbar navbar-default" role="navigation" style="box-shadow: 0 8px 6px -6px gray;">
 		<div class="top">
 			<div class="container">
 				<div class="row">
@@ -150,91 +156,47 @@
 		</div>
 	</nav>
 
-
-	<!-- Something to add style -->
-	<aside id="fh5co-hero">
-		<div class="flexslider">
-			<ul class="slides">
-		   	<li style="background-image: url(../images/teacher.jpg);">
-		   		<div class="overlay-gradient"></div>
-		   		<div class="container">
-		   			<div class="row">
-			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
-			   				<div class="slider-text-inner">
-								   <h1 class="heading-section">Hi, <?php echo $inst_first_name; ?>!</h1>
-								   <span> <?php echo "<img src='../profile_pictures/".basename($inst_picture)."' class='img-circle img-responsive text-center' style='height: 150px; width: 150px; margin: auto;' alt='No image'>"; ?></span> <br>
-								   <br>
-								   <h2>Let's get started!&nbsp;Please choose from the following options to get started.<br>
-										In case you need any help, feel free to <a href="../contact.php">contact us </a> any time.
-									</h2>
-			   				</div>
-			   			</div>
-			   		</div>
-		   		</div>
-		   	</li>
-		  	</ul>
-	  	</div>
-	</aside>
-	<!-- Finished adding styles -->
-
-	<!-- Add Dashboard Elements -->
-	<div id="fh5co-course-categories">
-		<div class="container">
+	<br><br>
+	<div class="container">
 			<div class="row animate-box">
-
-			</div>
-			<div class="row">
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-plus"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="create-course.php">Create Course</a></h3>
-							<p>Create a new course and turn what you know into an opportunity and reach millions around the world!</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-pen"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="course-management.php">Manage Courses</a></h3>
-							<p>Manage your existing courses &mdash; View statistics, put announcements, upload lecture videos, notes, and much more!</p>
-						</div>
-					</div>
-				</div>
-			
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="fa fa-envelope"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="messages.php">View Messages</a></h3>
-							<p>View and reply to the messages sent by your students.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="fa fa-question"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Get Help</a></h3>
-							<p>Contact us in case you need any help. We usually reply within 24 hours.</p>
-						</div>
-					</div>
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+					<h1>Messages</h1>
+					<p>View and Reply to messages sent by your students</p>
+					<a href="admin_dashboard.php"><button class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;&nbsp;Back to Dashboard</button></a>
 				</div>
 			</div>
-		</div>
+
+			<div class="table-responsive animate-box">  
+                     <table id="messages-table" class="table table-striped table-bordered">  
+                          <thead>  
+                               <tr>  
+                                    <th>Sent Date &amp; Time</th>  
+                                    <th>Name</th>  
+                                    <th>Email</th>  
+                                    <th>Messsage</th>
+                               </tr>  
+                          </thead>  
+
+						 <tbody>
+                          <?php  
+                          	while($mrow = mysqli_fetch_array($result_messages))  
+                          	{  
+                               echo '  
+                               <tr>  
+                                    <td>'.$mrow["message_date"].'</td>  
+                                    <td>'.$mrow["student_name"].'</td>  
+                                    <td>'.$mrow["student_email"].'</td>  
+                                    <td>'.$mrow["student_message"].'</td>  
+                               </tr>  
+                               ';  
+							}
+                          ?> 
+						</tbody>
+                     </table>  
+                </div>  
+
 	</div>
-
-	<!-- Finished adding dashboad elements -->
+	
 
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(../images/mountain.jpg);">
@@ -307,11 +269,12 @@
 	</div>
 
 	<!-- jQuery -->
-	<script src="../js/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="../js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="../js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="../js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
@@ -329,6 +292,12 @@
 	<script src="../js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="../js/main.js"></script>
+
+	<script>  
+ 		$(document).ready(function(){  
+      	$('#messages-table').DataTable();  
+ 		});  
+ 	</script> 
 	<script>
     var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 
