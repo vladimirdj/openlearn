@@ -194,87 +194,92 @@
 	  	</div>
 	</aside>
 
+	<br><br>
 	<div id="filter-buttons">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12 animate-box">
-					<div class=>
-
-				</div>
-
+		<div class="col-md-4 col-md-offset-4 animate-box">
+				<div class="btn-group btn-group-justified">
+    				<a href="course-management.php?sortby=name" class="btn btn-primary">Sort by Name</a>
+    				<a href="course-management.php?sortby=category" class="btn btn-primary">Sort by Category</a>    			
+  				</div>
 			</div>
-
-		</div>	
+		</div>
 	</div> 
 
 	<div id="fh5co-course">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-1.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Web Master</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-2.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Business &amp; Accounting</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-3.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Science &amp; Technology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-4.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-5.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Science &amp; Technology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-6.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
+				<div class="col-lg-12 animate-box">
+					<table class="table table-hover table-responsive table-bordered">
+						<thead>
+							<tr>
+								<td><b>Course Name</b></td>
+								<td><b>Course Info</b></td>
+								<td><b>Course Category</b></td>
+								<td><b>Manage</b></td>
+							</tr>
+						</thead>
+
+						<tbody>
+
+						<?php
+
+							if ($_GET['sortby'] == "name") {
+
+								$execute_query = mysqli_query($link, "SELECT * FROM courses WHERE instructor_id='$inst_id' ORDER BY course_name");
+								
+								while ($course_row = mysqli_fetch_assoc($execute_query)) {
+								echo "
+										<tr> 
+											<td>{$course_row['course_name']}</td>
+											<td>{$course_row['course_info']}</td>
+											<td>{$course_row['course_category']}</td>
+											<td><a href='manage-course.php?course_id=".$course_row['course_id']."'><button class='btn btn-primary'>Manage</button></a></td>
+										</tr>
+								
+								";
+								}
+							}
+
+							elseif ($_GET['sortby'] == "category") {
+								
+									$execute_query = mysqli_query($link, "SELECT * FROM courses WHERE instructor_id='$inst_id' ORDER BY course_category");
+																
+									while ($course_row = mysqli_fetch_assoc($execute_query)) {
+										echo "
+												<tr> 
+													<td>{$course_row['course_name']}</td>
+													<td>{$course_row['course_info']}</td>
+													<td>{$course_row['course_category']}</td>
+													<td><a href='manage-course.php?course_id=".$course_row['course_id']."'><button class='btn btn-primary'>Manage</button></a></td>
+												</tr>
+										
+										";
+									}
+							}
+
+							else {
+								$execute_query = mysqli_query($link, "SELECT * FROM courses WHERE instructor_id='$inst_id' ORDER BY course_category");
+								
+								while ($course_row = mysqli_fetch_assoc($execute_query)) {
+									echo "
+											<tr> 
+												<td>{$course_row['course_name']}</td>
+												<td>{$course_row['course_info']}</td>
+												<td>{$course_row['course_category']}</td>
+												<td><a href='manage-course.php?course_id=".$course_row['course_id']."'><button class='btn btn-primary'>Manage</button></a></td>
+											</tr>
+
+									";
+								}
+
+							}
+
+						?>
+
+						</tbody>
+
+					  </table>
 				</div>
 			</div>
 		</div>
