@@ -1,23 +1,30 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="shortcut icon" href="../favicon.png" />
+<head>
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="favicon.png" />
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Messages&mdash; Free Online Courses at OpenLearn!</title>
+	<title>Courses &mdash; OpenLearn!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="freehtml5.co" /> 
 
+	<style>
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'Slabo 27px', serif !important;
+		}
+
+	</style>
 	<?php
 	
 		ini_set ('log_errors', 'on'); //Logging errors
 
 		session_start();
 
-		require_once '../config.php';
+		require_once 'config.php';
 
 		if(isset($_SESSION['inst_id'])) {
 
@@ -65,32 +72,32 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
 
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="../css/animate.css">
+	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="../css/icomoon.css">
+	<link rel="stylesheet" href="css/icomoon.css">
 	
 
 	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="../css/magnific-popup.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
 
 	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="../css/owl.carousel.min.css">
-	<link rel="stylesheet" href="../css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
 	<!-- Flexslider  -->
-	<link rel="stylesheet" href="../css/flexslider.css">
+	<link rel="stylesheet" href="css/flexslider.css">
 
 	<!-- Pricing -->
-	<link rel="stylesheet" href="../css/pricing.css">
+	<link rel="stylesheet" href="css/pricing.css">
 
 	<!-- Theme style  -->
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<!-- Modernizr JS -->
-	<script src="../js/modernizr-2.6.2.min.js"></script>
+	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -123,26 +130,26 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="../index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn&nbsp;</font><font color="red">/Admin</font></a></div>
+						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn&nbsp;</font><font color="red">/Admin</font></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li><a href="../index.php">Home</a></li>
-							<li><a href="../courses.php">Courses</a></li>
-							<li><a href="../instructors.php">Instructors</a></li>
-							<li><a href="../about.php">About</a></li>
-							<li><a href="../contact.php">Contact</a></li> 
+							<li><a href="index.php">Home</a></li>
+							<li><a href="courses.php">Courses</a></li>
+							<li><a href="instructors.php">Instructors</a></li>
+							<li><a href="about.php">About</a></li>
+							<li><a href="contact.php">Contact</a></li> 
 							&nbsp;&nbsp;&nbsp;
 							
 							<?php
 								if(isset($_SESSION['inst_id'])) {
 									echo "
-								<li class='btn-cta has-dropdown'><a href='#'><span><img src='../profile_pictures/".basename($inst_picture)."' height='15px' width='15px'>&nbsp;&nbsp;".$inst_name."</span></a>
+								<li class='btn-cta has-dropdown'><a href='#'><span><img src='profile_pictures/".basename($inst_picture)."' height='15px' width='15px'>&nbsp;&nbsp;".$inst_name."</span></a>
 								<ul class='dropdown'>
-									<li><a href='../profile.php?inst_id=$inst_id'><i class='fa fa-user'></i>&nbsp;&nbsp;Profile</a></li>
+									<li><a href='profile.php?inst_id=$inst_id'><i class='fa fa-user'></i>&nbsp;&nbsp;Profile</a></li>
 									<li><a href='http://localhost/open-learning/admin/admin_dashboard.php'><i class='fa fa-tachometer'></i>&nbsp;&nbsp;Dashboard</a></li>
 									<li><a href='#'><i class='fa fa-question-circle'></i>&nbsp;&nbsp;Help &amp; Support</a></li>									
-									<li><a href='../logout.php'><i class='fa fa-sign-out'></i>&nbsp;&nbsp;Logout</a></li>
+									<li><a href='logout.php'><i class='fa fa-sign-out'></i>&nbsp;&nbsp;Logout</a></li>
 								</ul>
 							</li>";
 							}
@@ -160,9 +167,8 @@
 	<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h1>Messages</h1>
-					<p>View and reply to the messages sent by your students</p>
-					<a href="admin_dashboard.php"><button class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;&nbsp;Back to Dashboard</button></a>
+					<h1>Our Courses</h1>
+					<p>Choose what you want to pursue from the plethora of courses we offer—all for free!</p>
 				</div>
 			</div>
 
@@ -188,7 +194,7 @@
                                     <td>'.$mrow["student_name"].'</td>  
                                     <td>'.$mrow["student_email"].'</td>  
 									<td>'.$mrow["student_message"].'</td>
-									<td><a href="mailto:'.$mrow["student_email"].'"><button class="btn btn-success align-center"><i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp; Reply</button></a></td>
+									<td><a href="mailto:'.$mrow["student_email"].'"><button class="btn btn-success align-center"><i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp;Reply</button></a></td>
                                </tr>  
                                ';  
 							}
@@ -277,31 +283,34 @@
 	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="../js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
 	<!-- Waypoints -->
-	<script src="../js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
-	<script src="../js/jquery.stellar.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Carousel -->
-	<script src="../js/owl.carousel.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
 	<!-- Flexslider -->
-	<script src="../js/jquery.flexslider-min.js"></script>
+	<script src="js/jquery.flexslider-min.js"></script>
 	<!-- countTo -->
-	<script src="../js/jquery.countTo.js"></script>
+	<script src="js/jquery.countTo.js"></script>
 	<!-- Magnific Popup -->
-	<script src="../js/jquery.magnific-popup.min.js"></script>
-	<script src="../js/magnific-popup-options.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
 	<!-- Count Down -->
-	<script src="../js/simplyCountdown.js"></script>
+	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
-	<script src="../js/main.js"></script>
+	<script src="js/main.js"></script>
 
+	<!--DataTables plugin -->
 	<script>  
  		$(document).ready(function(){  
       	$('#messages-table').DataTable();  
  		});  
- 	</script> 
+	 </script> 
+	<!--DataTables plugin ends --> 
+
 	<script>
     var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 

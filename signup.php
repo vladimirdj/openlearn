@@ -114,7 +114,6 @@
 						<li><a href="index.php">Home</a></li>
 						<li><a href="courses.php">Courses</a></li>
 						<li><a href="instructors.php">Instructors</a></li>
-						<li><a href="#"  data-toggle="modal" data-target="#livestream">Livestream</a></li>
 						<li><a href="about.php">About</a></li>
 						<li><a href="contact.php">Contact</a></li>
 						<li class="btn-cta" data-toggle="modal" data-target="#myModal"><a href="#"><span>Login</span></a></li>
@@ -127,70 +126,47 @@
 
 	</nav>
 
-	<!-- Modal - For Livestream-->
-	<div class="modal fade" id="livestream" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="Livestream_modal">Join Livestream</h4>
-				</div>
 
-				<div class="modal-body">
-					<form action="livestream.php" method="get">
+	<!-- Modal - For Login-->
+	<div class="modal fade" id="myModal" tabindex="-1" autocomplete="off" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Login to OpenLearn&nbsp;(For Instructors Only)</h4>
+			</div>
+
+			<div class="modal-body">
+				<form id="login-form" method="POST" autocomplete="off">
+					<div class="form-group">
+							<b>Email address</b>
+							<input type="email" name="instEmail" class="form-control" id="instEmail" placeholder="Enter email">
+							<span class="help-block" id="error"></span>
+						</div>
+
 						<div class="form-group">
-								<label for="Code_Livestream">Enter the invite code of the Livestream you want to join</label>
-								<input type="text" class="form-control" id="livestream_link" aria-describedby="emailHelp" placeholder="Livestream Invite Code" required>
-							</div>
-				</div>
+							<b>Password</b>
+							<input type="password" name="instPassword" class="form-control" id="instPassword" placeholder="Password">
+							<span class="help-block" id="error"></span>
+						</div>
 
-				<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<input type="submit" value="Join Livestream" class="btn btn-primary">
-				</form>
-				</div>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input type="checkbox" id="rememberMe"class="form-check-input">&nbsp;Remember me
+							</label>
+						</div>
+						<div id="errorDiv"></div> 
+			</div>
+
+			<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="submit" id="btn-login" class="btn btn-primary">Login</button>
+			</form>
 			</div>
 		</div>
 	</div>
-	<!--Modal for livestream ends-->
-
-	<!-- Modal - For Login-->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">Login to OpenLearn (For Instructors Only)</h4>
-	      </div>
-
-				<div class="modal-body">
-					<form action="index.php" method="POST" autocomplete="off">
-						<div class="form-group">
-								<label for="InputEmail1">Email address</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-							</div>
-
-							<div class="form-group">
-								<label for="exampleInputPassword1">Password</label>
-								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
-							</div>
-
-							<div class="form-check">
-								<label class="form-check-label">
-									<input type="checkbox" class="form-check-input">&nbsp;Remember me
-								</label>
-							</div>
-	      </div>
-
-				<div class="modal-footer">
-	        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        	<input type="submit" value="Login" class="btn btn-primary">
-				</form>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-	<!--Modal ends-->
+</div>
+<!--Modal for login ends-->
 
 	<aside id="fh5co-hero">
 		<div class="flexslider">
@@ -493,7 +469,9 @@
     <script src="assets/jquery.validate.min.js"></script>
 	<script src="js/additional-methods.js"></script>
 	<script src="js/extension.js"></script>
-    <script src="register.js"></script>
+	<script src="register.js"></script>
+	<script src="login.js"></script>
+	
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap 

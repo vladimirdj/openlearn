@@ -234,7 +234,7 @@
 											<td>{$course_row['course_name']}</td>
 											<td>{$course_row['course_info']}</td>
 											<td>{$course_row['course_category']}</td>
-											<td><a href='manage-course.php?course_id=".$course_row['course_id']."'><button class='btn btn-primary'>Manage</button></a></td>
+											<td><a href='manage-course.php?course_id=".$course_row['course_id']."'><button class='btn btn-primary'><i class='fa fa-pencil-square-o'></i>&nbsp;&nbsp;Manage</button></a></td>
 										</tr>
 								
 								";
@@ -251,7 +251,7 @@
 													<td>{$course_row['course_name']}</td>
 													<td>{$course_row['course_info']}</td>
 													<td>{$course_row['course_category']}</td>
-													<td><a href='manage-course.php?course_id=".$course_row['course_id']."'><button class='btn btn-primary'>Manage</button></a></td>
+													<td><a href='manage-course.php?course_id=".$course_row['course_id']."'><button class='btn btn-primary'><i class='fa fa-pencil-square-o'></i>&nbsp;&nbsp;Manage</button></a></td>
 												</tr>
 										
 										";
@@ -267,7 +267,7 @@
 												<td>{$course_row['course_name']}</td>
 												<td>{$course_row['course_info']}</td>
 												<td>{$course_row['course_category']}</td>
-												<td><a href='manage-course.php?course_id=".$course_row['course_id']."'><button class='btn btn-primary'>Manage</button></a></td>
+												<td><a href='manage-course.php?course_id=".$course_row['course_id']."'><button class='btn btn-primary'><i class='fa fa-pencil-square-o'></i>&nbsp;&nbsp;Manage</button></a></td>
 											</tr>
 
 									";
