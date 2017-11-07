@@ -23,6 +23,11 @@
 		$inst_twitter = $row['twitter'];
 		$inst_picture = $row['picture'];
 		$inst_about = $row['about'];
+
+		//Getting information about the courses:
+		$getCourseInfo = "SELECT * from `courses` where (`instructor_id`='$inst_id')";
+		$query_course = mysqli_query($link, $getCourseInfo);
+
 	?>
 
 	<head>
@@ -292,76 +297,33 @@
                 <div class="row animate-box">
                     <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
                         <h2>Courses by <?php echo $inst_name; ?></h2>
-                        <p>Go through the courses made by the instructor.</p>
+                        <p>Take your desired course prepared for you by <?php echo $inst_name; ?>.</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 animate-box">
+
+				<?php
+
+					if (mysqli_num_rows($query_course) > 0) {					
+						while ($course_no = mysqli_fetch_assoc($query_course)) {
+							echo '
+                    	<div class="col-md-6 animate-box">
                         <div class="course">
                             <a href="#" class="course-img" style="background-image: url(images/profile-art.jpg);">
                             </a>
                             <div class="desc">
-                                <h3><a href="#">Web Master</a></h3>
-                                <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                                <span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+                                <h3><a href="#">'.$course_no['course_name'].'</a></h3>
+                                <p>'.substr($course_no['course_info'], 0, 100).'</p>
+                                <span><a href="#" class="btn btn-primary btn-sm btn-course">Take the Course</a></span>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 animate-box">
-                        <div class="course">
-                            <a href="#" class="course-img" style="background-image: url(images/profile-art.jpg);">
-                            </a>
-                            <div class="desc">
-                                <h3><a href="#">Business &amp; Accounting</a></h3>
-                                <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                                <span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 animate-box">
-                        <div class="course">
-                            <a href="#" class="course-img" style="background-image: url(images/profile-art.jpg);">
-                            </a>
-                            <div class="desc">
-                                <h3><a href="#">Science &amp; Technology</a></h3>
-                                <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                                <span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 animate-box">
-                        <div class="course">
-                            <a href="#" class="course-img" style="background-image: url(images/profile-art.jpg);">
-                            </a>
-                            <div class="desc">
-                                <h3><a href="#">Health &amp; Psychology</a></h3>
-                                <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                                <span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 animate-box">
-                        <div class="course">
-                            <a href="#" class="course-img" style="background-image: url(images/project-5.jpg);">
-                            </a>
-                            <div class="desc">
-                                <h3><a href="#">Science &amp; Technology</a></h3>
-                                <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                                <span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 animate-box">
-                        <div class="course">
-                            <a href="#" class="course-img" style="background-image: url(images/project-6.jpg);">
-                            </a>
-                            <div class="desc">
-                                <h3><a href="#">Health &amp; Psychology</a></h3>
-                                <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-                                <span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-                            </div>
-                        </div>
-                    </div>
+						</div>';
+						}
+					}
+					else {
+						echo "<h3 class='text-center'>No courses found.</h3>";
+					}
+					?>
                 </div>
             </div>
         </div>
