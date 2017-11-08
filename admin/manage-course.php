@@ -278,6 +278,7 @@
 </div>
     <!--Experiment ends -->
 
+    <br><br><br>
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(../images/mountain.jpg);">
 		<div class="overlay"></div>

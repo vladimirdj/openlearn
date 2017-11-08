@@ -1,26 +1,17 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<head>
+		<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="shortcut icon" href="favicon.png" />
-	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>View Course &mdash; OpenLearn!</title>
+	<title>Manage Course &mdash; Free Online Courses at OpenLearn!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" /> 
+	<meta name="author" content="freehtml5.co" />
 
-	<style>
-		h1, h2, h3, h4, h5, h6 {
-			font-family: 'Slabo 27px', serif !important;
-		}
-
-	</style>
-    <?php
-    
-    //https://img.youtube.com/vi/aiYZZmEdXlQ/hqdefault.jpg
+	<?php
 	
 		ini_set ('log_errors', 'on'); //Logging errors
 
@@ -39,19 +30,26 @@
 			$inst_name = $row['name'];
 			$inst_email = $row['email'];
 			$inst_picture = $row['picture'];
-		}
-	?>
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+			//Getting instructor's first name (accessible as zeroth index)
+			$get_name = explode(' ',trim($inst_name));
+            $inst_first_name = $get_name[0];
+            
+            //Getting course information
+            $getCourseInfo = "SELECT * from `courses` where `course_id`='{$_GET['course_id']}'";
+			$queryCourse = mysqli_query($link, $getCourseInfo);
+            $rowCourse = mysqli_fetch_assoc($queryCourse);
+
+		} else {
+			//Redirect the instructor to login page if he/she is not logged in.
+			echo "
+				<script type='text/javascript'>
+					window.location.href = 'login.php';
+				</script>
+			";
+        }
+        
+	?>
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
@@ -60,7 +58,8 @@
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="css/icomoon.css">
-	
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
 
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="css/magnific-popup.css">
@@ -78,9 +77,6 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -88,13 +84,37 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+
+	<style>
+		.modal {
+			text-align: center;
+			padding: 0!important;
+			}
+
+			.modal:before {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+			margin-right: -4px;
+			}
+
+			.modal-dialog {
+			display: inline-block;
+			text-align: left;
+			vertical-align: middle;
+			}
+
+
+	</style>
+
 	</head>
 	<body>
 
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-	<nav class="fh5co-nav navbar navbar-default" role="navigation" style="box-shadow: 0 8px 6px -6px gray;">
+	<nav class="fh5co-nav navbar navbar-default" style="box-shadow: 0 8px 6px -6px gray;" role="navigation">
 		<div class="top">
 			<div class="container">
 				<div class="row">
@@ -120,7 +140,7 @@
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li><a href="courses.php"><b>Courses</b></a></li>
+							<li><a href="courses.php">Courses</a></li>
 							<li><a href="instructors.php">Instructors</a></li>
 							<li><a href="about.php">About</a></li>
 							<li><a href="contact.php">Contact</a></li> 
@@ -134,14 +154,10 @@
 									<li><a href='profile.php?inst_id=$inst_id'><i class='fa fa-user'></i>&nbsp;&nbsp;Profile</a></li>
 									<li><a href='http://localhost/open-learning/admin/admin_dashboard.php'><i class='fa fa-tachometer'></i>&nbsp;&nbsp;Dashboard</a></li>
 									<li><a href='#'><i class='fa fa-question-circle'></i>&nbsp;&nbsp;Help &amp; Support</a></li>									
-									<li><a href='logout.php'><i class='fa fa-sign-out'></i>&nbsp;&nbsp;Logout</a></li>
+									<li><a href='#' data-toggle='modal' data-target='#logoutModal'><i class='fa fa-sign-out'></i>&nbsp;&nbsp;Logout</a></li>
 								</ul>
 							</li>";
-							} else {
-                                echo "<li class='btn-cta' data-toggle='modal' data-target='#myModal'><a href='#'><span>Login</span></a></li>
-                                
-                                <li class='btn-cta'><a href='signup.php'><span>Become an Instructor</span></a></li>";
-                            }
+							}
 						?>
 
 						</ul>
@@ -150,103 +166,104 @@
 
 			</div>
 		</div>
-    </nav>
-    
-    <!-- Modal - For Login-->
-	<div class="modal fade" id="myModal" tabindex="-1" autocomplete="off" role="dialog" aria-labelledby="myModalLabel">
+	</nav>
+
+	<!-- Modal - For Logout-->
+	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Login to OpenLearn&nbsp;(For Instructors Only)</h4>
+					<h4 class="modal-title" id="myModalLabel">Logout</h4>
 				</div>
 
 				<div class="modal-body">
-					<form id="login-form" method="POST" autocomplete="off">
-						<div class="form-group">
-								<b>Email address</b>
-								<input type="email" name="instEmail" class="form-control" id="instEmail" placeholder="Enter email">
-								<span class="help-block" id="error"></span>
-							</div>
-
-							<div class="form-group">
-								<b>Password</b>
-								<input type="password" name="instPassword" class="form-control" id="instPassword" placeholder="Password">
-								<span class="help-block" id="error"></span>
-							</div>
-
-							<div class="form-check">
-								<label class="form-check-label">
-									<input type="checkbox" id="rememberMe"class="form-check-input">&nbsp;Remember me
-								</label>
-							</div>
-							<div id="errorDiv"></div> 
+					<br>
+					<p> Do you really want to log out? </p>
 				</div>
 
 				<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="submit" id="btn-login" class="btn btn-primary">Login</button>
-				</form>
+					<form action="logout.php">
+						<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+						<input type="submit" value="Yes" class="btn btn-primary">
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--Modal for login ends-->
+	<!--Modal ends-->
 
-	<br><br>
-	<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h1>Our Courses</h1>
-					<p>Choose what you want to pursue from the plethora of courses we offer—all for free!</p>
-				</div>
-			</div>
+<br><br><br>
 
-			<div class="table-responsive animate-box">  
-                     <table id="messages-table" class="table table-striped table-bordered">  
-                          <thead>  
-                               <tr>  
-							   		<td><b>Course Name</b></td>
-							   		<td><b>Course Info</b></td>
-							   		<td><b>Course Category</b></td>
-									<td><b>Instructor</b></td>
-									<td></td>
-                               </tr>  
-                          </thead>  
+	<!--Experiment About Course Part -->
+    <div class="container" style="width:700px;">  
+	<h1 align="center"><i class="fa fa-graduation-cap fa-3x"></i><br></h3>
+   <h3 align="center"><?php echo $rowCourse['course_name'];?></h3>  
+   <p align="center"><?php echo $rowCourse['course_info'] ?></p>
+   <br />  
+   <div class="table-responsive">
+    <div id="employee_table">
+     <table class="table table-hover table-bordered">
+      <thead>
+		  <tr>
+       		<th width="70%">Title</th>  
+       		<th width="30%">View</th>
+		  </tr>
+	</thead>
 
-						 <tbody>
+	<tbody>
+      <?php
 
-						  <?php  
-						  
-							$query_join = "SELECT courses.course_id, courses.course_name, courses.course_info, courses.course_category, instructor.name, instructor.id
-							FROM courses
-							INNER JOIN instructor ON courses.instructor_id=instructor.id;";
-						  	$execute_course_query = mysqli_query($link, $query_join);
-						  
-							while ($course_row = mysqli_fetch_assoc($execute_course_query)) {
-						  		echo "
-								  <tr> 
-									  <td>{$course_row['course_name']}</td>
-									  <td>{$course_row['course_info']}</td>
-									  <td>{$course_row['course_category']}</td>
-									  <td><a href='profile.php?inst_id=".$course_row['id']."'>".$course_row['name']."</a></td>
-									  <td><a target='_blank' href='view-course.php?course_id=".$course_row['course_id']."'><button class='btn btn-primary'><i class='fa fa-eye'></i>&nbsp;&nbsp; View</button></a></td>
-								  </tr>
-						
-						  		";
-							}
+        $getCourseContent = "SELECT * from `course_content` where `course_id`='{$_GET['course_id']}'";
+        $queryCourseContent = mysqli_query($link, $getCourseContent);
 
-						  ?>
-						   
-						</tbody>
-                     </table>  
-                </div>  
+        while($row_course_content = mysqli_fetch_assoc($queryCourseContent))
+        {
+    ?>
+    
+      <tr>
+       <td><?php echo $row_course_content["video_title"]; ?></td>
+       <td><button class="btn btn-primary" data-toggle="modal" data-target="#add_data_Modal">View</button></td>
+      </tr>
+      <?php
+      }
+	  ?>
+	  </tbody>
+     </table>
+    </div>
+   </div>  
+  </div>
+ </body>  
+</html>  
 
-	</div>
+<div id="add_data_Modal" class="modal fade">
+ <div class="modal-dialog">
+  <div class="modal-content">
+   <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">Playing Video..</h4>
+   </div>
+   <div class="modal-body" id="yt-player">
+	<!-- Form ends -->
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/4axuf8Qvotw" frameborder="0" allowfullscreen></iframe>
+    
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+    </form>
+   </div>
+  </div>
+ </div>
+</div>
+	<!--Experiment ends -->
 	
+	<script type="text/javascript">
+    $('#add_data_Modal').on('hidden.bs.modal', function () {
+        callPlayer('yt-player', 'stopVideo');
+    });
+</script>
 
-	<br><br><br><br><br><br>
-
+    <br><br><br>
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/mountain.jpg);">
 		<div class="overlay"></div>
@@ -317,18 +334,14 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 
-	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
-    <script src="assets/jquery.validate.min.js"></script>
-	<script src="js/additional-methods.js"></script>
-	<script src="js/extension.js"></script> <!--Message is validated and sent-->
-	<script src="login.js"></script>
-
+    <!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+    
+    
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
@@ -346,15 +359,6 @@
 	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
-
-	<!--DataTables plugin -->
-	<script>  
- 		$(document).ready(function(){  
-      	$('#messages-table').DataTable();  
- 		});  
-	 </script> 
-	<!--DataTables plugin ends --> 
-
 	<script>
     var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 
