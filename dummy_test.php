@@ -196,7 +196,7 @@
 <br><br><br>
 
 	<!--Experiment About Course Part -->
-    <div class="container" style="width:900px;">  
+    <div class="container" style="width:700px;">  
 	<h1 align="center"><i class="fa fa-graduation-cap fa-3x"></i><br></h3>
    <h3 align="center"><?php echo $rowCourse['course_name'];?></h3>  
    <p align="center"><?php echo $rowCourse['course_info'] ?></p>
@@ -207,7 +207,7 @@
       <thead>
 		  <tr>
        		<th width="70%">Title</th>  
-       		<th width="4%">View</th>
+       		<th width="30%">View</th>
 		  </tr>
 	</thead>
 
