@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 07, 2017 at 01:29 AM
+-- Generation Time: Nov 09, 2017 at 02:37 AM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -42,8 +42,12 @@ CREATE TABLE `instructor` (
 --
 
 INSERT INTO `instructor` (`name`, `id`, `email`, `password`, `website`, `twitter`, `picture`, `about`) VALUES
-('Subhadeep Dey', '59fda3768bccb', 'contact.sdey@gmail.co', '$2y$10$I2z9mlcitttir8x1oXqvb.508kSVXm0vHVPszyvp4CdBUabBl96pS', '', '', '/var/www/html/open-learning/profile_pictures/picture3.jpg', 'I am a very good boy, you know. very foo'),
-('Thomas Jaguar', '59fe0aee0db8d', 'thomas@jaguar.com', '$2y$10$jku1ACArNqamrymluV.NbeZAsPP5c8m5AY7t.1X2RqHw41z.iiEHS', 'https://www.jaguar.com', 'https://twitter.com/jaguar', '/var/www/html/open-learning/profile_pictures/person2.jpg', 'I am the CEO of Jaguar Corp.\r\n\r\nI love passionate people, right? You are passionate too I hope.');
+('Ramy Kamil', '59fda3768bccb', 'contact.sdey@gmail.co', '$2y$10$I2z9mlcitttir8x1oXqvb.508kSVXm0vHVPszyvp4CdBUabBl96pS', '', '', '/var/www/html/open-learning/profile_pictures/picture3.jpg', 'I am a very good boy, you know. very foo'),
+('Thomas Jaguar', '59fe0aee0db8d', 'thomas@jaguar.com', '$2y$10$jku1ACArNqamrymluV.NbeZAsPP5c8m5AY7t.1X2RqHw41z.iiEHS', 'https://www.jaguar.com', 'https://twitter.com/jaguar', '/var/www/html/open-learning/profile_pictures/person2.jpg', 'I am the CEO of Jaguar Corp.\r\n\r\nI love passionate people, right? You are passionate too I hope.'),
+('Subhadeep Dey', '5a00cf67b3274', 'contact.sdey@gmail.com', '$2y$10$poNKw/x0tFNg8Te6Zw0s2uWj5HliRniERiZrV66gvt7ZSq48T1Ryi', 'https://www.sddey.com', 'https://twitter.com/SDey_96', '/var/www/html/open-learning/profile_pictures/DSC02346 2926895607.jpg', 'Technology enthusiast and a passionate programmer, who loves to teach everybody!'),
+('Satyam Tiwari', '5a00d2598fd59', 'huh@hml.com', '$2y$10$QY8J2kosclSXl/omaQpY6OaPO8AL/BCPO.KR1p625nHVvjcK0osV2', 'https://www.google.co.in', 'https://ff.com', '/var/www/html/open-learning/profile_pictures/image32124837974.jpg', 'I am a decent guy. And love music, okay?'),
+('Ramanujan Tiwari', '5a00d2b49c6fe', 'contact.sdey@gmail.comm', '$2y$10$r0Nq0/qTL2AdiBn4mChsjOD9btJ9mix.TCflWhT8kO.ifvPdB9/yS', '', '', '/var/www/html/open-learning/profile_pictures/internet1478529562.svg', 'Life is boring, so is you. Understand?'),
+('Jammanun', '5a00d2f5efe04', 'jamanu@ul.com', '$2y$10$Hndmu0p6tfZZ5WX6nsadHunVzWiMKSL5JInMoQ9MsbNC6WEQmMxMq', 'http://www.hoo.com', '', '/var/www/html/open-learning/profile_pictures/budget-pc-main-img924667044.png', 'Ksdsdn sdmsnd msdn smdsdcvvvvv');
 
 -- --------------------------------------------------------
 
@@ -70,7 +74,10 @@ INSERT INTO `messages` (`message_id`, `student_name`, `student_email`, `student_
 ('59ff5647b5027', 'Hi there', 'iams@i.com', 'Hi ther esdsjd sd sd', '2017-11-05 23:49:51', '59fe0aee0db8d'),
 ('59ff5ccd5c2f2', 'ddff', 'dfd@m.com', 'ddfdf f df', '2017-11-06 00:17:41', '59fe0aee0db8d'),
 ('59ff5d33b6d56', 'dfddf', 'sdsd@i.com', 'dfdf dfdfdf df df', '2017-11-06 00:19:23', '59fe0aee0db8d'),
-('59ff5e49f11e5', 'Shi rhr', 'dfdf@i.co', 'qsdsdsddfdf', '2017-11-06 00:24:01', '59fda3768bccb');
+('59ff5e49f11e5', 'Shi rhr', 'dfdf@i.co', 'qsdsdsddfdf', '2017-11-06 00:24:01', '59fda3768bccb'),
+('5a01bf386b55b', 'Shyamlal Dwivedi', 'shyamlal@di.com', 'Hello, bhai I have a doubt in something. Please help me out. Hi, can you please help meout?\r\n\r\nI need to take admission in IIT.', '2017-11-07 19:42:08', '59fe0aee0db8d'),
+('5a01bf5f7d5cb', 'Satyam Tiwari', 'say@i.com', 'Hey, please will you be available for a walk?', '2017-11-07 19:42:47', '59fe0aee0db8d'),
+('5a01c7a5b0cfe', 'Subhadeep Dey', 'contact.sdey@gmail.com', 'How are you doing?', '2017-11-07 20:18:05', '59fe0aee0db8d');
 
 --
 -- Indexes for dumped tables
