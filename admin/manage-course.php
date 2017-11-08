@@ -33,17 +33,28 @@
 
 			//Getting instructor's first name (accessible as zeroth index)
 			$get_name = explode(' ',trim($inst_name));
-			$inst_first_name = $get_name[0];
-		}
-		else
-		{
+            $inst_first_name = $get_name[0];
+            
+            //Getting course information
+            $getCourseInfo = "SELECT * from `courses` where `course_id`='{$_GET['course_id']}'";
+			$queryCourse = mysqli_query($link, $getCourseInfo);
+            $rowCourse = mysqli_fetch_assoc($queryCourse);
+            
+
+            //Checking if the designated course is managed by the logged-in instructor.
+            if($_SESSION['inst_id'] !== $rowCourse['instructor_id']) {
+                exit("You are not authorised to manage this course.");
+            }
+
+		} else {
 			//Redirect the instructor to login page if he/she is not logged in.
 			echo "
 				<script type='text/javascript'>
 					window.location.href = '../login.php';
 				</script>
 			";
-		}
+        }
+        
 	?>
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
@@ -188,91 +199,155 @@
 	</div>
 	<!--Modal ends-->
 
+<br><br><br>
 
-	<!-- Something to add style -->
-	<aside id="fh5co-hero">
-		<div class="flexslider">
-			<ul class="slides">
-		   	<li style="background-image: url(../images/teacher.jpg);">
-		   		<div class="overlay-gradient"></div>
-		   		<div class="container">
-		   			<div class="row">
-			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
-			   				<div class="slider-text-inner">
-								   <h1 class="heading-section">Hi, <?php echo $inst_first_name; ?>!</h1>
-								   <span> <?php echo "<img src='../profile_pictures/".basename($inst_picture)."' class='img-circle img-responsive text-center' style='height: 150px; width: 150px; margin: auto;' alt='No image'>"; ?></span> <br>
-								   <br>
-								   <h2>Let's get started!&nbsp;Please choose from the following options to get started.<br>
-										In case you need any help, feel free to <a href="../contact.php">contact us </a> any time.
-									</h2>
-			   				</div>
-			   			</div>
-			   		</div>
-		   		</div>
-		   	</li>
-		  	</ul>
-	  	</div>
-	</aside>
-	<!-- Finished adding styles -->
+	<!--Experiment About Course Part -->
+    <div class="container" style="width:700px;">  
+   <h3 align="center">Manage Course "<?php echo $rowCourse['course_name'];?>"</h3>  
+   <br />  
+   <div class="table-responsive">
+    <div align="right">
+     <button type="button" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning">Add</button>
+    </div>
+    <br />
+    <div id="employee_table">
+     <table class="table table-bordered">
+      <tr>
+       <th width="70%">Employee Name</th>  
+       <th width="30%">View</th>
+      </tr>
+      <?php
+      while($row = mysqli_fetch_array($result))
+      {
+      ?>
+      <tr>
+       <td><?php echo $row["name"]; ?></td>
+       <td><input type="button" name="view" value="view" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-xs view_data" /></td>
+      </tr>
+      <?php
+      }
+      ?>
+     </table>
+    </div>
+   </div>  
+  </div>
+ </body>  
+</html>  
 
-	<!-- Add Dashboard Elements -->
-	<div id="fh5co-course-categories">
-		<div class="container">
-			<div class="row animate-box">
+<div id="add_data_Modal" class="modal fade">
+ <div class="modal-dialog">
+  <div class="modal-content">
+   <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">PHP Ajax Insert Data in MySQL By Using Bootstrap Modal</h4>
+   </div>
+   <div class="modal-body">
+    <form method="post" id="insert_form">
+     <label>Enter Employee Name</label>
+     <input type="text" name="name" id="name" class="form-control" />
+     <br />
+     <label>Enter Employee Address</label>
+     <textarea name="address" id="address" class="form-control"></textarea>
+     <br />
+     <label>Select Gender</label>
+     <select name="gender" id="gender" class="form-control">
+      <option value="Male">Male</option>  
+      <option value="Female">Female</option>
+     </select>
+     <br />  
+     <label>Enter Designation</label>
+     <input type="text" name="designation" id="designation" class="form-control" />
+     <br />  
+     <label>Enter Age</label>
+     <input type="text" name="age" id="age" class="form-control" />
+     <br />
+     <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />
 
-			</div>
-			<div class="row">
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-plus"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="create-course.php">Create Course</a></h3>
-							<p>Create a new course and turn what you know into an opportunity and reach millions around the world!</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="icon-pen"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="course-management.php">Manage Courses</a></h3>
-							<p>Manage your existing courses &mdash; View statistics, put announcements, upload lecture videos, notes, and much more!</p>
-						</div>
-					</div>
-				</div>
-			
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="fa fa-envelope"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="messages.php">View Messages</a></h3>
-							<p>View and reply to the messages sent by your students.</p>
-						</div>
-					</div>
-				</div>
+    </form>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div>
 
-				<div class="col-md-3 col-sm-6 text-center animate-box">
-					<div class="services">
-						<span class="icon">
-							<i class="fa fa-question"></i>
-						</span>
-						<div class="desc">
-							<h3><a href="#">Get Help</a></h3>
-							<p>Contact us in case you need any help. We usually reply within 24 hours.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<div id="dataModal" class="modal fade">
+ <div class="modal-dialog">
+  <div class="modal-content">
+   <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">Employee Details</h4>
+   </div>
+   <div class="modal-body" id="employee_detail">
+    
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div>
 
-	<!-- Finished adding dashboad elements -->
+<script>  
+$(document).ready(function(){
+ $('#insert_form').on("submit", function(event){  
+  event.preventDefault();  
+  if($('#name').val() == "")  
+  {  
+   alert("Name is required");  
+  }  
+  else if($('#address').val() == '')  
+  {  
+   alert("Address is required");  
+  }  
+  else if($('#designation').val() == '')
+  {  
+   alert("Designation is required");  
+  }
+   
+  else  
+  {  
+   $.ajax({  
+    url:"insert.php",  
+    method:"POST",  
+    data:$('#insert_form').serialize(),  
+    beforeSend:function(){  
+     $('#insert').val("Inserting");  
+    },  
+    success:function(data){  
+     $('#insert_form')[0].reset();  
+     $('#add_data_Modal').modal('hide');  
+     $('#employee_table').html(data);  
+    }  
+   });  
+  }  
+ });
+
+
+
+
+ $(document).on('click', '.view_data', function(){
+  //$('#dataModal').modal();
+  var employee_id = $(this).attr("id");
+  $.ajax({
+   url:"select.php",
+   method:"POST",
+   data:{employee_id:employee_id},
+   success:function(data){
+    $('#employee_detail').html(data);
+    $('#dataModal').modal('show');
+   }
+  });
+ });
+});  
+ </script>
+
+
+
+    <!--Experiment ends -->
+
+	
 
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(../images/mountain.jpg);">
