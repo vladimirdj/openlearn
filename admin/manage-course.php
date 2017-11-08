@@ -357,102 +357,97 @@
     <script src="../assets/jquery.validate.min.js"></script>
 	<script src="../js/additional-methods.js"></script>
 	<script src="../js/extension.js"></script>
+    
     <script>
-        // JavaScript Validation For Registration Page
+    // JavaScript Validation For Insertion
 
-$('document').ready(function()
-{
-		 $("#register-form").validate({
-		  rules:
-		  {
-				video_title: {
-					required: true,
-					minlength: 4
-				},
+        $('document').ready(function()
+        {
+        		 $("#register-form").validate({
+        		  rules:
+        		  {
+        				video_title: {
+        					required: true,
+        					minlength: 4
+        				},
+                    
+        				video_link: {
+        				    required : true,
+        				    minlength: 3
+        				}				
+                   },
 
-				video_link: {
-				    required : true,
-				    minlength: 3
-				}				
-           },
-           
-		   messages:
-		   {
-                video_title: {
-					required: "Required",
-					minlength: "Should not bee too short"
-				},
-
-				video_link: {
-				    required : "Required",
-				    minlength: "Should not be too short"
-				}
-		   },
-		   errorPlacement : function(error, element) {
-			  $(element).closest('.form-group').find('.help-block').html(error.html());
-		   },
-		   highlight : function(element) {
-			  $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-		   },
-		   unhighlight: function(element, errorClass, validClass) {
-			  $(element).closest('.form-group').removeClass('has-error');
-			  $(element).closest('.form-group').find('.help-block').html('');
-		   },
-				submitHandler: submitForm
-		   });
-
-
-		   function submitForm(){
-				$.ajax({
-			   		url: 'insert.php',
-			   		type: 'POST',
-                       data: $('#register-form').serialize(),
-			   		dataType: 'json'
-			   })
-			   .done(function(data){
-
-			   		$('#btn-signup').html('<img src="../ajax-loader.gif" />&nbsp; Inserting...').prop('disabled', true);
-			   		$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', true);
-
-			   		setTimeout(function(){
-
-						if (data.status==='success') {
-
-							$('#errorDiv').slideDown('fast', function(){
-								$('#errorDiv').html('<div class="alert alert-info">'+data.message+'</div>');
-								$("#register-form").trigger('reset');
-								$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', false);
-								$('#btn-signup').html('Insert').prop('disabled', false);
-							}).delay(3000).slideUp('fast');
-
-
-					    } else {
-
-						    $('#errorDiv').slideDown('fast', function(){
-						      	$('#errorDiv').html('<div class="alert alert-danger">'+data.message+'</div>');
-							  	$("#register-form").trigger('reset');
-							  	$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', false);
-							  	$('#btn-signup').html('Insert').prop('disabled', false);
-							}).delay(3000).slideUp('fast');
-						}
-
-					},3000);
-
-			   })
-			   .fail(function(){
-			   		$("#register-form").trigger('reset');
-			   		alert('An unknown error occoured. Please try again later.');
-			   });
-
-}
-});
-
-
-
-    </script>
-
-
-
+        		   messages:
+        		   {
+                        video_title: {
+        					required: "Required",
+        					minlength: "Should not bee too short"
+        				},
+                    
+        				video_link: {
+        				    required : "Required",
+        				    minlength: "Should not be too short"
+        				}
+        		   },
+        		   errorPlacement : function(error, element) {
+        			  $(element).closest('.form-group').find('.help-block').html(error.html());
+        		   },
+        		   highlight : function(element) {
+        			  $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+        		   },
+        		   unhighlight: function(element, errorClass, validClass) {
+        			  $(element).closest('.form-group').removeClass('has-error');
+        			  $(element).closest('.form-group').find('.help-block').html('');
+        		   },
+        				submitHandler: submitForm
+        		   });
+               
+               
+        		   function submitForm(){
+        				$.ajax({
+        			   		url: 'insert.php',
+        			   		type: 'POST',
+                               data: $('#register-form').serialize(),
+        			   		dataType: 'json'
+        			   })
+        			   .done(function(data){
+                    
+        			   		$('#btn-signup').html('<img src="../ajax-loader.gif" />&nbsp; Inserting...').prop('disabled', true);
+        			   		$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', true);
+                    
+        			   		setTimeout(function(){
+                            
+        						if (data.status==='success') {
+                                
+        							$('#errorDiv').slideDown('fast', function(){
+        								$('#errorDiv').html('<div class="alert alert-info">'+data.message+'</div>');
+        								$("#register-form").trigger('reset');
+        								$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop      ('disabled', false);
+        								$('#btn-signup').html('Insert').prop('disabled', false);
+        							}).delay(3000).slideUp('fast');
+                                
+                                
+        					    } else {
+                                
+        						    $('#errorDiv').slideDown('fast', function(){
+        						      	$('#errorDiv').html('<div class="alert alert-danger">'+data.message+'</div>');
+        							  	$("#register-form").trigger('reset');
+        							  	$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop      ('disabled', false);
+        							  	$('#btn-signup').html('Insert').prop('disabled', false);
+        							}).delay(3000).slideUp('fast');
+        						}
+                            
+        					},3000);
+                        
+        			   })
+        			   .fail(function(){
+        			   		$("#register-form").trigger('reset');
+        			   		alert('An unknown error occoured. Please try again later.');
+        			   });
+                   
+        }
+        });
+</script>
 	
 	<!-- Waypoints -->
 	<script src="../js/jquery.waypoints.min.js"></script>
