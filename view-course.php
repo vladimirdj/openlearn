@@ -6,7 +6,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Courses &mdash; OpenLearn!</title>
+	<title>View Course &mdash; OpenLearn!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -18,7 +18,9 @@
 		}
 
 	</style>
-	<?php
+    <?php
+    
+    //https://img.youtube.com/vi/aiYZZmEdXlQ/hqdefault.jpg
 	
 		ini_set ('log_errors', 'on'); //Logging errors
 
@@ -113,7 +115,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn&nbsp;</font></a></div>
+						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn&nbsp;</font><font color="red">/Admin</font></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
@@ -136,7 +138,7 @@
 								</ul>
 							</li>";
 							} else {
-                                echo "<li class='btn-cta' data-toggle='modal' data-target='#myModal'><a href='login.php'><span>Login</span></a></li>
+                                echo "<li class='btn-cta' data-toggle='modal' data-target='#myModal'><a href='#'><span>Login</span></a></li>
                                 
                                 <li class='btn-cta'><a href='signup.php'><span>Become an Instructor</span></a></li>";
                             }
@@ -148,9 +150,9 @@
 
 			</div>
 		</div>
-	</nav>
-
-	<!-- Modal - For Login-->
+    </nav>
+    
+    <!-- Modal - For Login-->
 	<div class="modal fade" id="myModal" tabindex="-1" autocomplete="off" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -201,14 +203,14 @@
 			</div>
 
 			<div class="table-responsive animate-box">  
-                     <table id="messages-table" class="table table-hover table-bordered">  
+                     <table id="messages-table" class="table table-striped table-bordered">  
                           <thead>  
                                <tr>  
 							   		<td><b>Course Name</b></td>
 							   		<td><b>Course Info</b></td>
 							   		<td><b>Course Category</b></td>
 									<td><b>Instructor</b></td>
-									<td><b>View</b></td>
+									<td></td>
                                </tr>  
                           </thead>  
 
@@ -318,8 +320,8 @@
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
-	<script src="assets/jquery.validate.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+    <script src="assets/jquery.validate.min.js"></script>
 	<script src="js/additional-methods.js"></script>
 	<script src="js/extension.js"></script> <!--Message is validated and sent-->
 	<script src="login.js"></script>
@@ -350,7 +352,7 @@
  		$(document).ready(function(){  
       	$('#messages-table').DataTable();  
  		});  
-	 </script>
+	 </script> 
 	<!--DataTables plugin ends --> 
 
 	<script>

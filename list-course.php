@@ -195,7 +195,7 @@
 	<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h1>Our Courses</h1>
+					<h1>View All the Courses by "<?php echo $_GET['course_category']; ?>"</h1>
 					<p>Choose what you want to pursue from the plethora of courses we offer—all for free!</p>
 				</div>
 			</div>
@@ -206,7 +206,6 @@
                                <tr>  
 							   		<td><b>Course Name</b></td>
 							   		<td><b>Course Info</b></td>
-							   		<td><b>Course Category</b></td>
 									<td><b>Instructor</b></td>
 									<td><b>View</b></td>
                                </tr>  
@@ -218,7 +217,7 @@
 						  
 							$query_join = "SELECT courses.course_id, courses.course_name, courses.course_info, courses.course_category, instructor.name, instructor.id
 							FROM courses
-							INNER JOIN instructor ON courses.instructor_id=instructor.id;";
+							INNER JOIN instructor ON courses.instructor_id=instructor.id WHERE courses.course_category={$_GET['course_category']};";
 						  	$execute_course_query = mysqli_query($link, $query_join);
 						  
 							while ($course_row = mysqli_fetch_assoc($execute_course_query)) {
@@ -226,11 +225,9 @@
 								  <tr> 
 									  <td>{$course_row['course_name']}</td>
 									  <td>{$course_row['course_info']}</td>
-									  <td>{$course_row['course_category']}</td>
 									  <td><a href='profile.php?inst_id=".$course_row['id']."'>".$course_row['name']."</a></td>
 									  <td><a target='_blank' href='view-course.php?course_id=".$course_row['course_id']."'><button class='btn btn-primary'><i class='fa fa-eye'></i>&nbsp;&nbsp; View</button></a></td>
-								  </tr>
-						
+								  </tr>						
 						  		";
 							}
 

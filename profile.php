@@ -321,7 +321,7 @@
 						}
 					}
 					else {
-						echo "<h3 class='text-center'>No courses found.</h3>";
+						echo "<h3 class='text-center animate-box'>No courses found.</h3>";
 					}
 					?>
                 </div>

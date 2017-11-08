@@ -229,7 +229,7 @@
 				while ($fetch_row = mysqli_fetch_assoc($queryAll)) {
 					echo '<div class="col-md-3 animate-box text-center">
 						<div class="staff">
-							<div class="staff-img" style="background-image: url(profile_pictures/'.basename($fetch_row['picture']).');">
+							<div class="staff-img" style="background-image: url(profile_pictures/'.basename($fetch_row['picture']).'); width: 300px; height: 300px;">
 								<ul class="fh5co-social">
 									<li><a target="_blank" href="'.$fetch_row['twitter'].'" ><i class="icon-twitter2"></i></a></li>
 									<li><a target="_blank" href="'.$fetch_row['website'].'" ><i class="fa fa-globe"></i></a></li>

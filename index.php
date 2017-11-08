@@ -272,8 +272,8 @@
 							<i class="icon-shop"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Business</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<h3><a href="list-course.php?course_category=Business">Business</a></h3>
+							<p>Enhance your business skills with our special courses tailored for you.</p>
 						</div>
 					</div>
 				</div>
@@ -283,8 +283,8 @@
 							<i class="icon-heart4"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<h3><a href="list-course.php?course_category='Health and Psychology'">Health &amp; Psychology</a></h3>
+							<p>Want to live a good life? Check out our all new exciting course!</p>
 						</div>
 					</div>
 				</div>
@@ -294,8 +294,8 @@
 							<i class="icon-banknote"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Accounting</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<h3><a href="list-course.php?course_category=Accounting">Accounting</a></h3>
+							<p>Learn about accounting and brush up your skills.</p>
 						</div>
 					</div>
 				</div>
@@ -305,8 +305,8 @@
 							<i class="icon-lab2"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Science &amp; Technology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<h3><a href="list-course.php?course_category='Science and Technology'">Science &amp; Technology</a></h3>
+							<p>Are you a sci-fi enthusiast? Then check out the courses exclusively for you!</p>
 						</div>
 					</div>
 				</div>
@@ -316,8 +316,8 @@
 							<i class="icon-photo"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Art &amp; Media</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<h3><a href="list-course.php?course_category='Art and Media'">Art &amp; Media</a></h3>
+							<p>Learn about art and media with the help of our all new courses.</p>
 						</div>
 					</div>
 				</div>
@@ -327,8 +327,8 @@
 							<i class="icon-home-outline"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Real Estate</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<h3><a href="list-course.php?course_category='Real Estate'">Real Estate</a></h3>
+							<p>Check out the courses on real estate.</p>
 						</div>
 					</div>
 				</div>
@@ -338,8 +338,8 @@
 							<i class="icon-bubble3"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Language</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<h3><a href="list-course.php?course_category=Language">Language</a></h3>
+							<p>Going for a World tour? Then we are sure you need to learn a new language! Check out the awesome courses which teach you new languages.</p>
 						</div>
 					</div>
 				</div>
@@ -349,8 +349,8 @@
 							<i class="icon-world"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Web &amp; Programming</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+							<h3><a target="_blank" href="list-course.php?course_category='Web and Programming'">Web &amp; Programming</a></h3>
+							<p>If you are a computer nerd, make sure to check out the awesome courses to brush up your programming skills.</p>
 						</div>
 					</div>
 				</div>
@@ -394,52 +394,52 @@
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2>Popular Courses</h2>
+					<h2>Popular Course Categories</h2>
 					<p>See what is trending across OpenLearn!</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-1.jpg);">
+						<a href="list-course.php?course_category='Web and Programming'" class="course-img" style="background-image: url(images/webdev.jpg);">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Web Master</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							<h3><a href="#">Web and Programming</a></h3>
+							<p>Learn the most trending courses in IT industry and earn more! We are sure you will love all the courses our instructors have developed for you.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">View Courses</a></span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-2.jpg);">
+						<a href="#" class="course-img" style="background-image: url(images/business.jpg);">
 						</a>
 						<div class="desc">
-							<h3><a href="#">Business &amp; Accounting</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							<h3><a href="list-course.php?course_category='Business and Accounting'">Business &amp; Accounting</a></h3>
+							<p>Couldn't afford to pursue an expensive marketing degree? Don't worry, we are at your rescue! Check out the all new courses.</p> 
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">View Courses</a></span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-3.jpg);">
+						<a href="#" class="course-img" style="background-image: url(images/scitech.jpg);">
 						</a>
 						<div class="desc">
 							<h3><a href="#">Science &amp; Technology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							<p>If you are one of those who get a spark everytime he/she watches a sci-fi novel or watch a movie, then we are sure you will love to watch our latest courses!</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">View Courses</a></span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 animate-box">
 					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-4.jpg);">
+						<a href="#" class="course-img" style="background-image: url(images/health.jpg);">
 						</a>
 						<div class="desc">
 							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
+							<p>Are you on a mission to live a healthy life? Just check out our all new courses exclusively for you! We are sure you will love them.</p>
+							<span><a href="#" class="btn btn-primary btn-sm btn-course">View Courses</a></span>
 						</div>
 					</div>
 				</div>
@@ -524,41 +524,6 @@
 						<h3><a href="#">New Device Develope by Microsoft</a></h3>
 						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 						<p><a href="#">Read More</a></p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-img-holder" style="background-image: url(images/project-1.jpg);"></a>
-						<div class="blog-text">
-							<h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
-							<span class="posted_on">March. 15th</span>
-							<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-img-holder" style="background-image: url(images/project-2.jpg);"></a>
-						<div class="blog-text">
-							<h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
-							<span class="posted_on">March. 15th</span>
-							<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-img-holder" style="background-image: url(images/project-3.jpg);"></a>
-						<div class="blog-text">
-							<h3><a href="#">Healty Lifestyle &amp; Living</a></h3>
-							<span class="posted_on">March. 15th</span>
-							<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
 					</div>
 				</div>
 			</div>
