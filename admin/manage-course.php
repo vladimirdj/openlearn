@@ -203,26 +203,31 @@
 
 	<!--Experiment About Course Part -->
     <div class="container" style="width:700px;">  
-   <h3 align="center">Manage Course "<?php echo $rowCourse['course_name'];?>"</h3>  
+   <h3 align="center">Manage Course: "<?php echo $rowCourse['course_name'];?>"</h3>  
    <br />  
    <div class="table-responsive">
-    <div align="right">
-     <button type="button" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning">Add</button>
+    <div align="center">
+     <button type="button" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-success">Add Title</button>
     </div>
     <br />
     <div id="employee_table">
      <table class="table table-bordered">
       <tr>
-       <th width="70%">Employee Name</th>  
-       <th width="30%">View</th>
+       <th width="70%">Title</th>  
+       <th width="30%">YouTube Video Unique Code</th>
       </tr>
       <?php
-      while($row = mysqli_fetch_array($result))
-      {
-      ?>
+
+        $getCourseContent = "SELECT * from `course_content` where `course_id`='{$_GET['course_id']}'";
+        $queryCourseContent = mysqli_query($link, $getCourseContent);
+
+        while($row_course_content = mysqli_fetch_assoc($queryCourseContent))
+        {
+    ?>
+    
       <tr>
-       <td><?php echo $row["name"]; ?></td>
-       <td><input type="button" name="view" value="view" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-xs view_data" /></td>
+       <td><?php echo $row_course_content["video_title"]; ?></td>
+       <td><?php echo $row_course_content["video_link"]; ?></td>
       </tr>
       <?php
       }
@@ -239,115 +244,39 @@
   <div class="modal-content">
    <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="modal-title">PHP Ajax Insert Data in MySQL By Using Bootstrap Modal</h4>
+    <h4 class="modal-title">Add Video</h4>
    </div>
    <div class="modal-body">
-    <form method="post" id="insert_form">
-     <label>Enter Employee Name</label>
-     <input type="text" name="name" id="name" class="form-control" />
-     <br />
-     <label>Enter Employee Address</label>
-     <textarea name="address" id="address" class="form-control"></textarea>
-     <br />
-     <label>Select Gender</label>
-     <select name="gender" id="gender" class="form-control">
-      <option value="Male">Male</option>  
-      <option value="Female">Female</option>
-     </select>
-     <br />  
-     <label>Enter Designation</label>
-     <input type="text" name="designation" id="designation" class="form-control" />
-     <br />  
-     <label>Enter Age</label>
-     <input type="text" name="age" id="age" class="form-control" />
-     <br />
-     <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />
 
+      <!-- F o r m  -->
+     <form method="POST" id="register-form">
+        
+        <div class="form-group">
+            <b>Enter Video Title</b>
+            <input type="text" name="video_title" id="video_title" class="form-control" placeholder="Video Title"/>
+            <span class="help-block" id="error"></span>
+            <br />
+        </div>
+     
+        <div class="form-group">
+            <b>Enter YouTube Video Unique Code</b>
+            <input type="text" name="video_link" id="video_link" class="form-control" placeholder="For example, type 'xzjoXwCpBU4' for the video link 'https://www.youtube.com/watch?v=xzjoXwCpBU4'"></textarea>
+            <span class="help-block" id="error"></span>
+        </div>
+
+        <input type="hidden" name="course_id" id="course_id" value='<?php echo $_GET[course_id]; ?>' />
+    <!-- Form ends -->
+    <div id="errorDiv"></div> 
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <input type="submit" name="btn-signup" id="btn-signup" value="Insert" class="btn btn-success" />
     </form>
    </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-   </div>
   </div>
  </div>
 </div>
-
-<div id="dataModal" class="modal fade">
- <div class="modal-dialog">
-  <div class="modal-content">
-   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="modal-title">Employee Details</h4>
-   </div>
-   <div class="modal-body" id="employee_detail">
-    
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-   </div>
-  </div>
- </div>
-</div>
-
-<script>  
-$(document).ready(function(){
- $('#insert_form').on("submit", function(event){  
-  event.preventDefault();  
-  if($('#name').val() == "")  
-  {  
-   alert("Name is required");  
-  }  
-  else if($('#address').val() == '')  
-  {  
-   alert("Address is required");  
-  }  
-  else if($('#designation').val() == '')
-  {  
-   alert("Designation is required");  
-  }
-   
-  else  
-  {  
-   $.ajax({  
-    url:"insert.php",  
-    method:"POST",  
-    data:$('#insert_form').serialize(),  
-    beforeSend:function(){  
-     $('#insert').val("Inserting");  
-    },  
-    success:function(data){  
-     $('#insert_form')[0].reset();  
-     $('#add_data_Modal').modal('hide');  
-     $('#employee_table').html(data);  
-    }  
-   });  
-  }  
- });
-
-
-
-
- $(document).on('click', '.view_data', function(){
-  //$('#dataModal').modal();
-  var employee_id = $(this).attr("id");
-  $.ajax({
-   url:"select.php",
-   method:"POST",
-   data:{employee_id:employee_id},
-   success:function(data){
-    $('#employee_detail').html(data);
-    $('#dataModal').modal('show');
-   }
-  });
- });
-});  
- </script>
-
-
-
     <!--Experiment ends -->
-
-	
 
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(../images/mountain.jpg);">
@@ -419,12 +348,112 @@ $(document).ready(function(){
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 
-	<!-- jQuery -->
+    <!-- jQuery -->
 	<script src="../js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="../js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
 	<script src="../js/bootstrap.min.js"></script>
+    <script src="../assets/jquery.validate.min.js"></script>
+	<script src="../js/additional-methods.js"></script>
+	<script src="../js/extension.js"></script>
+    <script>
+        // JavaScript Validation For Registration Page
+
+$('document').ready(function()
+{
+		 $("#register-form").validate({
+		  rules:
+		  {
+				video_title: {
+					required: true,
+					minlength: 4
+				},
+
+				video_link: {
+				    required : true,
+				    minlength: 3
+				}				
+           },
+           
+		   messages:
+		   {
+                video_title: {
+					required: "Required",
+					minlength: "Should not bee too short"
+				},
+
+				video_link: {
+				    required : "Required",
+				    minlength: "Should not be too short"
+				}
+		   },
+		   errorPlacement : function(error, element) {
+			  $(element).closest('.form-group').find('.help-block').html(error.html());
+		   },
+		   highlight : function(element) {
+			  $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+		   },
+		   unhighlight: function(element, errorClass, validClass) {
+			  $(element).closest('.form-group').removeClass('has-error');
+			  $(element).closest('.form-group').find('.help-block').html('');
+		   },
+				submitHandler: submitForm
+		   });
+
+
+		   function submitForm(){
+				$.ajax({
+			   		url: 'insert.php',
+			   		type: 'POST',
+                       data: $('#register-form').serialize(),
+			   		dataType: 'json'
+			   })
+			   .done(function(data){
+
+			   		$('#btn-signup').html('<img src="../ajax-loader.gif" />&nbsp; Inserting...').prop('disabled', true);
+			   		$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', true);
+
+			   		setTimeout(function(){
+
+						if (data.status==='success') {
+
+							$('#errorDiv').slideDown('fast', function(){
+								$('#errorDiv').html('<div class="alert alert-info">'+data.message+'</div>');
+								$("#register-form").trigger('reset');
+								$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', false);
+								$('#btn-signup').html('Insert').prop('disabled', false);
+							}).delay(3000).slideUp('fast');
+
+
+					    } else {
+
+						    $('#errorDiv').slideDown('fast', function(){
+						      	$('#errorDiv').html('<div class="alert alert-danger">'+data.message+'</div>');
+							  	$("#register-form").trigger('reset');
+							  	$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', false);
+							  	$('#btn-signup').html('Insert').prop('disabled', false);
+							}).delay(3000).slideUp('fast');
+						}
+
+					},3000);
+
+			   })
+			   .fail(function(){
+			   		$("#register-form").trigger('reset');
+			   		alert('An unknown error occoured. Please try again later.');
+			   });
+
+}
+});
+
+
+
+    </script>
+
+
+
+	
 	<!-- Waypoints -->
 	<script src="../js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
