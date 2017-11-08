@@ -1,34 +1,61 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
+<head>
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="favicon.png" />
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Courses &mdash; OpenLearn, Your Open Educaton Platform!</title>
+	<title>Courses &mdash; OpenLearn!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
+	<meta name="author" content="freehtml5.co" /> 
 
 	<style>
-		.modal {
-		text-align: center;
-		padding: 0!important;
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'Slabo 27px', serif !important;
 		}
 
-		.modal:before {
-		content: '';
-		display: inline-block;
-		height: 100%;
-		vertical-align: middle;
-		margin-right: -4px;
-		}
-
-		.modal-dialog {
-		display: inline-block;
-		text-align: left;
-		vertical-align: middle;
-		}
 	</style>
+	<?php
+	
+		ini_set ('log_errors', 'on'); //Logging errors
+
+		session_start();
+
+		require_once 'config.php';
+
+		if(isset($_SESSION['inst_id'])) {
+
+			$inst_id = $_SESSION['inst_id'];
+
+			$getinfo = "SELECT `name`, `id`, `email`, `picture` from `instructor` where `id`='{$_SESSION['inst_id']}'";
+			$query = mysqli_query($link, $getinfo);
+			$row = mysqli_fetch_assoc($query);
+
+			$inst_name = $row['name'];
+			$inst_email = $row['email'];
+			$inst_picture = $row['picture'];
+
+			//Getting instructor's first name (accessible as zeroth index)
+			$get_name = explode(' ',trim($inst_name));
+			$inst_first_name = $get_name[0];
+
+			//Getting messages.
+			$sql_messages = " SELECT * FROM `messages` WHERE `instructor_id`='$inst_id' ";
+			$result_messages = mysqli_query($link, $sql_messages);
+		}
+		else
+		{
+			//Redirect the instructor to login page if he/she is not logged in.
+			echo "
+				<script type='text/javascript'>
+					window.location.href = '../login.php';
+				</script>
+			";
+		}
+	?>
 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
@@ -43,13 +70,12 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	
 
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="css/magnific-popup.css">
@@ -67,6 +93,9 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -76,11 +105,11 @@
 
 	</head>
 	<body>
-		
+
 	<div class="fh5co-loader"></div>
-	
+
 	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
+	<nav class="fh5co-nav navbar navbar-default" role="navigation" style="box-shadow: 0 8px 6px -6px gray;">
 		<div class="top">
 			<div class="container">
 				<div class="row">
@@ -101,213 +130,92 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn</font></a>
-						</div>
+						<div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i><span>&nbsp;Open</span><font color="#2D6CDF">Learn&nbsp;</font><font color="red">/Admin</font></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li class="active"><a href="courses.php">Courses</a></li>
+							<li><a href="courses.php">Courses</a></li>
 							<li><a href="instructors.php">Instructors</a></li>
 							<li><a href="about.php">About</a></li>
-							<li><a href="contact.php">Contact</a></li>
-							<li class="btn-cta" data-toggle="modal" data-target="#myModal"><a href="#"><span>Login</span></a></li>
-							<li class="btn-cta"><a href="signup.php"><span>Become an Instructor</span></a></li>
+							<li><a href="contact.php">Contact</a></li> 
+							&nbsp;&nbsp;&nbsp;
+							
+							<?php
+								if(isset($_SESSION['inst_id'])) {
+									echo "
+								<li class='btn-cta has-dropdown'><a href='#'><span><img src='profile_pictures/".basename($inst_picture)."' height='15px' width='15px'>&nbsp;&nbsp;".$inst_name."</span></a>
+								<ul class='dropdown'>
+									<li><a href='profile.php?inst_id=$inst_id'><i class='fa fa-user'></i>&nbsp;&nbsp;Profile</a></li>
+									<li><a href='http://localhost/open-learning/admin/admin_dashboard.php'><i class='fa fa-tachometer'></i>&nbsp;&nbsp;Dashboard</a></li>
+									<li><a href='#'><i class='fa fa-question-circle'></i>&nbsp;&nbsp;Help &amp; Support</a></li>									
+									<li><a href='logout.php'><i class='fa fa-sign-out'></i>&nbsp;&nbsp;Logout</a></li>
+								</ul>
+							</li>";
+							}
+						?>
+
 						</ul>
 					</div>
+				</div>
+
 			</div>
 		</div>
-	</div>
 	</nav>
 
-	<!-- Modal - For Login-->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Login to OpenLearn&nbsp;(For Instructors Only)</h4>
-				</div>
-
-				<div class="modal-body">
-					<form action="index.php" method="get">
-						<div class="form-group">
-								<label for="InputEmail1">Email address</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-							</div>
-
-							<div class="form-group">
-								<label for="exampleInputPassword1">Password</label>
-								<input type="password" class="form-control is-invalid" id="exampleInputPassword1" placeholder="Password" required>
-							</div>
-
-							<div class="form-check">
-								<label class="form-check-label">
-									<input type="checkbox" class="form-check-input">&nbsp;Remember me
-								</label>
-							</div>
-				</div>
-
-				<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<input type="submit" value="Login" class="btn btn-primary">
-				</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Modal for login ends-->
-
-
-	<!-- Modal - For Livestream-->
-	<div class="modal fade" id="livestream" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="Livestream_modal">Join Livestream</h4>
-				</div>
-
-				<div class="modal-body">
-					<form action="livestream.php" method="get">
-						<div class="form-group">
-								<label for="Code_Livestream">Enter the invite code of the Livestream you want to join</label>
-								<input type="text" class="form-control" id="livestream_link" aria-describedby="emailHelp" placeholder="Livestream Invite Code" required>
-							</div>
-				</div>
-
-				<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<input type="submit" value="Join Livestream" class="btn btn-primary">
-				</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Modal for livestream ends-->
-	
-	<aside id="fh5co-hero">
-		<div class="flexslider">
-			<ul class="slides">
-		   	<li style="background-image: url(images/male-student-studying.jpg);">
-		   		<div class="overlay-gradient"></div>
-		   		<div class="container">
-		   			<div class="row">
-			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
-			   				<div class="slider-text-inner">
-			   					<h1 class="heading-section">Our Courses</h1>
-									<h2>Choose what you want to pursue from the plethora of courses we offer&mdash;all for free!</a></h2>
-			   				</div>
-			   			</div>
-			   		</div>
-		   		</div>
-		   	</li>
-		  	</ul>
-	  	</div>
-	</aside>
-
-	<div id="fh5co-course">
-		<div class="container">
+	<br><br>
+	<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2>Our Course</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<h1>Our Courses</h1>
+					<p>Choose what you want to pursue from the plethora of courses we offer—all for free!</p>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-1.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Web Master</a></h3>
-							<p>Dignissimos aspeffguundf df dmfn dfdfbd nfb dfdfdfdfdf dfdf df dfdfdfhjdfhkdsjhkjhfkjefhsriores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-2.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Business &amp; Accounting</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-3.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Science &amp; Technology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-4.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/project-5.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Science &amp; Technology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 animate-box">
-					<div class="course">
-						<a href="#" class="course-img" style="background-image: url(images/studying.jpg);">
-						</a>
-						<div class="desc">
-							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Take A Course</a></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<div id="fh5co-register" style="background-image: url(images/study-boy.jpg);">
-		<div class="overlay"></div>
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 animate-box">
-				<div class="date-counter text-center">
-					<h2>Get 400 of Online Courses for Free</h2>
-					<h3>By Mike Smith</h3>
-					<div class="simply-countdown simply-countdown-one"></div>
-					<p><strong>Limited Offer, Hurry Up!</strong></p>
-					<p><a href="#" class="btn btn-primary btn-lg btn-reg">Register Now!</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+			<div class="table-responsive animate-box">  
+                     <table id="messages-table" class="table table-striped table-bordered">  
+                          <thead>  
+                               <tr>  
+                                    <th>Sent Date &amp; Time</th>  
+                                    <th>Name</th>  
+                                    <th>Email</th>  
+									<th>Messsage</th>
+									<th>Reply</th>
+                               </tr>  
+                          </thead>  
 
-	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
+						 <tbody>
+                          <?php  
+                          	while($mrow = mysqli_fetch_array($result_messages))  
+                          	{  
+                               echo '  
+                               <tr>  
+                                    <td>'.$mrow["message_date"].'</td>  
+                                    <td>'.$mrow["student_name"].'</td>  
+                                    <td>'.$mrow["student_email"].'</td>  
+									<td>'.$mrow["student_message"].'</td>
+									<td><a href="mailto:'.$mrow["student_email"].'"><button class="btn btn-success align-center"><i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp;Reply</button></a></td>
+                               </tr>  
+                               ';  
+							}
+                          ?> 
+						</tbody>
+                     </table>  
+                </div>  
+
+	</div>
+	
+
+	<br><br><br><br><br><br>
+
+
+	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(../images/mountain.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row row-pb-md">
 				<div class="col-md-3 fh5co-widget">
 					<h3>About OpenLearn</h3>
 					<p>OpenLearn is a global marketplace for learning and teaching online where students are mastering new skills and achieving their goals by learning from an extensive library of over 55,000 courses taught by expert instructors.</p>
-				
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
 					<h3>Learning</h3>
@@ -369,13 +277,14 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	
+
 	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
@@ -393,6 +302,15 @@
 	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+
+	<!--DataTables plugin -->
+	<script>  
+ 		$(document).ready(function(){  
+      	$('#messages-table').DataTable();  
+ 		});  
+	 </script> 
+	<!--DataTables plugin ends --> 
+
 	<script>
     var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 
@@ -413,4 +331,3 @@
 	</script>
 	</body>
 </html>
-
