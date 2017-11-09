@@ -378,6 +378,10 @@
 	<script src="js/additional-methods.js"></script>
 	<script src="js/extension.js"></script> <!--Message is validated and sent-->
 	<script src="login.js"></script>
+	<script src="assets/jquery.validate.min.js"></script>
+	<script src="js/additional-methods.js"></script>
+	<script src="js/extension.js"></script> <!--Message is validated and sent-->
+	<script src="login.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
