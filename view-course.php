@@ -35,12 +35,12 @@
 			$get_name = explode(' ',trim($inst_name));
             $inst_first_name = $get_name[0];
 
-            //Getting course information
-            $getCourseInfo = "SELECT * from `courses` where `course_id`='{$_GET['course_id']}'";
-			$queryCourse = mysqli_query($link, $getCourseInfo);
-            $rowCourse = mysqli_fetch_assoc($queryCourse);
-
 		}
+
+		//Getting course information
+		$getCourseInfo = "SELECT * from `courses` where `course_id`='{$_GET['course_id']}'";
+		$queryCourse = mysqli_query($link, $getCourseInfo);
+		$rowCourse = mysqli_fetch_assoc($queryCourse);
 
 	?>
 
@@ -190,6 +190,47 @@
 	</div>
 	<!--Modal ends-->
 
+	<!-- Modal - For Login-->
+	<div class="modal fade" id="myModal" tabindex="-1" autocomplete="off" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Login to OpenLearn&nbsp;(For Instructors Only)</h4>
+				</div>
+
+				<div class="modal-body">
+					<form id="login-form" method="POST" autocomplete="off">
+						<div class="form-group">
+								<b>Email address</b>
+								<input type="email" name="instEmail" class="form-control" id="instEmail" placeholder="Enter email">
+								<span class="help-block" id="error"></span>
+							</div>
+
+							<div class="form-group">
+								<b>Password</b>
+								<input type="password" name="instPassword" class="form-control" id="instPassword" placeholder="Password">
+								<span class="help-block" id="error"></span>
+							</div>
+
+							<div class="form-check">
+								<label class="form-check-label">
+									<input type="checkbox" id="rememberMe"class="form-check-input">&nbsp;Remember me
+								</label>
+							</div>
+							<div id="errorDiv"></div> 
+				</div>
+
+				<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" id="btn-login" class="btn btn-primary">Login</button>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Modal for login ends-->
+
 <br><br><br>
 
 	<!--Experiment About Course Part -->
@@ -211,7 +252,7 @@
 	<tbody>
       <?php
 
-        $getCourseContent = "SELECT * from `course_content` where `course_id`='{$_GET['course_id']}'";
+        $getCourseContent = "SELECT * from `course_content` WHERE `course_id`='{$_GET['course_id']}'";
         $queryCourseContent = mysqli_query($link, $getCourseContent);
 
         while($row_course_content = mysqli_fetch_assoc($queryCourseContent))
@@ -220,7 +261,7 @@
 
       <tr>
        <td><?php echo $row_course_content["video_title"]; ?></td>
-       <td><button class="btn btn-primary view-button" data-toggle="modal" data-target="#add_data_Modal" data-video-id="<?php $row_course_content["video_link"] ?>">View</button></td>
+       <td><button class="btn btn-primary view-button" data-toggle="modal" data-target="#add_data_Modal" data-video-id="<?= $row_course_content["video_link"] ?>">View</button></td>
       </tr>
       <?php
       }
@@ -238,7 +279,7 @@
   <div class="modal-content">
    <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="modal-title">Playing Video..</h4>
+    <h4 class="modal-title">Video Player</h4>
    </div>
    <div class="modal-body" id="yt-player">
 	<!-- Form ends -->
@@ -333,6 +374,10 @@
 
     <!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
+	<script src="assets/jquery.validate.min.js"></script>
+	<script src="js/additional-methods.js"></script>
+	<script src="js/extension.js"></script> <!--Message is validated and sent-->
+	<script src="login.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
