@@ -12,7 +12,7 @@
 	<meta name="author" content="freehtml5.co" />
 
 	<?php
-	
+
 		ini_set ('log_errors', 'on'); //Logging errors
 
 		session_start();
@@ -34,7 +34,7 @@
 			//Getting instructor's first name (accessible as zeroth index)
 			$get_name = explode(' ',trim($inst_name));
             $inst_first_name = $get_name[0];
-            
+
             //Getting course information
             $getCourseInfo = "SELECT * from `courses` where `course_id`='{$_GET['course_id']}'";
 			$queryCourse = mysqli_query($link, $getCourseInfo);
@@ -48,7 +48,7 @@
 				</script>
 			";
         }
-        
+
 	?>
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
@@ -143,9 +143,9 @@
 							<li><a href="courses.php">Courses</a></li>
 							<li><a href="instructors.php">Instructors</a></li>
 							<li><a href="about.php">About</a></li>
-							<li><a href="contact.php">Contact</a></li> 
+							<li><a href="contact.php">Contact</a></li>
 							&nbsp;&nbsp;&nbsp;
-							
+
 							<?php
 								if(isset($_SESSION['inst_id'])) {
 									echo "
@@ -153,7 +153,7 @@
 								<ul class='dropdown'>
 									<li><a href='profile.php?inst_id=$inst_id'><i class='fa fa-user'></i>&nbsp;&nbsp;Profile</a></li>
 									<li><a href='http://localhost/open-learning/admin/admin_dashboard.php'><i class='fa fa-tachometer'></i>&nbsp;&nbsp;Dashboard</a></li>
-									<li><a href='#'><i class='fa fa-question-circle'></i>&nbsp;&nbsp;Help &amp; Support</a></li>									
+									<li><a href='#'><i class='fa fa-question-circle'></i>&nbsp;&nbsp;Help &amp; Support</a></li>
 									<li><a href='#' data-toggle='modal' data-target='#logoutModal'><i class='fa fa-sign-out'></i>&nbsp;&nbsp;Logout</a></li>
 								</ul>
 							</li>";
@@ -196,17 +196,17 @@
 <br><br><br>
 
 	<!--Experiment About Course Part -->
-    <div class="container" style="width:900px;">  
+    <div class="container" style="width:900px;">
 	<h1 align="center"><i class="fa fa-graduation-cap fa-3x"></i><br></h3>
-   <h3 align="center"><?php echo $rowCourse['course_name'];?></h3>  
+   <h3 align="center"><?php echo $rowCourse['course_name'];?></h3>
    <p align="center"><?php echo $rowCourse['course_info'] ?></p>
-   <br />  
+   <br />
    <div class="table-responsive">
     <div id="employee_table">
      <table class="table table-hover table-bordered">
       <thead>
 		  <tr>
-       		<th width="70%">Title</th>  
+       		<th width="70%">Title</th>
        		<th width="4%">View</th>
 		  </tr>
 	</thead>
@@ -220,7 +220,7 @@
         while($row_course_content = mysqli_fetch_assoc($queryCourseContent))
         {
     ?>
-    
+
       <tr>
        <td><?php echo $row_course_content["video_title"]; ?></td>
        <td><button class="btn btn-primary" data-toggle="modal" data-target="#add_data_Modal">View</button></td>
@@ -231,10 +231,10 @@
 	  </tbody>
      </table>
     </div>
-   </div>  
+   </div>
   </div>
- </body>  
-</html>  
+ </body>
+</html>
 
 <div id="add_data_Modal" class="modal fade">
  <div class="modal-dialog">
@@ -246,7 +246,7 @@
    <div class="modal-body" id="yt-player">
 	<!-- Form ends -->
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/4axuf8Qvotw" frameborder="0" allowfullscreen></iframe>
-    
+
    </div>
    <div class="modal-footer">
     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -256,7 +256,7 @@
  </div>
 </div>
 	<!--Experiment ends -->
-	
+
 	<script type="text/javascript">
     $('#add_data_Modal').on('hidden.bs.modal', function () {
         callPlayer('yt-player', 'stopVideo');
@@ -340,8 +340,8 @@
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
 	<script src="js/bootstrap.min.js"></script>
-    
-    
+
+
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
