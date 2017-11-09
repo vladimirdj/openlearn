@@ -40,14 +40,7 @@
 			$queryCourse = mysqli_query($link, $getCourseInfo);
             $rowCourse = mysqli_fetch_assoc($queryCourse);
 
-		} else {
-			//Redirect the instructor to login page if he/she is not logged in.
-			echo "
-				<script type='text/javascript'>
-					window.location.href = 'login.php';
-				</script>
-			";
-        }
+		}
 
 	?>
 
@@ -157,6 +150,10 @@
 									<li><a href='#' data-toggle='modal' data-target='#logoutModal'><i class='fa fa-sign-out'></i>&nbsp;&nbsp;Logout</a></li>
 								</ul>
 							</li>";
+							} else {
+								echo "<li class='btn-cta' data-toggle='modal' data-target='#myModal'><a href='#'><span>Login</span></a></li>
+								
+								<li class='btn-cta'><a href='signup.php'><span>Become an Instructor</span></a></li>";
 							}
 						?>
 
@@ -198,8 +195,8 @@
 	<!--Experiment About Course Part -->
     <div class="container" style="width:900px;">
 	<h1 align="center"><i class="fa fa-graduation-cap fa-3x"></i><br></h3>
-   <h3 align="center"><?php echo $rowCourse['course_name'];?></h3>
-   <p align="center"><?php echo $rowCourse['course_info'] ?></p>
+   <h3 align="center"><?php echo $rowCourse["course_name"]; ?></h3>
+   <p align="center"><?php echo $rowCourse["course_info"]; ?></p>
    <br />
    <div class="table-responsive">
     <div id="employee_table">
@@ -223,7 +220,7 @@
 
       <tr>
        <td><?php echo $row_course_content["video_title"]; ?></td>
-       <td><button class="btn btn-primary view-button" data-toggle="modal" data-target="#add_data_Modal" data-video-id="<?= $row_course_content["video_link"] ?>">View</button></td>
+       <td><button class="btn btn-primary view-button" data-toggle="modal" data-target="#add_data_Modal" data-video-id="<?php $row_course_content["video_link"] ?>">View</button></td>
       </tr>
       <?php
       }
