@@ -40,20 +40,8 @@
 			$queryCourse = mysqli_query($link, $getCourseInfo);
             $rowCourse = mysqli_fetch_assoc($queryCourse);
 
-<<<<<<< HEAD
 		} 
 
-=======
-		} else {
-			//Redirect the instructor to login page if he/she is not logged in.
-			echo "
-				<script type='text/javascript'>
-					window.location.href = 'login.php';
-				</script>
-			";
-        }
-        
->>>>>>> 51de0d704e52afde704c0b60afaa3de3d8febda2
 	?>
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
