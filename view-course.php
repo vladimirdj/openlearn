@@ -223,7 +223,7 @@
 
       <tr>
        <td><?php echo $row_course_content["video_title"]; ?></td>
-       <td><button class="btn btn-primary" data-toggle="modal" data-target="#add_data_Modal">View</button></td>
+       <td><button class="btn btn-primary view-button" data-toggle="modal" data-target="#add_data_Modal" data-video-id="<?= $row_course_content["video_link"] ?>">View</button></td>
       </tr>
       <?php
       }
@@ -245,7 +245,7 @@
    </div>
    <div class="modal-body" id="yt-player">
 	<!-- Form ends -->
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/4axuf8Qvotw" frameborder="0" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="" id="video" frameborder="0" allowfullscreen></iframe>
 
    </div>
    <div class="modal-footer">
@@ -376,6 +376,12 @@
         day: d.getDate(),
         enableUtc: false
     });
+
+	$(".view-button").click(function() {
+		var video_url = $(this).attr("data-video-id");
+		video_url = "https://youtube.com/embed/" + video_url;
+		$("#video").attr("src", video_url);
+	});
 	</script>
 	</body>
 </html>
