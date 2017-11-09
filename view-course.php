@@ -40,14 +40,7 @@
 			$queryCourse = mysqli_query($link, $getCourseInfo);
             $rowCourse = mysqli_fetch_assoc($queryCourse);
 
-		} else {
-			//Redirect the instructor to login page if he/she is not logged in.
-			echo "
-				<script type='text/javascript'>
-					window.location.href = 'login.php';
-				</script>
-			";
-        }
+		} 
 
 	?>
 
@@ -157,6 +150,10 @@
 									<li><a href='#' data-toggle='modal' data-target='#logoutModal'><i class='fa fa-sign-out'></i>&nbsp;&nbsp;Logout</a></li>
 								</ul>
 							</li>";
+							} else {
+								echo "<li class='btn-cta' data-toggle='modal' data-target='#myModal'><a href='#'><span>Login</span></a></li>
+								
+								<li class='btn-cta'><a href='signup.php'><span>Become an Instructor</span></a></li>";
 							}
 						?>
 
@@ -167,6 +164,47 @@
 			</div>
 		</div>
 	</nav>
+
+	<!-- Modal - For Login-->
+	<div class="modal fade" id="myModal" tabindex="-1" autocomplete="off" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Login to OpenLearn&nbsp;(For Instructors Only)</h4>
+				</div>
+
+				<div class="modal-body">
+					<form id="login-form" method="POST" autocomplete="off">
+						<div class="form-group">
+								<b>Email address</b>
+								<input type="email" name="instEmail" class="form-control" id="instEmail" placeholder="Enter email">
+								<span class="help-block" id="error"></span>
+							</div>
+
+							<div class="form-group">
+								<b>Password</b>
+								<input type="password" name="instPassword" class="form-control" id="instPassword" placeholder="Password">
+								<span class="help-block" id="error"></span>
+							</div>
+
+							<div class="form-check">
+								<label class="form-check-label">
+									<input type="checkbox" id="rememberMe"class="form-check-input">&nbsp;Remember me
+								</label>
+							</div>
+							<div id="errorDiv"></div> 
+				</div>
+
+				<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" id="btn-login" class="btn btn-primary">Login</button>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Modal for login ends-->
 
 	<!-- Modal - For Logout-->
 	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -336,6 +374,10 @@
 
     <!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
+	<script src="assets/jquery.validate.min.js"></script>
+	<script src="js/additional-methods.js"></script>
+	<script src="js/extension.js"></script> <!--Message is validated and sent-->
+	<script src="login.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
