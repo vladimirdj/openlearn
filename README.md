@@ -4,13 +4,13 @@ It is being developed using the following languages:
 
 (1) HTML,
 
-(2) CSS, and
+(2) CSS,
 
-(3) PHP.
+(3) PHP, and
+
+(4) JavaScript (alongwith jQuery at certain places).
 
 And, the database used is MySQL.
-
-Alongwith the aforementioned technologies, Node.js and various other frameworks and scripting languages are also used.
 
 It has the following features:
 
