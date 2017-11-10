@@ -124,6 +124,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="top-menu">
 			<div class="container">
 				<div class="row">
@@ -160,7 +161,6 @@
 						</ul>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</nav>
@@ -232,9 +232,7 @@
 	<!--Modal for login ends-->
 
 
-
-
-<aside id="fh5co-hero">
+	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
 		   	<li style="background-image: url(images/people-woman-coffee-meeting.jpg);">
@@ -253,43 +251,47 @@
 		  	</ul>
 	  	</div>
 	</aside>
+
 	<br><br><br>
+	
 	<!--Experiment About Course Part -->
     <div class="container" style="width:900px;">
-   <div class="table-responsive">
-    <div id="employee_table">
-     <table class="table table-hover animate-row table-bordered">
-      <thead>
-		  <tr>
-       		<th width="70%">Title</th>
-       		<th width="4%">View</th>
-		  </tr>
-	</thead>
+   		<div class="table-responsive">
+    		<div id="employee_table">
+     			<table class="table table-hover animate-row table-bordered">
+      				<thead>
+		  				<tr>
+       						<th width="70%">Title</th>
+       						<th width="4%">View</th>
+		  				</tr>
+					</thead>
 
-	<tbody>
-      <?php
+					<tbody>
+      					
+						<?php
 
-        $getCourseContent = "SELECT * from `course_content` WHERE `course_id`='{$_GET['course_id']}'";
-        $queryCourseContent = mysqli_query($link, $getCourseContent);
+        					$getCourseContent = "SELECT * from `course_content` WHERE `course_id`='{$_GET['course_id']}'";
+        					$queryCourseContent = mysqli_query($link, $getCourseContent);
 
-        while($row_course_content = mysqli_fetch_assoc($queryCourseContent))
-        {
-    ?>
+        					while($row_course_content = mysqli_fetch_assoc($queryCourseContent))
+        					{
+						
+						?>
 
-      <tr>
-       <td><?php echo $row_course_content["video_title"]; ?></td>
-       <td><button class="btn btn-primary view-button" data-toggle="modal" data-target="#add_data_Modal" data-video-id="<?= $row_course_content["video_link"] ?>">View</button></td>
-      </tr>
-      <?php
-      }
-	  ?>
-	  </tbody>
-     </table>
+      							<tr>
+       								<td><?php echo $row_course_content["video_title"]; ?></td>
+       								<td><button class="btn btn-primary view-button" data-toggle="modal" data-target="#add_data_Modal" data-video-id="<?= $row_course_content["video_link"] ?>">View</button></td>
+      							</tr>
+      
+	  					<?php
+      						}
+	  					?>
+	  				</tbody>
+     		</table>
     </div>
    </div>
   </div>
  </body>
-</html>
 
 <div id="add_data_Modal" class="modal fade">
  <div class="modal-dialog">
