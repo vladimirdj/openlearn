@@ -166,8 +166,8 @@ $('document').ready(function()
 
 						if (data.status==='success') {
 
-							$('#errorDiv').slideDown('fast', function(){
-								$('#errorDiv').html('<div class="alert alert-info">'+data.message+'</div>');
+							$('#errorDiv2').slideDown('fast', function(){
+								$('#errorDiv2').html('<div class="alert alert-info">'+data.message+'</div>');
 								$("#register-form").trigger('reset');
 								$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', false);
 								$('#btn-signup').html('Register').prop('disabled', false);
@@ -176,8 +176,8 @@ $('document').ready(function()
 
 					    } else {
 
-						    $('#errorDiv').slideDown('fast', function(){
-						      	$('#errorDiv').html('<div class="alert alert-danger">'+data.message+'</div>');
+						    $('#errorDiv2').slideDown('fast', function(){
+						      	$('#errorDiv2').html('<div class="alert alert-danger">'+data.message+'</div>');
 							  	$("#register-form").trigger('reset');
 							  	$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', false);
 							  	$('#btn-signup').html('Register').prop('disabled', false);

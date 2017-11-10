@@ -369,7 +369,7 @@
 									</div>
 								</div>
 
-								<div id="errorDiv"></div>
+								<div id="errorDiv2"></div>
 
 					</form>
 				</div>
