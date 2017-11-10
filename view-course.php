@@ -2,14 +2,14 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="shortcut icon" href="favicon.png" />
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>View Course &mdash; Free Online Courses at OpenLearn!</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
+		<link rel="shortcut icon" href="favicon.png" />
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>View Course &mdash; Free Online Courses at OpenLearn!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+		<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+		<meta name="author" content="freehtml5.co" />
 
 	<?php
 
