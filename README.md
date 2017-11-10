@@ -12,14 +12,18 @@ It is being developed using the following languages:
 
 The database being used is MySQL. All the queries can be found in the file called `openlearn.sql`. You can import it in phpMyAdmin's portal.
 
+
 It has the following features:
 
-**1. A virtual classroom:** It has a virtual whiteboard which can be used by the instructors to teach the students in real-time. Whatever the instructor would draw or write on that virtual whiteboard are broadcasted to the students pursuing in “real-time”, which would essentially be similar to as if they are studying in a physical classroom. Technically, it would be comprised of an HTML5 Canvas for drawing and the broadcast mechanism would be made available with assistance of technologies such as WebSockets, Node.js, and Socket.io.
+1. It is an open learning platform in which any instructor can sign up for free, and teach their students.
 
-Assignment Upload and Download Portal: It can be used by the instructors to upload handouts or documents relevant to the course that can be downloaded by the students any time for reference.
+2. No signup required for students. Anyone can learn any time, anywhere.
 
-**2. Video Repository:** The instructors can embed the videos from YouTube (with an embed code) under certain course title and can provide a description of the video in each page of the course. The students can browse through the videos any time.
+3. A contact page, where any student can contact any teacher in case he/she has any questions related to the course.
 
-**3. Announcements:** Instructors can use this page for any announcements about the course.
+4. An easy-to-use admin panel, where the instructors can manage their course(s), add content to the existing courses, view messages, and do much more!
 
-**4. A contact page:** It would be used by the students to contact the instructor of the opted course in case they need to ask them any questions.
+
+**Note: **
+
+Kindly note that this project has been developed as part of the course INT301 (Open Source Technologies) for 7th semester, and is not meant to be used in the enterprise.
