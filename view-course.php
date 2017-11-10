@@ -253,9 +253,17 @@
 	</aside>
 
 	<br><br><br>
+
 	
 	<!--Experiment About Course Part -->
     <div class="container" style="width:900px;">
+	<?php
+		$getCourseContent = "SELECT * from `course_content` WHERE `course_id`='{$_GET['course_id']}'";
+		$queryCourseContent = mysqli_query($link, $getCourseContent); 
+
+		if(mysqli_num_rows($queryCourseContent) > 0) {
+	?>
+
    		<div class="table-responsive">
     		<div id="employee_table">
      			<table class="table table-hover animate-row table-bordered">
@@ -270,8 +278,6 @@
       					
 						<?php
 
-        					$getCourseContent = "SELECT * from `course_content` WHERE `course_id`='{$_GET['course_id']}'";
-        					$queryCourseContent = mysqli_query($link, $getCourseContent);
 
         					while($row_course_content = mysqli_fetch_assoc($queryCourseContent))
         					{
@@ -289,6 +295,13 @@
 	  				</tbody>
      		</table>
     </div>
+	<?php 
+		}
+		else {
+			echo "<h4 align='center'>No course found.</h4>";
+		}
+
+	?>
    </div>
   </div>
  </body>
