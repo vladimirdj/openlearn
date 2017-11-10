@@ -1,16 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="shortcut icon" href="favicon.png" />
-	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Courses &mdash; OpenLearn!</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" /> 
+	<?php
+		include_once 'page-info.php';
+		echo $page_meta; 	//Page modularization
+	?>
 
 	<style>
 		h1, h2, h3, h4, h5, h6 {
@@ -54,8 +48,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
 
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
+	
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="css/icomoon.css">
 	
