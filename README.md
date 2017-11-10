@@ -2,15 +2,15 @@
 
 It is being developed using the following languages:
 
-(1) HTML,
+   (1) HTML,
 
-(2) CSS,
+   (2) CSS,
 
-(3) PHP, and
+   (3) PHP, and
 
-(4) JavaScript (alongwith jQuery at certain places).
+   (4) JavaScript (alongwith jQuery at certain places).
 
-And, the database used is MySQL.
+The database being used is MySQL. All the queries can be found in the file called `openlearn.sql`. You can import it in phpMyAdmin's portal.
 
 It has the following features:
 
