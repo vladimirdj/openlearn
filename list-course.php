@@ -195,8 +195,7 @@
 	<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h1>View All the Courses by "<?php echo $_GET['course_category']; ?>"</h1>
-					<p>Choose what you want to pursue from the plethora of courses we offer—all for free!</p>
+					<h1>All courses by category "<?php echo $_GET['course_category']; ?>"</h1>
 				</div>
 			</div>
 
