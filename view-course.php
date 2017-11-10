@@ -231,17 +231,34 @@
 	</div>
 	<!--Modal for login ends-->
 
-<br><br><br>
 
+
+
+<aside id="fh5co-hero">
+		<div class="flexslider">
+			<ul class="slides">
+		   	<li style="background-image: url(images/people-woman-coffee-meeting.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1 class="heading-section"><?php echo $rowCourse["course_name"]; ?></h1>
+									<h2><?php echo $rowCourse["course_info"]; ?> </h2>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		  	</ul>
+	  	</div>
+	</aside>
+	<br><br><br>
 	<!--Experiment About Course Part -->
     <div class="container" style="width:900px;">
-	<h1 align="center"><i class="fa fa-graduation-cap fa-3x"></i><br></h3>
-   <h3 align="center"><?php echo $rowCourse["course_name"]; ?></h3>
-   <p align="center"><?php echo $rowCourse["course_info"]; ?></p>
-   <br />
    <div class="table-responsive">
     <div id="employee_table">
-     <table class="table table-hover table-bordered">
+     <table class="table table-hover animate-row table-bordered">
       <thead>
 		  <tr>
        		<th width="70%">Title</th>
