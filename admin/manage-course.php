@@ -266,11 +266,11 @@
 
         <input type="hidden" name="course_id" id="course_id" value='<?php echo $_GET[course_id]; ?>' />
     <!-- Form ends -->
-    <div id="errorDiv"></div> 
+    <div id="errorDiv2"></div> 
    </div>
    <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <input type="submit" name="btn-signup" id="btn-signup" value="Insert" class="btn btn-success" />
+    <input type="submit" name="btn-insert" id="btn-insert" value="Insert" class="btn btn-success" />
     </form>
    </div>
   </div>
@@ -413,28 +413,28 @@
         			   })
         			   .done(function(data){
                     
-        			   		$('#btn-signup').html('<img src="../ajax-loader.gif" />&nbsp; Inserting...').prop('disabled', true);
+        			   		$('#btn-insert').html('<img src="../ajax-loader.gif" />&nbsp; Inserting...').prop('disabled', true);
         			   		$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop('disabled', true);
                     
         			   		setTimeout(function(){
                             
         						if (data.status==='success') {
                                 
-        							$('#errorDiv').slideDown('fast', function(){
-        								$('#errorDiv').html('<div class="alert alert-info">'+data.message+'</div>');
+        							$('#errorDiv2').slideDown('fast', function(){
+        								$('#errorDiv2').html('<div class="alert alert-info">'+data.message+'</div>');
         								$("#register-form").trigger('reset');
         								$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop      ('disabled', false);
-        								$('#btn-signup').html('Insert').prop('disabled', false);
+        								$('#btn-insert').html('Insert').prop('disabled', false);
         							}).delay(3000).slideUp('fast');
                                 
                                 
         					    } else {
                                 
-        						    $('#errorDiv').slideDown('fast', function(){
-        						      	$('#errorDiv').html('<div class="alert alert-danger">'+data.message+'</div>');
+        						    $('#errorDiv2').slideDown('fast', function(){
+        						      	$('#errorDiv2').html('<div class="alert alert-danger">'+data.message+'</div>');
         							  	$("#register-form").trigger('reset');
         							  	$('input[type=text],input[type=email],input[type=password],input[type=url],input[type=file]').prop      ('disabled', false);
-        							  	$('#btn-signup').html('Insert').prop('disabled', false);
+        							  	$('#btn-insert').html('Insert').prop('disabled', false);
         							}).delay(3000).slideUp('fast');
         						}
                             
