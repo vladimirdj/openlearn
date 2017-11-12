@@ -314,7 +314,7 @@
                             <div class="desc">
                                 <h3><a href="#">'.$course_no['course_name'].'</a></h3>
                                 <p>'.substr($course_no['course_info'], 0, 100).'</p>
-                                <span><a href="#" class="btn btn-primary btn-sm btn-course">Take the Course</a></span>
+                                <span><a href="view-course.php?course_id='.$course_no['course_id'].'" class="btn btn-primary btn-sm btn-course">Take the Course</a></span>
                             </div>
                         </div>
 						</div>';
