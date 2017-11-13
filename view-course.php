@@ -264,15 +264,10 @@
 		if(mysqli_num_rows($queryCourseContent) > 0) {
 	?>
 
-   		<div class="table-responsive">
+   		<div class="container"> 
+		   <div class="table-responsive">
     		<div id="employee_table">
-     			<table class="table table-hover animate-row table-bordered">
-      				<thead>
-		  				<tr>
-       						<th width="70%">Title</th>
-       						<th width="4%">View</th>
-		  				</tr>
-					</thead>
+     			<table class="table table-hover animate-row">
 
 					<tbody>
       					
@@ -303,6 +298,7 @@
 
 	?>
    </div>
+  </div>
   </div>
  </body>
 
