@@ -277,7 +277,6 @@
 					}
 					else {
 						echo "<button class='btn btn-primary' data-toggle='modal' data-target='#messageModal' style='color: white;'><i class='fa fa-envelope'></i>&nbsp;&nbsp;Send Message</button><br><br>";
-					}
 
 				?>
 
@@ -343,7 +342,8 @@
 						}
 							else {
 								echo "<h4 align='center'>No course found.</h4>";
-								}
+								} 
+						}
 
 								?>
   </div>
@@ -427,6 +427,7 @@
 					</p>
 				</div>
 			</div>
+			</div>
 
 		</div>
 	</footer>
@@ -483,4 +484,4 @@
 	</body>
 </html>
 
-<?= mysqli_close ($link); ?>
+<?php mysqli_close ($link); ?>

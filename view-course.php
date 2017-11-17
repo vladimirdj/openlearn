@@ -242,7 +242,8 @@
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
 			   					<h1 class="heading-section"><?php echo $rowCourse["course_name"]; ?></h1>
-									<h2><?php echo $rowCourse["course_info"]; ?> </h2>
+								<h4 style="color: white;">Instructed by <?php echo $inst_name; ?></h4><br>
+								<h2><?php echo $rowCourse["course_info"]; ?> </h2>
 			   				</div>
 			   			</div>
 			   		</div>
@@ -264,10 +265,10 @@
 		if(mysqli_num_rows($queryCourseContent) > 0) {
 	?>
 
-   		<div class="container"> 
+   		<div class="container animate-box"> 
 		   <div class="table-responsive">
     		<div id="employee_table">
-     			<table class="table table-hover animate-row">
+     			<table class="table table-hover">
 
 					<tbody>
       					
