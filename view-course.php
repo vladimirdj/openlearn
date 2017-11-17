@@ -256,7 +256,7 @@
 
 	
 	<!--Experiment About Course Part -->
-    <div class="container animate-box" style="width:900px;">
+    <div class="container" style="width:900px;">
 	<?php
 		$getCourseContent = "SELECT * from `course_content` WHERE `course_id`='{$_GET['course_id']}'";
 		$queryCourseContent = mysqli_query($link, $getCourseContent); 
@@ -264,7 +264,7 @@
 		if(mysqli_num_rows($queryCourseContent) > 0) {
 	?>
 
-   		<div class="container animate-box"> 
+   		<div class="container"> 
 		   <div class="table-responsive">
     		<div id="employee_table">
      			<table class="table table-hover">
