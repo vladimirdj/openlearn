@@ -231,6 +231,19 @@
 	</div>
 	<!--Modal for login ends-->
 
+	<?php
+
+		$get_course_id = $_GET['course_id'];
+
+		$result_set_ins = mysqli_query($link, "SELECT instructor.name FROM instructor INNER JOIN courses ON instructor.id=courses.instructor_id WHERE course_id='$get_course_id'");
+
+		$result_ins_arr = mysqli_fetch_assoc($result_set_ins);
+
+		$course_inst_name = $result_ins_arr['name'];
+
+
+	?>
+
 	<aside id="fh5co-hero">
 		<div class="flexslider">
 			<ul class="slides">
@@ -241,7 +254,7 @@
 			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
 			   				<div class="slider-text-inner">
 			   					<h1 class="heading-section"><?php echo $rowCourse["course_name"]; ?></h1>
-								<!--<h4 style="color: white;">Instructed by <?php echo $inst_name; ?></h4><br>-->
+								<h4 style="color: white;">Instructed by <?php echo $course_inst_name; ?></h4><br>
 								<h2><?php echo $rowCourse["course_info"]; ?> </h2>
 			   				</div>
 			   			</div>
