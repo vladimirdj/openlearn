@@ -300,36 +300,49 @@
                         <p>Take your desired course prepared for you by <?php echo $inst_name; ?>.</p>
                     </div>
                 </div>
-                <div class="row">
 
+				<!--Editing begins -->
+
+				<div class="container animate-box" style="width:900px;">
 				<?php
 
-					if (mysqli_num_rows($query_course) > 0) {					
-						while ($course_no = mysqli_fetch_assoc($query_course)) {
-							echo '
-                    	<div class="col-md-6 animate-box">
-                        <div class="course">
-                            <a href="#" class="course-img" style="background-image: url(images/profile-art.jpg);">
-                            </a>
-                            <div class="desc">
-                                <h3><a href="#">'.$course_no['course_name'].'</a></h3>
-                                <p>'.substr($course_no['course_info'], 0, 100).'</p>
-                                <span><a href="view-course.php?course_id='.$course_no['course_id'].'" class="btn btn-primary btn-sm btn-course">Take the Course</a></span>
-                            </div>
-                        </div>
-						</div>';
+				if (mysqli_num_rows($query_course) > 0) {					
+					while ($course_no = mysqli_fetch_assoc($query_course)) {
+		
+				?> 
+		   				<div class="table-responsive">
+    						<div id="courses_table">
+     							<table class="table table-hover">
+								 	<tbody>  
+									 	<?php
+						
+											while ($course_no = mysqli_fetch_assoc($query_course)) {
+						
+										?>
+      										<tr>
+       											<td><?php echo $course_no['course_name']; ?></td>
+												<td><?php echo $course_no['course_info']; ?> </td>
+       											<td><a href="view-course.php?course_id='<?php echo $course_no['course_id']; ?>'" class="btn btn-primary btn-sm btn-course">Take the Course</a></td>
+      										</tr>
+      
+	  									<?php
+      									}
+	  									?>
+	  								</tbody>
+     							</table>
+    						</div>
+							<?php 
+							} 
 						}
-					}
-					else {
-						echo "<h3 class='text-center animate-box'>No courses found.</h3>";
-					}
-					?>
-                </div>
-            </div>
-        </div>
+							else {
+								echo "<h4 align='center'>No course found.</h4>";
+								}
 
-
-    <!--Courses List ends -->
+								?>
+  </div>
+  </div>
+  </div>
+  </div>
 
 
     <div id="fh5co-register" style="background-image: url(images/studying.jpg);">
