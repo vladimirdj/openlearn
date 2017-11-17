@@ -256,7 +256,7 @@
 
 	
 	<!--Experiment About Course Part -->
-    <div class="container" style="width:900px;">
+    <div class="container animate-box" style="width:900px;">
 	<?php
 		$getCourseContent = "SELECT * from `course_content` WHERE `course_id`='{$_GET['course_id']}'";
 		$queryCourseContent = mysqli_query($link, $getCourseContent); 
