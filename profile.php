@@ -60,7 +60,7 @@
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="css/magnific-popup.css">
@@ -312,7 +312,14 @@
 				?> 
 		   				<div class="table-responsive">
     						<div id="courses_table">
-     							<table class="table table-hover">
+     							<table class="table table-bordered table-hover">
+
+								 	<thead>
+									 	<th>Title</th>
+										<th>Summary</th>
+										<th>Link</th>
+									</thead>
+
 								 	<tbody>  
 									 	<?php
 						
