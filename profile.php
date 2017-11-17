@@ -322,7 +322,7 @@
       										<tr>
        											<td><?php echo $course_no['course_name']; ?></td>
 												<td><?php echo $course_no['course_info']; ?> </td>
-       											<td><a href="view-course.php?course_id='<?php echo $course_no['course_id']; ?>'" class="btn btn-primary btn-sm btn-course">Take the Course</a></td>
+       											<td><a href="view-course.php?course_id=<?php echo $course_no['course_id']; ?>" class="btn btn-primary btn-sm btn-course">Take the Course</a></td>
       										</tr>
       
 	  									<?php
