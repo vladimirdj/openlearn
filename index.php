@@ -435,7 +435,7 @@
 						</a>
 						<div class="desc">
 							<h3><a href="#">Health &amp; Psychology</a></h3>
-							<p>Are you on a mission to live a healthy life? Just check out our all new courses exclusively for you! We are sure you will love them.</p>
+							<p>Are you on a mission to live a healthy life? Then you would like to check out all of our new courses exclusively made for you! We are sure you will love them all!</p>
 							<span><a href="#" class="btn btn-primary btn-sm btn-course">View Courses</a></span>
 						</div>
 					</div>
