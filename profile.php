@@ -271,9 +271,9 @@
 
 				<?php
 					
-					//Hack to not show "Send Message" button for the logged in instructor's profile
+					//Hack to not show "Send Message" button for the logged in instructor's profile; instead show the edit button.
 					if($inst_id === $_SESSION['inst_id']) {
-						echo "";						
+						echo "<button class='btn btn-primary'> <a style='color: white;' href='edit-profile.php?id=".$inst_id."'>  <i class='fa fa-pencil'></i>&nbsp;&nbsp;Edit Profile </a> </button><br><br>";						
 					}
 					else {
 						echo "<button class='btn btn-primary' data-toggle='modal' data-target='#messageModal' style='color: white;'><i class='fa fa-envelope'></i>&nbsp;&nbsp;Send Message</button><br><br>";
