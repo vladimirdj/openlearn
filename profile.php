@@ -25,7 +25,7 @@
 		$inst_about = $row['about'];
 
 		//Getting information about the courses:
-		$getCourseInfo = "SELECT * from `courses` where (`instructor_id`='$inst_id')";
+		$getCourseInfo = "SELECT * from `courses` where (`instructor_id`='$instructor_id')";
 		$query_course = mysqli_query($link, $getCourseInfo);
 
 	?>
