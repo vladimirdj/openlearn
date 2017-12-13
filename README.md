@@ -24,6 +24,6 @@ It has the following features:
 4. An easy-to-use admin panel, where the instructors can manage their course(s), add content to the existing courses, view messages, and do much more!
 
 
-**Note:** 
 
+**Note:** 
 Kindly note that this project has been developed as part of the course INT301 (Open Source Technologies) for 7th semester, and is not meant for production, since it was developed within a span of two weeks and thus may contain a lot of bad code. Yet, you are welcome to make any changes to this project.
