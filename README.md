@@ -1,5 +1,7 @@
 *OpenLearn* is an online Learning Management System solution enabling instructors to create their own private website filled with dynamic courses that extend learning anytime, anywhere. It helps the instructors create effective online teaching and learning experiences for the students in a collaborative and private environment, and helps students build their talent pool at their convenience.
 
+*NOTE*: It is not meant for production.
+
 It is being developed using the following languages:
 
    (1) HTML,
