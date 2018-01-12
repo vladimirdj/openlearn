@@ -10,7 +10,7 @@ It is being developed using the following languages:
 
    (4) JavaScript (alongwith jQuery at certain places).
 
-The database being used is MySQL. All the queries can be found in the file called `openlearn.sql`. You can import it in phpMyAdmin's portal.
+The database being used is MySQL. All the queries can be found in the file called `openlearn.sql`, which can be imported from phpMyAdmin's portal.
 
 
 It has the following features:
@@ -27,4 +27,4 @@ It has the following features:
 
 
 **Note:** 
-Kindly note that this project has been developed as part of the recommended project assigned for the course INT301 (Open Source Technologies) by my college, and is not meant for production, since it was developed within a span of two weeks and thus may contain a lot of bad code. Yet, you are welcome to make any changes to this project.
+Kindly note that this project has been developed as part of the recommended project assigned for the course INT301 (Open Source Technologies) by my college, and **is not meant for production**, since it was developed in a span of two weeks, and thus may contain a lot of bad cod as I had a lot of other stuff to do. Yet, you are welcome to make any changes to this project and raise an issue.
