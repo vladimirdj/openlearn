@@ -1,4 +1,5 @@
-#OpenLearn
+# OpenLearn
+
 *OpenLearn* is an online Learning Management System solution enabling instructors to create their own private website filled with dynamic courses that extend learning anytime, anywhere. It helps the instructors create effective online teaching and learning experiences for the students in a collaborative and private environment, and helps students build their talent pool at their convenience.
 
 It is being developed using the following languages:
@@ -27,6 +28,6 @@ It has the following features:
 
 
 
-##Note
+## Note
 
 Kindly note that this project has been developed as part of the recommended project assigned for the course INT301 (Open Source Technologies) by my college, and **is not meant for production**, since it was developed in a span of two weeks, and thus may contain a lot of bad code as I had a lot of other stuff to do. Yet, you are welcome to make any changes to this project and raise an issue.
