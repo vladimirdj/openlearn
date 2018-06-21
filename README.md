@@ -30,4 +30,4 @@ It has the following features:
 
 ## Note
 
-Kindly note that this project has been developed as part of the recommended project assigned for the course INT301 (Open Source Technologies) by my college, and **is not meant for production**, since it was developed in a span of two weeks, and thus may contain a lot of bad code as I had a lot of other stuff to do. Yet, you are welcome to make any changes to this project and raise an issue.
+This project has been developed as part of the recommended project assigned for the course INT301 (Open Source Technologies) by my college, and **is not meant for production**, since it was developed in a span of about two weeks and thus **contains a lot of bad code** as I had a lot of other stuff to do. Yet, you are welcome to suggest any changes to this project and raise issue(s).
